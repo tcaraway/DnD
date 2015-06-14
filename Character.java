@@ -27,6 +27,9 @@ public class Character {
     //amount of skill proficiences
     private int profAmount;
     
+    //skills that get double prof bonus (knowledge cleric, rogue expertise, etc)
+    private int[] doubleSkillProfs;
+    
     //inspiration points
     private int inspiration;
     
@@ -82,8 +85,12 @@ public class Character {
     //weapon attacks
     private ArrayList<WeaponAttack> weaponAttacks;
     
-    //other proficiencies and languages
+    //other proficiencies 
     private ArrayList<String> proficiencies;
+    
+    //languages known
+    private ArrayList<String> languages;
+    private int languagesAmount;
     
     //currency ([1] = copper, [2] = silver, etc.)
     private int[] currency;
@@ -120,13 +127,34 @@ public class Character {
     private ArrayList<String> sixthLevelSpells;
     
     //7th level spells
-    private ArrayList seventhLevelSpells;
+    private ArrayList<String> seventhLevelSpells;
     
     //8th level spells
     private ArrayList<String> eigthLevelSpells;
     
     //9th level spells
     private ArrayList<String> ninthLevelSpells;
+    
+    
+    //IF CLERIC: Cleric Domain
+    private String clericDomain;
+    
+    //IF FIGHTER: Fighting Style
+    private String fightingStyle;
+    
+    //IF RANGER: Favored Enemy
+    private String favoredEnemy;
+    
+    //IF SORCERER: Sorcerous Origin
+    private String sorcerousOrigin;
+    //if draconic bloodline origin
+    private String draconicAncestry;
+    
+    //IF WARLOCK: Otherworldly Patron
+    private String otherworldlyPatron;
+    
+    //used in determining Rogue Experstise at level 1
+    private ArrayList<String> rogueProfs;
     
     
     public Character(){
@@ -138,9 +166,11 @@ public class Character {
         this.alignment = "";
     
         //proficiency bonus
-        this.profBonus = 0;
+        this.profBonus = 2;
     
         this.profAmount = 0;
+        
+        this.doubleSkillProfs = new int[18];
         
         //inspiration points
         this.inspiration = 0;
@@ -191,8 +221,12 @@ public class Character {
         //weapon attacks
         this.weaponAttacks = new ArrayList<WeaponAttack>();
     
-        //other proficiencies and languages
+        //other proficiencies 
         this.proficiencies = new ArrayList<String>();
+        
+        //languages known
+        this.languages = new ArrayList<String>();
+        this.languagesAmount = 0;
     
         //currency ([1] = copper, [2] = silver, etc.)
         this.currency = new int[5];
@@ -236,6 +270,12 @@ public class Character {
     
         //9th level spells
         this.ninthLevelSpells = new ArrayList<String>();
+        
+        this.clericDomain = "";
+        this.fightingStyle = "";
+        this.otherworldlyPatron = "";
+        this.favoredEnemy = "";
+        this.rogueProfs = new ArrayList<String>();
     }
     
     //GETTERS AND SETTERS
@@ -347,14 +387,23 @@ public class Character {
         this.profAmount = amount;
     }
     
-    public int[] getSkillProfs()
+    public int getThisSkillProf(int index)
     {
-        return this.skillProfs;
+        return this.skillProfs[index];
     }
     public void setThisSkillProf(int index, int amount)
     {
         this.skillProfs[index] = amount;
     }
+    public int getThisSkill(int index)
+    {
+        return this.skills[index];
+    }
+    public void setThisSkill(int index, int amount)
+    {
+        this.skills[index] = amount;
+    }
+    
     
     public void setStrMod(int value)
     {
@@ -404,6 +453,153 @@ public class Character {
     public int getChaMod()
     {
         return this.chaMod;
+    }
+    
+    public int getProfBonus()
+    {
+        return this.profBonus;
+    }
+    
+    public String getClericDomain()
+    {
+        return this.clericDomain;
+    }
+    public void setClericDomain(String domain)
+    {
+        this.clericDomain = domain;
+    }
+    
+    public void setThisDoubleProf(int index)
+    {
+        this.doubleSkillProfs[index] = 1;
+    }
+    public int[] getDoubleProfs()
+    {
+        return this.doubleSkillProfs;
+    }
+    
+    public String getFightingStyle()
+    {
+        return this.fightingStyle;
+    }
+    public void setFightingStyle(String fs)
+    {
+        this.fightingStyle = fs;
+    }
+    
+    public String getSorcerousOrigin()
+    {
+        return this.sorcerousOrigin;
+    }
+    public void setSorcerousOrigin(String so)
+    {
+        this.sorcerousOrigin = so;
+    }
+    public String getDraconicAncestry()
+    {
+        return this.draconicAncestry;
+    }
+    public void setDraconicAncestry(String da)
+    {
+        this.draconicAncestry = da;
+    }
+    
+    public String getFavoredEnemy()
+    {
+        return this.favoredEnemy;
+    }
+    public void setFavoredEnemy(String fe)
+    {
+        this.favoredEnemy = fe;
+    }
+    
+    public String getOtherworldlyPatron()
+    {
+        return this.otherworldlyPatron;
+    }
+    public void setOtherworldlyPatron(String op)
+    {
+        this.otherworldlyPatron = op;
+    }
+    
+    public ArrayList<String> getRogueProfs()
+    {
+        return this.rogueProfs;
+    }
+    public void addThisRogueProf(String prof)
+    {
+        this.rogueProfs.add(prof);
+    }
+    
+    public ArrayList<String> getOtherProficiencies()
+    {
+        return this.proficiencies;
+    }
+    public void addThisOtherProf(String prof)
+    {
+        this.proficiencies.add(prof);
+    }
+    
+    public ArrayList<String> getLanguages()
+    {
+        return this.languages;
+    }
+    public void addThisLanguage(String lang)
+    {
+        this.languages.add(lang);
+    }
+    
+    public int getLanguageAmount()
+    {
+        return this.languagesAmount;
+    }
+    public void setLanguageAmount(int amt)
+    {
+        this.languagesAmount = amt;
+    }
+    
+    public String getPlayerName()
+    {
+        return this.playerName;
+    }
+    public String getCharacterName()
+    {
+        return this.characterName;
+    }
+    public void setPlayerName(String name)
+    {
+        this.playerName = name;
+    }
+    public void setCharacterName(String name)
+    {
+        this.characterName = name;
+    }
+    
+    public ArrayList<String> getCantrips()
+    {
+        return this.cantrips;
+    }
+    public void addThisCantrip(String cantrip)
+    {
+        this.cantrips.add(cantrip);
+    }
+    
+    public ArrayList<String> getFirstLevelSpells()
+    {
+        return this.firstLevelSpells;
+    }
+    public void addThisFirstLevel(String spell)
+    {
+        this.firstLevelSpells.add(spell);
+    }
+    
+    public ArrayList<String> getInventory()
+    {
+        return this.inventory;
+    }
+    public void addThisToInventory(String items)
+    {
+        this.inventory.add(items);
     }
 }
      
