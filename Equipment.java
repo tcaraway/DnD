@@ -13,36 +13,123 @@ package charactercreator;
 public class Equipment {
     
     //returns gear given by backgrounds
-    public static String getBackgroundGear(String bg)
+    public static String[] getBackgroundGear(String bg)
     {
+        String[] items = null;
         if(bg.equals("Acolyte"))
-            return "holy symbol, prayer book, 5 sticks of incense, vestments, set of common clothes, belt pouch (containing 15gp)";
+        {
+            items = new String[6];
+            items[0] = "holy symbol";
+            items[1] = "prayer book";
+            items[2] = "5 sticks of incense";
+            items[3] = "vestments";
+            items[4] = "common clothes";
+            items[5] = "belt pouch (containing 15gp)";
+        }
         else if(bg.equals("Charlatan"))
-            return "set of fine clothes, disguise kit, con-tools (of your choice), belt pouch (containing 15gp)";
+        {
+            items = new String[4];
+            items[0] = "fine clothes";
+            items[1] = "disguise kit";
+            items[2] = "tools for con of choice";
+            items[3] = "belt pouch (containing 15gp)";
+        }
         else if(bg.equals("Criminal"))
-            return "crowbar, set of dark common clothes including a hood, belt pouch (containing 15gp)";
+        {
+            items = new String[3];
+            items[0] = "crowbar";
+            items[1] = "dark common clothes with hood";
+            items[2] = "belt pouch (containing 15gp)";
+        }
         else if(bg.equals("Entertainer"))
-            return "Musical Instrument (of your choice), favor of an admirer, costume, belt pouch (containing 15gp)";
+        {
+            items = new String[4];
+            items[0] = "Musical Instruments (of your choice)";
+            items[1] = "favor of an admirer";
+            items[2] = "costume";
+            items[3] = "belt pouch (containing 15gp)";
+        }     
         else if(bg.equals("Folk Hero"))
-            return "A set of artisan's tools (of your choice), shovel, iron pot, set of common clothes, belt pouch (containing 10gp)";
+        {
+            items = new String[5];
+            items[0] = "set of artisan's tools (of your choice)";
+            items[1] = "shovel";
+            items[2] = "iron pot";
+            items[3] = "common clothes";
+            items[4] = "belt pouch (containing 10gp)";
+        }
         else if(bg.equals("Guild Artisan"))
-            return "set of artisan's tools (of your choice), letter of introduction from your guild, set of traveler's clothes, belt pouch (containing 15gp)";
+        {
+            items = new String[4];
+            items[0] = "set of artisan's tools (of your choice)";
+            items[1] = "letter of introduction from guild";
+            items[2] = "traveler's clothes";
+            items[3] = "belt pouch (containing 15gp)";
+        }
         else if(bg.equals("Hermit"))
-               return "scroll case with notes, winter blanket, set of common clothes, herbalism kit, 5gp";
+        {
+            items = new String[5];
+            items[0] = "scroll case with notes";
+            items[1] = "winter blanket";
+            items[2] = "common clothes";
+            items[3] = "herbalism kit";
+            items[4] = "belt pouch (containing 5gp)";
+        }      
         else if(bg.equals("Noble"))
-            return "set of fine clothes, signet ring, scroll of pedigree, purse (containing 25gp)";
+        {
+            items = new String[4];
+            items[0] = "fine clothes";
+            items[1] = "signet ring";
+            items[2] = "scroll of pedigree";
+            items[3] = "purse (containing 25gp)";
+        }   
         else if(bg.equals("Outlander"))
-            return "staff, hunting trap, trophy from hunted animal, set of traveler's clothes, belt pouch (containing 10gp)";
+        {
+            items = new String[5];
+            items[0] = "staff";
+            items[1] = "hunting trap";
+            items[2] = "trophy from hunted animal";
+            items[3] = "traveler's clothes";
+            items[4] = "belt pouch (containing 10gp)";
+        }
         else if(bg.equals("Sage"))
-            return "bottle of black ink, quill, small knife, letter from dead colleague, set of common clothes, belt pouch (containing 10gp)";
+        {
+            items = new String[6];
+            items[0] = "bottle of black ink";
+            items[1] = "quill";
+            items[2] = "small knife";
+            items[3] = "letter from dead colleague";
+            items[4] = "common clothes";
+            items[5] = "belt pouch (containing 10gp";
+        }
         else if(bg.equals("Sailor"))
-            return "Belaying pin, 50ft. of silk rope, a lucky charm, set of common clothes, belt pouch (containing 10gp)";
+        {
+            items = new String[5];
+            items[0] = "Belaying pin";
+            items[1] = "50 ft. silk rope";
+            items[2] = "lucky charm";
+            items[3] = "common clothes";
+            items[4] = "belt pouch (containing 10gp)";
+        }
         else if(bg.equals("Soldier"))
-            return "insignia of rank, trophy from fallen enemy, set of bone dice OR deck of cards, set of common clothes, belt pouch (containing 10gp)";
+        {
+            items = new String[5];
+            items[0] = "insignia of rank";
+            items[1] = "trophy from fallen enemy";
+            items[2] = "set of bone dice";
+            items[3] = "common clothes";
+            items[4] = "belt pouch (containing 10gp)";
+        }
         else if(bg.equals("Urchin"))
-            return "small knife, map of city you grew up in, pet mouse, token to remember your parents by, set of common clothes, bel pouch (containing 10gp)";
-        else
-            return "";
+        {
+            items = new String[5];
+            items[0] = "small knife";
+            items[1] = "map of hometown";
+            items[2] = "pet mouse";
+            items[3] = "token to remember your parents by";
+            items[4] = "common clothes";
+        }
+        return items;
     }
     
     
@@ -50,32 +137,105 @@ public class Equipment {
     
     
     //returns gear given by different adventuring packs
-    public static String getBurglarsPack()
+    public static String[] getBurglarsPack()
     {
-        return "backpack, 1,000 ball bearings, 10 ft. of string, a bell, 5 candles, crowbar, hammer, 10 pitons, hooded lantern, 2 flasks of oil, 5 days rations, tinderbox, waterskin, 50ft. hempen rope";
+        String[] items = new String[14];
+        items[0] = "backpack";
+        items[1] = "1,000 ball bearings";
+        items[2] = "10ft of string";
+        items[3] = "a bell";
+        items[4] = "5 candles";
+        items[5] = "crowbar";
+        items[6] = "hammer";
+        items[7] = "10 pitons";
+        items[8] = "hooded lantern";
+        items[9] = "2 flasks of oil";
+        items[10] = "5 days of rations";
+        items[11] = "tinderbox";
+        items[12] = "waterskin";
+        items[13] = "50 ft. hempen rope";
+        return items;
     }
-    public static String getDiplomatsPack()
+    public static String[] getDiplomatsPack()
     {
-        return "chest, 2 cases for maps/scrolls, fine clothes, bottle of ink, ink pen, lamp, 2 flasks of oil, 5 sheets of paper, vial of perfume, sealing wax, soap";
+        String[] items = new String[11];
+        items[0] = "chest";
+        items[1] = "2 scroll cases";
+        items[2] = "fine clothes";
+        items[3] = "bottle of ink";
+        items[4] = "ink pen";
+        items[5] = "lamp";
+        items[6] = "2 flasks of oil";
+        items[7] = "5 sheets of paper";
+        items[8] = "vial of perfume";
+        items[9] = "sealing wax";
+        items[10] = "soap";
+        return items;
     }
-    public static String getDungeoneersPack()
+    public static String[] getDungeoneersPack()
     {
-        return "backpack, crowbar, hammer, 10 pitons, 10 torches, tinderbox, 10 days of rations, waterskin, 50 ft. hempen rope";
+        String[] items = new String[9];
+        items[0] = "backpack";
+        items[1] = "crowbar";
+        items[2] = "hammer";
+        items[3] = "10 pitons";
+        items[4] = "10 torches";
+        items[5] = "tinderbox";
+        items[6] = "10 days of rations";
+        items[7] = "waterskin";
+        items[8] = "50 ft. hempen rope";
+        return items;
     }
-    public static String getEntertainersPack()
+    public static String[] getEntertainersPack()
     {
-        return "backpack, bedroll, 2 costumes, 5 candles, 5 days of rations, waterskin, disguise kit";
+        String[] items = new String[7];
+        items[0] = "backpack";
+        items[1] = "bedroll";
+        items[2] = "2 costumes";
+        items[3] = "5 candles";
+        items[4] = "5 days of rations";
+        items[5] = "waterskin";
+        items[6] = "disguise kit";
+        return items;
     }
-    public static String getExplorersPack()
+    public static String[] getExplorersPack()
     {
-        return "backpack, bedroll, mess kit, tinderbox, 10 torches, 10 days of rations, waterskin, 50 ft. hempen rope";
+        String[] items = new String[8];
+        items[0] = "backpack";
+        items[1] = "bedroll";
+        items[2] = "mess kit";
+        items[3] = "tinderbox";
+        items[4] = "10 torches";
+        items[5] = "10 days of rations";
+        items[6] = "waterskin";
+        items[7] = "50 ft. hempen rope";
+        return items;
     }
-    public static String getPriestsPack()
+    public static String[] getPriestsPack()
     {
-        return "backpack, blanket, 10 candles, tinderbox, alms box, 2 blocks of incense, censer, vestments, 2 days rations, waterskin";
+        String[] items = new String[10];
+        items[0] = "backpack";
+        items[1] = "blanket";
+        items[2] = "10 candles";
+        items[3] = "tinderbox";
+        items[4] = "alms box";
+        items[5] = "2 blocks of incense";
+        items[6] = "censer";
+        items[7] = "vestments";
+        items[8] = "2 days rations";
+        items[9] = "waterskin";
+        return items;
     }
-    public static String getScholarsPack()
+    public static String[] getScholarsPack()
     {
-        return "backpack, book of lore, bottle of ink, ink pen, 10 sheets of parchment, little bag of sand, small knife";
+        String[] items = new String[7];
+        items[0] = "backpack";
+        items[1] = "book of lore";
+        items[2] = "bottle of ink";
+        items[3] = "ink pen";
+        items[4] = "10 sheets of parchment";
+        items[5] = "little bag of sand";
+        items[6] = "small knife";
+        return items;
     }
 }

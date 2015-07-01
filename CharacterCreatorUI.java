@@ -8,6 +8,15 @@ package charactercreator;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import javax.swing.AbstractButton;
 import javax.swing.DefaultListModel;
@@ -59,6 +68,19 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         buttonGroup12 = new javax.swing.ButtonGroup();
         buttonGroup13 = new javax.swing.ButtonGroup();
         buttonGroup14 = new javax.swing.ButtonGroup();
+        buttonGroup15 = new javax.swing.ButtonGroup();
+        buttonGroup16 = new javax.swing.ButtonGroup();
+        buttonGroup17 = new javax.swing.ButtonGroup();
+        buttonGroup18 = new javax.swing.ButtonGroup();
+        buttonGroup19 = new javax.swing.ButtonGroup();
+        buttonGroup20 = new javax.swing.ButtonGroup();
+        buttonGroup21 = new javax.swing.ButtonGroup();
+        buttonGroup22 = new javax.swing.ButtonGroup();
+        buttonGroup23 = new javax.swing.ButtonGroup();
+        buttonGroup24 = new javax.swing.ButtonGroup();
+        buttonGroup25 = new javax.swing.ButtonGroup();
+        buttonGroup26 = new javax.swing.ButtonGroup();
+        buttonGroup27 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         startButton = new javax.swing.JButton();
@@ -70,16 +92,9 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         raceList = new javax.swing.JList();
         classScrollPane = new javax.swing.JScrollPane();
         classList = new javax.swing.JList();
-        statPanel = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        firstStatLabel = new javax.swing.JLabel();
-        secondStatLabel = new javax.swing.JLabel();
-        thirdStatLabel = new javax.swing.JLabel();
-        fourthStatLabel = new javax.swing.JLabel();
-        fifthStatLabel = new javax.swing.JLabel();
-        sixthStatLabel = new javax.swing.JLabel();
-        toAssignStatPanel = new javax.swing.JButton();
-        rollStatsButton = new javax.swing.JButton();
+        raceLabel = new javax.swing.JLabel();
+        raceStatLabel1 = new javax.swing.JLabel();
+        raceStatLabel2 = new javax.swing.JLabel();
         assignStatPanel = new javax.swing.JPanel();
         assignStat1 = new javax.swing.JLabel();
         assignStat2 = new javax.swing.JLabel();
@@ -124,6 +139,9 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         cha4 = new javax.swing.JRadioButton();
         cha6 = new javax.swing.JRadioButton();
         toBackgroundAlignmentPanel = new javax.swing.JButton();
+        jLabel47 = new javax.swing.JLabel();
+        raceStatLabel3 = new javax.swing.JLabel();
+        raceStatLabel4 = new javax.swing.JLabel();
         backgroundAlignmentPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -279,7 +297,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         simpleWeaponDruid2 = new javax.swing.JRadioButton();
         simpleWeaponDruidScroll2 = new javax.swing.JScrollPane();
         simpleWeaponDruidList2 = new javax.swing.JList();
-        jButton1 = new javax.swing.JButton();
+        toMiscFromDruid = new javax.swing.JButton();
         clericSpellPanel = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         guidanceCleric = new javax.swing.JCheckBox();
@@ -290,7 +308,6 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         spareTheDyingCleric = new javax.swing.JCheckBox();
         thaumaturgyCleric = new javax.swing.JCheckBox();
         toClericEquipmentPanel = new javax.swing.JButton();
-        clericEquipmentPanel = new javax.swing.JPanel();
         wizardSpellPanel = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         acidSplashWizard = new javax.swing.JCheckBox();
@@ -311,6 +328,16 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         mendingWizard = new javax.swing.JCheckBox();
         toWizardEquipmentPanel = new javax.swing.JButton();
         wizardEquipmentPanel = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        quarterstaffWizard = new javax.swing.JRadioButton();
+        daggerWizard = new javax.swing.JRadioButton();
+        jSeparator7 = new javax.swing.JSeparator();
+        compWizard = new javax.swing.JRadioButton();
+        arcaneFocusWizard = new javax.swing.JRadioButton();
+        jSeparator8 = new javax.swing.JSeparator();
+        scholarPackWizard = new javax.swing.JRadioButton();
+        explorerPackWizard = new javax.swing.JRadioButton();
+        toMiscFromWizard = new javax.swing.JButton();
         warlockSpellPanel = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -335,7 +362,21 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         protectionWarlock = new javax.swing.JCheckBox();
         witchBoltWarlock = new javax.swing.JCheckBox();
         toWarlockEquipmentPanel = new javax.swing.JButton();
+        patronSpell1 = new javax.swing.JCheckBox();
+        patronSpell2 = new javax.swing.JCheckBox();
         warlockEquipmentPanel = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        lightCrossbowWarlock = new javax.swing.JRadioButton();
+        simpleWeaponWarlock = new javax.swing.JRadioButton();
+        jSeparator18 = new javax.swing.JSeparator();
+        arcaneFocusWarlock = new javax.swing.JRadioButton();
+        componentPouchWarlock = new javax.swing.JRadioButton();
+        jSeparator19 = new javax.swing.JSeparator();
+        dungeoneerPackWarlock = new javax.swing.JRadioButton();
+        scholarPackWarlock = new javax.swing.JRadioButton();
+        toMiscFromWarlock = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        simpleWeaponWarlockList = new javax.swing.JList();
         bardSpellPanel = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -373,6 +414,21 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         longstriderBard = new javax.swing.JCheckBox();
         toBardEquipmentPanel = new javax.swing.JButton();
         bardEquipmentPanel = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        diplomatPackBard = new javax.swing.JRadioButton();
+        entertainerPackBard = new javax.swing.JRadioButton();
+        jSeparator11 = new javax.swing.JSeparator();
+        rapierBard = new javax.swing.JRadioButton();
+        simpleWeaponBard = new javax.swing.JRadioButton();
+        longswordBard = new javax.swing.JRadioButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        simpleWeaponBardList = new javax.swing.JList();
+        jSeparator12 = new javax.swing.JSeparator();
+        luteBard = new javax.swing.JRadioButton();
+        instrumentBard = new javax.swing.JRadioButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        instrumentBardList = new javax.swing.JList();
+        toMiscFromBard = new javax.swing.JButton();
         sorcererSpellPanel = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
@@ -411,12 +467,165 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         silentImageSorcerer = new javax.swing.JCheckBox();
         toSorcererEquipmentPanel = new javax.swing.JButton();
         sorcererEquipmentPanel = new javax.swing.JPanel();
+        jLabel41 = new javax.swing.JLabel();
+        lightCrossbowSorcerer = new javax.swing.JRadioButton();
+        simpleWeaponSorcerer = new javax.swing.JRadioButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        simpleWeaponSorcererList = new javax.swing.JList();
+        jSeparator16 = new javax.swing.JSeparator();
+        componentPouchSorcerer = new javax.swing.JRadioButton();
+        arcaneFocusSorcerer = new javax.swing.JRadioButton();
+        jSeparator17 = new javax.swing.JSeparator();
+        explorerPackSorcerer = new javax.swing.JRadioButton();
+        dungeoneerPackSorcerer = new javax.swing.JRadioButton();
+        toMiscFromSorcerer = new javax.swing.JButton();
         barbarianEquipmentPanel = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        greataxeBarbarian = new javax.swing.JRadioButton();
+        martialWeaponBarbarian = new javax.swing.JRadioButton();
+        martialWeaponBarbarianScroll = new javax.swing.JScrollPane();
+        martialWeaponBarbarianList = new javax.swing.JList();
+        jSeparator5 = new javax.swing.JSeparator();
+        handaxeBarbarian = new javax.swing.JRadioButton();
+        simpleWeaponBarbarian = new javax.swing.JRadioButton();
+        simpleWeaponBarbarianScroll = new javax.swing.JScrollPane();
+        simpleWeaponBarbarianList = new javax.swing.JList();
+        toMiscFromBarbarian = new javax.swing.JButton();
         fighterEquipmentPanel = new javax.swing.JPanel();
+        jLabel40 = new javax.swing.JLabel();
+        chainMailFighter = new javax.swing.JRadioButton();
+        leatherArmorFighter = new javax.swing.JRadioButton();
+        lightCrossbowFighter = new javax.swing.JRadioButton();
+        handaxeFighter = new javax.swing.JRadioButton();
+        dungeoneerPackFighter = new javax.swing.JRadioButton();
+        explorerPackFighter = new javax.swing.JRadioButton();
+        jSeparator13 = new javax.swing.JSeparator();
+        jSeparator14 = new javax.swing.JSeparator();
+        jSeparator15 = new javax.swing.JSeparator();
+        shieldFighter = new javax.swing.JRadioButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        martialWeaponFighterList1 = new javax.swing.JList();
+        martialWeaponsFighter = new javax.swing.JRadioButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        martialWeaponFighterList2 = new javax.swing.JList();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        martialWeaponFighterList3 = new javax.swing.JList();
+        toMiscFromFighter = new javax.swing.JButton();
         rangerEquipmentPanel = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        leatherArmorRanger = new javax.swing.JRadioButton();
+        scaleMailRanger = new javax.swing.JRadioButton();
+        dungeoneerPackRanger = new javax.swing.JRadioButton();
+        explorerPackRanger = new javax.swing.JRadioButton();
+        jSeparator20 = new javax.swing.JSeparator();
+        jSeparator21 = new javax.swing.JSeparator();
+        shortswordsRanger = new javax.swing.JRadioButton();
+        simpleWeaponsRanger = new javax.swing.JRadioButton();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        simpleWeaponRangerList1 = new javax.swing.JList();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        simpleWeaponRangerList2 = new javax.swing.JList();
+        toMiscFromRanger = new javax.swing.JButton();
         paladinEquipmentPanel = new javax.swing.JPanel();
+        jLabel44 = new javax.swing.JLabel();
+        explorerPackPaladin = new javax.swing.JRadioButton();
+        priestPackPaladin = new javax.swing.JRadioButton();
+        jSeparator22 = new javax.swing.JSeparator();
+        javelinPaladin = new javax.swing.JRadioButton();
+        simpleWeaponPaladin = new javax.swing.JRadioButton();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        simpleWeaponPaladinList = new javax.swing.JList();
+        jSeparator23 = new javax.swing.JSeparator();
+        martialWeaponPaladin2 = new javax.swing.JRadioButton();
+        martialWeaponPaladin1 = new javax.swing.JRadioButton();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        martialWeaponPaladinList1 = new javax.swing.JList();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        martialWeaponPaladinList2 = new javax.swing.JList();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        martialWeaponPaladinList3 = new javax.swing.JList();
+        toMiscFromPaladin = new javax.swing.JButton();
         rogueEquipmentPanel = new javax.swing.JPanel();
+        explorerPackRogue = new javax.swing.JRadioButton();
+        burglerPackRogue = new javax.swing.JRadioButton();
+        jSeparator9 = new javax.swing.JSeparator();
+        shortbowRogue = new javax.swing.JRadioButton();
+        shortswordRogue2 = new javax.swing.JRadioButton();
+        jSeparator10 = new javax.swing.JSeparator();
+        shortswordRogue = new javax.swing.JRadioButton();
+        rapierRogue = new javax.swing.JRadioButton();
+        jLabel38 = new javax.swing.JLabel();
+        toMiscFromRogue = new javax.swing.JButton();
+        dungeoneerPackRogue = new javax.swing.JRadioButton();
         monkEquipmentPanel = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        shortswordMonk = new javax.swing.JRadioButton();
+        simpleWeaponMonk = new javax.swing.JRadioButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        simpleWeaponMonkList = new javax.swing.JList();
+        jSeparator6 = new javax.swing.JSeparator();
+        dungeoneerPackMonk = new javax.swing.JRadioButton();
+        explorersPackMonk = new javax.swing.JRadioButton();
+        toMiscFromMonk = new javax.swing.JButton();
+        miscellaneousPanel = new javax.swing.JPanel();
+        finalizeButton = new javax.swing.JButton();
+        saveCharacterFile = new javax.swing.JButton();
+        highElfWizardCantripPanel = new javax.swing.JPanel();
+        acidSplashWizard1 = new javax.swing.JCheckBox();
+        bladeWardWizard1 = new javax.swing.JCheckBox();
+        chillTouchWizard1 = new javax.swing.JCheckBox();
+        dancingLightsWizard1 = new javax.swing.JCheckBox();
+        mageHandWizard1 = new javax.swing.JCheckBox();
+        lightWizard1 = new javax.swing.JCheckBox();
+        friendsWizard1 = new javax.swing.JCheckBox();
+        fireBoltWizard1 = new javax.swing.JCheckBox();
+        mendingWizard1 = new javax.swing.JCheckBox();
+        messageWizard1 = new javax.swing.JCheckBox();
+        minorIllusionWizard1 = new javax.swing.JCheckBox();
+        poisonSprayWizard1 = new javax.swing.JCheckBox();
+        trueStrikeWizard1 = new javax.swing.JCheckBox();
+        shockingGraspWizard1 = new javax.swing.JCheckBox();
+        rayOfFrostWizard1 = new javax.swing.JCheckBox();
+        prestidigitationWizard1 = new javax.swing.JCheckBox();
+        jLabel45 = new javax.swing.JLabel();
+        fromHighElfPanel = new javax.swing.JButton();
+        clericEquipmentPanel = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        maceCleric = new javax.swing.JRadioButton();
+        warhammerCleric = new javax.swing.JRadioButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        scaleMailCleric = new javax.swing.JRadioButton();
+        leatherArmorCleric = new javax.swing.JRadioButton();
+        chainMailCleric = new javax.swing.JRadioButton();
+        jSeparator3 = new javax.swing.JSeparator();
+        lightCrossBowCleric = new javax.swing.JRadioButton();
+        simpleWeaponCleric = new javax.swing.JRadioButton();
+        simpleWeaponClericScroll = new javax.swing.JScrollPane();
+        simpleWeaponClericList = new javax.swing.JList();
+        jSeparator4 = new javax.swing.JSeparator();
+        priestPackCleric = new javax.swing.JRadioButton();
+        explorerPackCleric = new javax.swing.JRadioButton();
+        toMiscFromCleric = new javax.swing.JButton();
+        statPanel = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        firstStatLabel = new javax.swing.JLabel();
+        secondStatLabel = new javax.swing.JLabel();
+        thirdStatLabel = new javax.swing.JLabel();
+        fourthStatLabel = new javax.swing.JLabel();
+        fifthStatLabel = new javax.swing.JLabel();
+        sixthStatLabel = new javax.swing.JLabel();
+        toAssignStatPanel = new javax.swing.JButton();
+        rollStatsButton = new javax.swing.JButton();
+        defaultArray = new javax.swing.JRadioButton();
+        rollForScores = new javax.swing.JRadioButton();
+        jLabel46 = new javax.swing.JLabel();
+        manualEntry = new javax.swing.JRadioButton();
+        firstStatField = new javax.swing.JTextField();
+        secondStatField = new javax.swing.JTextField();
+        thirdStatField = new javax.swing.JTextField();
+        fourthStatField = new javax.swing.JTextField();
+        fifthStatField = new javax.swing.JTextField();
+        sixthStatField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -425,7 +634,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
 
         mainPanel.setLayout(new java.awt.CardLayout());
 
-        startButton.setText("start");
+        startButton.setText("Create New Level-1 Character");
         startButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startButtonActionPerformed(evt);
@@ -449,6 +658,11 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
+        raceList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                raceListValueChanged(evt);
+            }
+        });
         raceScrollPane.setViewportView(raceList);
 
         classList.setModel(new javax.swing.AbstractListModel() {
@@ -463,22 +677,26 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         raceClassPanelLayout.setHorizontalGroup(
             raceClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(raceClassPanelLayout.createSequentialGroup()
-                .addGap(138, 138, 138)
+                .addContainerGap(573, Short.MAX_VALUE)
                 .addComponent(toStatPanelButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(123, 123, 123))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, raceClassPanelLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(61, 61, 61)
                 .addGroup(raceClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(raceScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 400, Short.MAX_VALUE)
+                    .addComponent(raceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(raceStatLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(raceStatLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
                 .addGroup(raceClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(raceClassPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, raceClassPanelLayout.createSequentialGroup()
-                        .addComponent(classScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36))))
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel2))
+                    .addComponent(raceScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56)
+                .addGroup(raceClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(classScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(204, 204, 204))
         );
         raceClassPanelLayout.setVerticalGroup(
             raceClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,97 +705,24 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                 .addGroup(raceClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(raceClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(classScrollPane)
-                    .addComponent(raceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(4, 4, 4)
+                .addComponent(raceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(raceClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(raceClassPanelLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(raceStatLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(raceStatLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(raceClassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(classScrollPane)
+                        .addComponent(raceScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(toStatPanelButton)
-                .addContainerGap())
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         mainPanel.add(raceClassPanel, "raceClassPanel");
-
-        jLabel4.setText("Roll your stats:");
-
-        firstStatLabel.setText("0");
-
-        secondStatLabel.setText("0");
-
-        thirdStatLabel.setText("0");
-
-        fourthStatLabel.setText("0");
-
-        fifthStatLabel.setText("0");
-
-        sixthStatLabel.setText("0");
-
-        toAssignStatPanel.setText("Next");
-        toAssignStatPanel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toAssignStatPanelActionPerformed(evt);
-            }
-        });
-
-        rollStatsButton.setText("Roll");
-        rollStatsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rollStatsButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout statPanelLayout = new javax.swing.GroupLayout(statPanel);
-        statPanel.setLayout(statPanelLayout);
-        statPanelLayout.setHorizontalGroup(
-            statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(statPanelLayout.createSequentialGroup()
-                .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(statPanelLayout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(jLabel4))
-                    .addGroup(statPanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(rollStatsButton)
-                        .addGap(85, 85, 85)
-                        .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sixthStatLabel)
-                            .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(secondStatLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(thirdStatLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(fourthStatLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(fifthStatLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(firstStatLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(466, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, statPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(toAssignStatPanel)
-                .addGap(27, 27, 27))
-        );
-        statPanelLayout.setVerticalGroup(
-            statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(statPanelLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(firstStatLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(secondStatLabel)
-                    .addComponent(rollStatsButton))
-                .addGap(6, 6, 6)
-                .addComponent(thirdStatLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(fourthStatLabel)
-                .addGap(19, 19, 19)
-                .addComponent(fifthStatLabel)
-                .addGap(18, 18, 18)
-                .addComponent(sixthStatLabel)
-                .addGap(18, 18, 18)
-                .addComponent(toAssignStatPanel)
-                .addContainerGap(69, Short.MAX_VALUE))
-        );
-
-        mainPanel.add(statPanel, "statPanel");
 
         assignStat1.setText("jLabel5");
 
@@ -706,12 +851,23 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel47.setText("Racial Bonuses:");
+
+        raceStatLabel3.setText("jLabel48");
+
+        raceStatLabel4.setText("jLabel48");
+
         javax.swing.GroupLayout assignStatPanelLayout = new javax.swing.GroupLayout(assignStatPanel);
         assignStatPanel.setLayout(assignStatPanelLayout);
         assignStatPanelLayout.setHorizontalGroup(
             assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(assignStatPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(47, 47, 47)
+                .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel47)
+                    .addComponent(raceStatLabel3)
+                    .addComponent(raceStatLabel4))
+                .addGap(65, 65, 65)
                 .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(assignStatPanelLayout.createSequentialGroup()
                         .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -802,16 +958,16 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                         .addComponent(wis2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cha2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(151, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, assignStatPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(toBackgroundAlignmentPanel)
-                .addGap(15, 15, 15))
+                .addGap(116, 116, 116))
         );
         assignStatPanelLayout.setVerticalGroup(
             assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(assignStatPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
                 .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(assignStat1)
                     .addComponent(str1)
@@ -819,55 +975,63 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                     .addComponent(con1)
                     .addComponent(int1)
                     .addComponent(wis1)
-                    .addComponent(cha1))
-                .addGap(18, 18, 18)
-                .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assignStat2)
-                    .addComponent(str2)
-                    .addComponent(dex2)
-                    .addComponent(con2)
-                    .addComponent(int2)
-                    .addComponent(wis2)
-                    .addComponent(cha2))
-                .addGap(18, 18, 18)
-                .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assignStat3)
-                    .addComponent(str3)
-                    .addComponent(dex3)
-                    .addComponent(con3)
-                    .addComponent(int3)
-                    .addComponent(wis3)
-                    .addComponent(cha3))
-                .addGap(18, 18, 18)
-                .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assignStat4)
-                    .addComponent(str4)
-                    .addComponent(dex4)
-                    .addComponent(con4)
-                    .addComponent(int4)
-                    .addComponent(wis4)
-                    .addComponent(cha4))
-                .addGap(18, 18, 18)
-                .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assignStat5)
-                    .addComponent(str5)
-                    .addComponent(dex5)
-                    .addComponent(con5)
-                    .addComponent(int5)
-                    .addComponent(wis5)
-                    .addComponent(cha5))
-                .addGap(18, 18, 18)
-                .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assignStat6)
-                    .addComponent(str6)
-                    .addComponent(dex6)
-                    .addComponent(con6)
-                    .addComponent(int6)
-                    .addComponent(wis6)
-                    .addComponent(cha6))
-                .addGap(18, 18, 18)
-                .addComponent(toBackgroundAlignmentPanel)
-                .addGap(19, 19, 19))
+                    .addComponent(cha1)
+                    .addComponent(jLabel47))
+                .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(assignStatPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(assignStat2)
+                            .addComponent(str2)
+                            .addComponent(dex2)
+                            .addComponent(con2)
+                            .addComponent(int2)
+                            .addComponent(wis2)
+                            .addComponent(cha2))
+                        .addGap(18, 18, 18)
+                        .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(assignStat3)
+                            .addComponent(str3)
+                            .addComponent(dex3)
+                            .addComponent(con3)
+                            .addComponent(int3)
+                            .addComponent(wis3)
+                            .addComponent(cha3))
+                        .addGap(18, 18, 18)
+                        .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(assignStat4)
+                            .addComponent(str4)
+                            .addComponent(dex4)
+                            .addComponent(con4)
+                            .addComponent(int4)
+                            .addComponent(wis4)
+                            .addComponent(cha4))
+                        .addGap(18, 18, 18)
+                        .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(assignStat5)
+                            .addComponent(str5)
+                            .addComponent(dex5)
+                            .addComponent(con5)
+                            .addComponent(int5)
+                            .addComponent(wis5)
+                            .addComponent(cha5))
+                        .addGap(18, 18, 18)
+                        .addGroup(assignStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(assignStat6)
+                            .addComponent(str6)
+                            .addComponent(dex6)
+                            .addComponent(con6)
+                            .addComponent(int6)
+                            .addComponent(wis6)
+                            .addComponent(cha6))
+                        .addGap(18, 18, 18)
+                        .addComponent(toBackgroundAlignmentPanel))
+                    .addGroup(assignStatPanelLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(raceStatLabel3)
+                        .addGap(10, 10, 10)
+                        .addComponent(raceStatLabel4)))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         mainPanel.add(assignStatPanel, "assignStatPanel");
@@ -922,28 +1086,48 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         backgroundAlignmentPanelLayout.setHorizontalGroup(
             backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundAlignmentPanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(lawfulEvilRadio)
-                    .addComponent(trueNeutralRadio)
-                    .addComponent(chaoticNeutralRadio)
-                    .addComponent(neutralEvilRadio)
-                    .addComponent(chaoticEvilRadio)
-                    .addComponent(lawfulGoodRadio)
-                    .addComponent(neutralGoodRadio)
-                    .addComponent(chaoticGoodRadio)
-                    .addComponent(lawfulNeutralRadio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 386, Short.MAX_VALUE)
-                .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundAlignmentPanelLayout.createSequentialGroup()
-                        .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(backgroundScrollPanel))
-                        .addGap(56, 56, 56))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundAlignmentPanelLayout.createSequentialGroup()
-                        .addComponent(toSkillsPanelButton)
-                        .addGap(74, 74, 74))))
+                    .addGroup(backgroundAlignmentPanelLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel6))
+                    .addGroup(backgroundAlignmentPanelLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5)
+                            .addGroup(backgroundAlignmentPanelLayout.createSequentialGroup()
+                                .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundAlignmentPanelLayout.createSequentialGroup()
+                                        .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lawfulNeutralRadio)
+                                            .addComponent(lawfulEvilRadio))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(backgroundAlignmentPanelLayout.createSequentialGroup()
+                                        .addComponent(lawfulGoodRadio)
+                                        .addGap(23, 23, 23)))
+                                .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(neutralGoodRadio)
+                                    .addComponent(neutralEvilRadio)
+                                    .addComponent(trueNeutralRadio))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(backgroundAlignmentPanelLayout.createSequentialGroup()
+                                .addComponent(chaoticEvilRadio)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(backgroundAlignmentPanelLayout.createSequentialGroup()
+                                .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(backgroundAlignmentPanelLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(chaoticNeutralRadio))
+                                    .addGroup(backgroundAlignmentPanelLayout.createSequentialGroup()
+                                        .addComponent(chaoticGoodRadio)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(backgroundScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(211, 211, 211))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundAlignmentPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(toSkillsPanelButton)
+                .addGap(132, 132, 132))
         );
         backgroundAlignmentPanelLayout.setVerticalGroup(
             backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -952,32 +1136,29 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                 .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(backgroundAlignmentPanelLayout.createSequentialGroup()
-                        .addComponent(lawfulGoodRadio)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(neutralGoodRadio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chaoticGoodRadio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lawfulNeutralRadio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(trueNeutralRadio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chaoticNeutralRadio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lawfulEvilRadio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(neutralEvilRadio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(chaoticEvilRadio)
-                        .addContainerGap())
+                        .addComponent(backgroundScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(backgroundAlignmentPanelLayout.createSequentialGroup()
-                        .addComponent(backgroundScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(toSkillsPanelButton)
-                        .addGap(10, 10, 10))))
+                        .addGap(30, 30, 30)
+                        .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lawfulGoodRadio)
+                            .addComponent(neutralGoodRadio)
+                            .addComponent(chaoticGoodRadio))
+                        .addGap(33, 33, 33)
+                        .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lawfulNeutralRadio)
+                            .addComponent(trueNeutralRadio)
+                            .addComponent(chaoticNeutralRadio))
+                        .addGap(41, 41, 41)
+                        .addGroup(backgroundAlignmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lawfulEvilRadio)
+                            .addComponent(neutralEvilRadio)
+                            .addComponent(chaoticEvilRadio))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(toSkillsPanelButton)
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         mainPanel.add(backgroundAlignmentPanel, "backgroundAlignmentPanel");
@@ -1041,85 +1222,66 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
             .addGroup(skillsPanelLayout.createSequentialGroup()
                 .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(skillsPanelLayout.createSequentialGroup()
-                        .addGap(143, 143, 143)
+                        .addGap(300, 300, 300)
                         .addComponent(jLabel7))
                     .addGroup(skillsPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(deceptionCheck)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(natureCheck)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(stealthCheck))
+                        .addGap(174, 174, 174)
+                        .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(skillsPanelLayout.createSequentialGroup()
+                                .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(animalHandlingCheck)
+                                    .addComponent(acrobaticsCheck)
+                                    .addComponent(arcanaCheck)
+                                    .addComponent(athleticsCheck)
+                                    .addComponent(deceptionCheck)
+                                    .addComponent(historyCheck))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(intimidationCheck)
+                                    .addComponent(investigationCheck)
+                                    .addComponent(insightCheck)
+                                    .addComponent(medicineCheck)
+                                    .addComponent(natureCheck)
+                                    .addComponent(perceptionCheck))
+                                .addGap(18, 18, 18)
+                                .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(survivalCheck)
+                                    .addComponent(stealthCheck)
+                                    .addComponent(sleightOfHandCheck)
+                                    .addComponent(religionCheck)
+                                    .addComponent(persuasionCheck)
+                                    .addComponent(performanceCheck)))
+                            .addComponent(jLabel8)))
                     .addGroup(skillsPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(athleticsCheck)
+                        .addGap(284, 284, 284)
+                        .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(medicineCheck)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sleightOfHandCheck))
-                    .addGroup(skillsPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(arcanaCheck)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(investigationCheck)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(religionCheck))
-                    .addGroup(skillsPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(animalHandlingCheck)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(intimidationCheck)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(persuasionCheck))
-                    .addGroup(skillsPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(historyCheck)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(perceptionCheck)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(survivalCheck))
-                    .addGroup(skillsPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel8)))
-                .addContainerGap(315, Short.MAX_VALUE))
-            .addGroup(skillsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(acrobaticsCheck)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(insightCheck)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(performanceCheck)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(profAmountLabel)
-                .addGap(32, 32, 32))
+                        .addComponent(profAmountLabel)))
+                .addContainerGap(193, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, skillsPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(toLanguagesPanel)
-                .addGap(78, 78, 78))
+                .addGap(125, 125, 125))
         );
         skillsPanelLayout.setVerticalGroup(
             skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(skillsPanelLayout.createSequentialGroup()
                 .addComponent(jLabel7)
-                .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(skillsPanelLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(acrobaticsCheck)
-                            .addComponent(insightCheck)
-                            .addComponent(performanceCheck)))
-                    .addGroup(skillsPanelLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(profAmountLabel))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(animalHandlingCheck)
-                    .addComponent(intimidationCheck)
-                    .addComponent(persuasionCheck))
+                    .addComponent(jLabel9)
+                    .addComponent(profAmountLabel))
+                .addGap(18, 18, 18)
+                .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(acrobaticsCheck)
+                    .addComponent(insightCheck)
+                    .addComponent(performanceCheck))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(persuasionCheck)
+                    .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(animalHandlingCheck)
+                        .addComponent(intimidationCheck)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(skillsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(arcanaCheck)
@@ -1142,9 +1304,9 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                     .addComponent(survivalCheck))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(toLanguagesPanel)
-                .addGap(52, 52, 52))
+                .addGap(49, 49, 49))
         );
 
         mainPanel.add(skillsPanel, "skillsPanel");
@@ -1174,48 +1336,48 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         HumanHalfElfStatPanel.setLayout(HumanHalfElfStatPanelLayout);
         HumanHalfElfStatPanelLayout.setHorizontalGroup(
             HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HumanHalfElfStatPanelLayout.createSequentialGroup()
-                .addGroup(HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(HumanHalfElfStatPanelLayout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addGroup(HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(variantDexCheck)
-                            .addComponent(variantConCheck)
-                            .addComponent(variantStrCheck))
-                        .addGap(18, 18, 18)
-                        .addGroup(HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(variantWisCheck)
-                            .addComponent(variantIntCheck)
-                            .addComponent(variantChaCheck)))
-                    .addGroup(HumanHalfElfStatPanelLayout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(jLabel10)))
-                .addContainerGap(344, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HumanHalfElfStatPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(toBackgroundAlignmentPanel2)
-                .addGap(27, 27, 27))
+                .addGap(148, 148, 148))
+            .addGroup(HumanHalfElfStatPanelLayout.createSequentialGroup()
+                .addGap(259, 259, 259)
+                .addGroup(HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addGroup(HumanHalfElfStatPanelLayout.createSequentialGroup()
+                        .addGroup(HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(variantDexCheck)
+                            .addComponent(variantConCheck)
+                            .addComponent(variantStrCheck))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(variantWisCheck)
+                            .addComponent(variantIntCheck)
+                            .addComponent(variantChaCheck))))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
         HumanHalfElfStatPanelLayout.setVerticalGroup(
             HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HumanHalfElfStatPanelLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel10)
-                .addGap(18, 18, 18)
-                .addGroup(HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(variantStrCheck)
-                    .addComponent(variantIntCheck))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(variantWisCheck)
-                    .addComponent(variantDexCheck))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(variantChaCheck)
-                    .addComponent(variantConCheck))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(HumanHalfElfStatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(HumanHalfElfStatPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(18, 18, 18)
+                        .addComponent(variantStrCheck)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(variantDexCheck)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(variantConCheck))
+                    .addGroup(HumanHalfElfStatPanelLayout.createSequentialGroup()
+                        .addComponent(variantIntCheck)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(variantWisCheck)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(variantChaCheck)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
                 .addComponent(toBackgroundAlignmentPanel2)
-                .addGap(27, 27, 27))
+                .addGap(57, 57, 57))
         );
 
         mainPanel.add(HumanHalfElfStatPanel, "HumanHalfElfStatPanel");
@@ -1268,14 +1430,19 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         languagePanel.setLayout(languagePanelLayout);
         languagePanelLayout.setHorizontalGroup(
             languagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, languagePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(toNamePanelButton)
-                .addGap(55, 55, 55))
             .addGroup(languagePanelLayout.createSequentialGroup()
                 .addGroup(languagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(languagePanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(282, 282, 282)
+                        .addComponent(languageAmountLabel))
+                    .addGroup(languagePanelLayout.createSequentialGroup()
+                        .addGap(243, 243, 243)
+                        .addComponent(jLabel20)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, languagePanelLayout.createSequentialGroup()
+                .addContainerGap(172, Short.MAX_VALUE)
+                .addGroup(languagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, languagePanelLayout.createSequentialGroup()
                         .addGroup(languagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(dwarvishCheck)
                             .addComponent(elvishCheck)
@@ -1298,14 +1465,11 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                             .addComponent(primordialCheck)
                             .addComponent(sylvanCheck)
                             .addComponent(undercommonCheck)
-                            .addComponent(infernalCheck)))
-                    .addGroup(languagePanelLayout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(languageAmountLabel))
-                    .addGroup(languagePanelLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel20)))
-                .addContainerGap(255, Short.MAX_VALUE))
+                            .addComponent(infernalCheck))
+                        .addGap(167, 167, 167))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, languagePanelLayout.createSequentialGroup()
+                        .addComponent(toNamePanelButton)
+                        .addGap(151, 151, 151))))
         );
         languagePanelLayout.setVerticalGroup(
             languagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1347,11 +1511,11 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                             .addComponent(sylvanCheck)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(undercommonCheck))))
-                .addGap(33, 33, 33)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel20)
-                .addGap(11, 11, 11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addComponent(toNamePanelButton)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addGap(52, 52, 52))
         );
 
         mainPanel.add(languagePanel, "languagePanel");
@@ -1403,36 +1567,40 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         clericDomainPanelLayout.setHorizontalGroup(
             clericDomainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(clericDomainPanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addContainerGap(139, Short.MAX_VALUE)
                 .addGroup(clericDomainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(clericDomainScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(clericDomainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericDomainPanelLayout.createSequentialGroup()
+                        .addComponent(clericDomainScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(83, 83, 83)
                         .addGroup(clericDomainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(clericDomainPanelLayout.createSequentialGroup()
-                                .addComponent(clericArcanaCheck)
-                                .addGap(18, 18, 18)
-                                .addComponent(clericNatureCheck))
-                            .addComponent(jLabel12)
-                            .addGroup(clericDomainPanelLayout.createSequentialGroup()
-                                .addComponent(clericHistoryCheck)
-                                .addGap(18, 18, 18)
-                                .addComponent(clericReligionCheck))
-                            .addGroup(clericDomainPanelLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericDomainPanelLayout.createSequentialGroup()
+                                .addGroup(clericDomainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(clericDomainPanelLayout.createSequentialGroup()
+                                        .addComponent(clericArcanaCheck)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(clericNatureCheck))
+                                    .addGroup(clericDomainPanelLayout.createSequentialGroup()
+                                        .addComponent(clericHistoryCheck)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(clericReligionCheck)))
+                                .addGap(200, 200, 200))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericDomainPanelLayout.createSequentialGroup()
                                 .addGroup(clericDomainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(clericNatureRadio)
                                     .addComponent(clericAnimalHandlingRadio)
-                                    .addComponent(clericSurvivalRadio))))
-                        .addGap(94, 94, 94)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericDomainPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(toStatPanelButton2)
-                .addGap(57, 57, 57))
+                                    .addComponent(clericSurvivalRadio))
+                                .addGap(235, 235, 235))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericDomainPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(169, 169, 169))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericDomainPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel13)
+                        .addGap(101, 101, 101))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericDomainPanelLayout.createSequentialGroup()
+                        .addComponent(toStatPanelButton2)
+                        .addGap(144, 144, 144))))
         );
         clericDomainPanelLayout.setVerticalGroup(
             clericDomainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1460,9 +1628,9 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                 .addComponent(clericNatureRadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(clericSurvivalRadio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(toStatPanelButton2)
-                .addGap(40, 40, 40))
+                .addGap(49, 49, 49))
         );
 
         mainPanel.add(clericDomainPanel, "clericDomainPanel");
@@ -1487,30 +1655,30 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         fightingStylePanel.setLayout(fightingStylePanelLayout);
         fightingStylePanelLayout.setHorizontalGroup(
             fightingStylePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fightingStylePanelLayout.createSequentialGroup()
-                .addContainerGap(304, Short.MAX_VALUE)
-                .addGroup(fightingStylePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fightingStylePanelLayout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(159, 159, 159))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fightingStylePanelLayout.createSequentialGroup()
-                        .addComponent(toStatPanelButton3)
-                        .addGap(43, 43, 43))))
             .addGroup(fightingStylePanelLayout.createSequentialGroup()
-                .addGap(200, 200, 200)
-                .addComponent(fightingStyleScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(fightingStylePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fightingStylePanelLayout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(jLabel14))
+                    .addGroup(fightingStylePanelLayout.createSequentialGroup()
+                        .addGap(294, 294, 294)
+                        .addComponent(fightingStyleScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(265, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fightingStylePanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(toStatPanelButton3)
+                .addGap(166, 166, 166))
         );
         fightingStylePanelLayout.setVerticalGroup(
             fightingStylePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fightingStylePanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addComponent(fightingStyleScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(fightingStyleScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
                 .addComponent(toStatPanelButton3)
-                .addGap(35, 35, 35))
+                .addGap(57, 57, 57))
         );
 
         mainPanel.add(fightingStylePanel, "fightingStylePanel");
@@ -1577,72 +1745,81 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         sorcerousOriginPanelLayout.setHorizontalGroup(
             sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sorcerousOriginPanelLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(toStatPanel4)
+                .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sorcerousOriginPanelLayout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jLabel15)
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel16))
+                    .addGroup(sorcerousOriginPanelLayout.createSequentialGroup()
+                        .addGap(149, 149, 149)
                         .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
                             .addComponent(draconicBloodlineRadio)
                             .addComponent(wildMagicRadio))
-                        .addGap(18, 18, 18)
+                        .addGap(86, 86, 86)
                         .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addGroup(sorcerousOriginPanelLayout.createSequentialGroup()
-                                .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(brassRadio)
-                                    .addComponent(blueRadio)
-                                    .addComponent(blackRadio)
-                                    .addComponent(copperRadio, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(bronzeRadio))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(whiteRadio)
-                                    .addComponent(goldRadio, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(greenRadio, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(redRadio, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(silverRadio, javax.swing.GroupLayout.Alignment.LEADING))))))
-                .addContainerGap(186, Short.MAX_VALUE))
+                            .addComponent(brassRadio)
+                            .addComponent(blueRadio)
+                            .addComponent(blackRadio)
+                            .addComponent(bronzeRadio)
+                            .addComponent(copperRadio))
+                        .addGap(18, 18, 18)
+                        .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(goldRadio, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(greenRadio, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(redRadio, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(silverRadio, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(whiteRadio, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sorcerousOriginPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(toStatPanel4)
+                        .addGap(28, 28, 28)))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         sorcerousOriginPanelLayout.setVerticalGroup(
             sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sorcerousOriginPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16))
-                .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(sorcerousOriginPanelLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(silverRadio)
-                            .addComponent(bronzeRadio)))
-                    .addGroup(sorcerousOriginPanelLayout.createSequentialGroup()
-                        .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(draconicBloodlineRadio)
-                            .addComponent(blackRadio)
-                            .addComponent(goldRadio))
+                        .addComponent(goldRadio)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(greenRadio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(silverRadio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(redRadio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(whiteRadio))
+                    .addGroup(sorcerousOriginPanelLayout.createSequentialGroup()
                         .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(wildMagicRadio)
-                            .addComponent(blueRadio)
-                            .addComponent(greenRadio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(brassRadio)
-                            .addComponent(redRadio))
-                        .addGap(35, 35, 35)))
-                .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(copperRadio)
-                    .addComponent(whiteRadio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                            .addComponent(blackRadio)
+                            .addComponent(draconicBloodlineRadio))
+                        .addGroup(sorcerousOriginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(sorcerousOriginPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(blueRadio)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(brassRadio))
+                            .addGroup(sorcerousOriginPanelLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(wildMagicRadio)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bronzeRadio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(copperRadio)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addComponent(toStatPanel4)
-                .addGap(94, 94, 94))
+                .addGap(64, 64, 64))
         );
 
         mainPanel.add(sorcerousOriginPanel, "sorcerousOriginPanel");
 
-        jLabel17.setText("Choose a Favored Enemy:");
+        jLabel17.setText("Choose a Favored Enemy for your Ranger:");
 
         favoredEnemyList.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Aberrations", "Beasts", "Celestials", "Constructs", "Dragons", "Elementals", "Fey", "Fiends", "Giants", "Monstrosities", "Oozes", "Plants", "Undead", "Humanoid Races (2)" };
@@ -1663,30 +1840,31 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         favoredEnemyPanelLayout.setHorizontalGroup(
             favoredEnemyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(favoredEnemyPanelLayout.createSequentialGroup()
-                .addGap(199, 199, 199)
-                .addGroup(favoredEnemyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(favoredEnemyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(favoredEnemyPanelLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(favoredEnemyScrollPane))
-                    .addComponent(jLabel17))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
-                .addComponent(toStatPanel5)
-                .addGap(36, 36, 36))
+                        .addGap(250, 250, 250)
+                        .addComponent(jLabel17))
+                    .addGroup(favoredEnemyPanelLayout.createSequentialGroup()
+                        .addGap(293, 293, 293)
+                        .addComponent(favoredEnemyScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78)
+                        .addComponent(toStatPanel5)))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         favoredEnemyPanelLayout.setVerticalGroup(
             favoredEnemyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(favoredEnemyPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(17, 17, 17)
                 .addComponent(jLabel17)
                 .addGroup(favoredEnemyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(favoredEnemyPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(toStatPanel5)
-                        .addGap(24, 24, 24))
-                    .addGroup(favoredEnemyPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(favoredEnemyScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(49, Short.MAX_VALUE))))
+                        .addContainerGap(97, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, favoredEnemyPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(toStatPanel5)
+                        .addGap(52, 52, 52))))
         );
 
         mainPanel.add(favoredEnemyPanel, "favoredEnemyPanel");
@@ -1714,35 +1892,36 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         otherworldlyPatronPanelLayout.setHorizontalGroup(
             otherworldlyPatronPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(otherworldlyPatronPanelLayout.createSequentialGroup()
-                .addContainerGap(280, Short.MAX_VALUE)
+                .addGap(229, 229, 229)
+                .addComponent(jLabel18)
+                .addGap(0, 235, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, otherworldlyPatronPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(otherworldlyPatronPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, otherworldlyPatronPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addGap(120, 120, 120))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, otherworldlyPatronPanelLayout.createSequentialGroup()
                         .addGroup(otherworldlyPatronPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(fiendRadio)
                             .addComponent(archFeyRadio)
                             .addComponent(greatOldOneRadio))
-                        .addGap(226, 226, 226))
+                        .addGap(302, 302, 302))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, otherworldlyPatronPanelLayout.createSequentialGroup()
                         .addComponent(toStatPanel6)
-                        .addGap(60, 60, 60))))
+                        .addGap(180, 180, 180))))
         );
         otherworldlyPatronPanelLayout.setVerticalGroup(
             otherworldlyPatronPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(otherworldlyPatronPanelLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(archFeyRadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fiendRadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(greatOldOneRadio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
                 .addComponent(toStatPanel6)
-                .addGap(87, 87, 87))
+                .addGap(67, 67, 67))
         );
 
         mainPanel.add(otherworldlyPatronPanel, "otherworldlyPatronPanel");
@@ -1766,32 +1945,33 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         rogueExpertisePanelLayout.setHorizontalGroup(
             rogueExpertisePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rogueExpertisePanelLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(expertiseScrollPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(expertiseScrollPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rogueExpertisePanelLayout.createSequentialGroup()
-                .addContainerGap(284, Short.MAX_VALUE)
                 .addGroup(rogueExpertisePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rogueExpertisePanelLayout.createSequentialGroup()
-                        .addComponent(jLabel19)
-                        .addGap(133, 133, 133))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rogueExpertisePanelLayout.createSequentialGroup()
-                        .addComponent(toLanguagePanel2)
-                        .addGap(46, 46, 46))))
+                    .addGroup(rogueExpertisePanelLayout.createSequentialGroup()
+                        .addGap(211, 211, 211)
+                        .addComponent(expertiseScrollPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(98, 98, 98)
+                        .addComponent(expertiseScrollPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(rogueExpertisePanelLayout.createSequentialGroup()
+                        .addGap(240, 240, 240)
+                        .addComponent(jLabel19)))
+                .addContainerGap(212, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rogueExpertisePanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(toLanguagePanel2)
+                .addGap(173, 173, 173))
         );
         rogueExpertisePanelLayout.setVerticalGroup(
             rogueExpertisePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rogueExpertisePanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addComponent(jLabel19)
-                .addGap(27, 27, 27)
+                .addGap(12, 12, 12)
                 .addGroup(rogueExpertisePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(expertiseScrollPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                     .addComponent(expertiseScrollPanel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(toLanguagePanel2)
-                .addGap(39, 39, 39))
+                .addGap(64, 64, 64))
         );
 
         mainPanel.add(rogueExpertisePanel, "rogueExpertisePanel");
@@ -1812,22 +1992,21 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         namePanelLayout.setHorizontalGroup(
             namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(namePanelLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel22))
-                .addGroup(namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(196, 196, 196)
+                .addGroup(namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(namePanelLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addComponent(jLabel21)
+                        .addGap(18, 18, 18)
                         .addComponent(playerNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(namePanelLayout.createSequentialGroup()
+                        .addComponent(jLabel22)
                         .addGap(18, 18, 18)
                         .addComponent(characterNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, namePanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(toCantripOrEquipmentPanel)
-                .addGap(72, 72, 72))
+                .addGap(161, 161, 161))
         );
         namePanelLayout.setVerticalGroup(
             namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1836,13 +2015,13 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                 .addGroup(namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(playerNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21))
-                .addGap(39, 39, 39)
-                .addGroup(namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(33, 33, 33)
+                .addGroup(namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(characterNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(85, 85, 85)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
                 .addComponent(toCantripOrEquipmentPanel)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGap(65, 65, 65))
         );
 
         mainPanel.add(namePanel, "namePanel");
@@ -1870,36 +2049,36 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         dwarfToolPanelLayout.setHorizontalGroup(
             dwarfToolPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dwarfToolPanelLayout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGroup(dwarfToolPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dwarfToolPanelLayout.createSequentialGroup()
+                        .addGap(271, 271, 271)
+                        .addComponent(jLabel23))
+                    .addGroup(dwarfToolPanelLayout.createSequentialGroup()
+                        .addGap(314, 314, 314)
+                        .addGroup(dwarfToolPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(brewerSuppliesRadio)
+                            .addComponent(smithToolRadio)
+                            .addComponent(masonToolsRadio))))
+                .addContainerGap(285, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dwarfToolPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(toNamePanel2)
+                .addGap(185, 185, 185))
+        );
+        dwarfToolPanelLayout.setVerticalGroup(
+            dwarfToolPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dwarfToolPanelLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(smithToolRadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(brewerSuppliesRadio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(masonToolsRadio)
-                .addContainerGap(211, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dwarfToolPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(dwarfToolPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dwarfToolPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel23)
-                        .addGap(210, 210, 210))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dwarfToolPanelLayout.createSequentialGroup()
-                        .addComponent(toNamePanel2)
-                        .addGap(52, 52, 52))))
-        );
-        dwarfToolPanelLayout.setVerticalGroup(
-            dwarfToolPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dwarfToolPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel23)
-                .addGap(32, 32, 32)
-                .addGroup(dwarfToolPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(smithToolRadio)
-                    .addComponent(brewerSuppliesRadio)
-                    .addComponent(masonToolsRadio))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
                 .addComponent(toNamePanel2)
-                .addGap(91, 91, 91))
+                .addGap(66, 66, 66))
         );
 
         mainPanel.add(dwarfToolPanel, "dwarfToolPanel");
@@ -1934,55 +2113,56 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         druidSpellPanelLayout.setHorizontalGroup(
             druidSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(druidSpellPanelLayout.createSequentialGroup()
-                .addGap(219, 219, 219)
+                .addGap(284, 284, 284)
                 .addComponent(jLabel24)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, druidSpellPanelLayout.createSequentialGroup()
-                .addContainerGap(163, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(druidSpellPanelLayout.createSequentialGroup()
+                .addGap(152, 152, 152)
+                .addGroup(druidSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(druidSpellPanelLayout.createSequentialGroup()
+                        .addComponent(guidanceDruid)
+                        .addGap(6, 6, 6))
+                    .addComponent(druidcraftDruid))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(druidSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, druidSpellPanelLayout.createSequentialGroup()
-                        .addGroup(druidSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(druidSpellPanelLayout.createSequentialGroup()
-                                .addComponent(guidanceDruid)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(poisonSprayDruid)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(resistanceDruid)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(shillelaghDruid))
-                            .addGroup(druidSpellPanelLayout.createSequentialGroup()
-                                .addComponent(druidcraftDruid)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(mendingDruid)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(produceFlameDruid)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(thornWhipDruid)))
-                        .addGap(117, 117, 117))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, druidSpellPanelLayout.createSequentialGroup()
-                        .addComponent(toDruidEquipmentPanel)
-                        .addGap(71, 71, 71))))
+                    .addGroup(druidSpellPanelLayout.createSequentialGroup()
+                        .addComponent(mendingDruid)
+                        .addGap(32, 32, 32)
+                        .addComponent(produceFlameDruid))
+                    .addGroup(druidSpellPanelLayout.createSequentialGroup()
+                        .addComponent(poisonSprayDruid)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(resistanceDruid)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(druidSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(thornWhipDruid)
+                    .addComponent(shillelaghDruid))
+                .addContainerGap(166, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, druidSpellPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(toDruidEquipmentPanel)
+                .addGap(181, 181, 181))
         );
         druidSpellPanelLayout.setVerticalGroup(
             druidSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(druidSpellPanelLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel24)
-                .addGap(31, 31, 31)
+                .addGap(27, 27, 27)
                 .addGroup(druidSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(druidcraftDruid)
-                    .addComponent(thornWhipDruid)
+                    .addComponent(mendingDruid)
                     .addComponent(produceFlameDruid)
-                    .addComponent(mendingDruid))
+                    .addComponent(shillelaghDruid))
                 .addGap(18, 18, 18)
                 .addGroup(druidSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(shillelaghDruid)
-                    .addComponent(resistanceDruid)
+                    .addComponent(guidanceDruid)
                     .addComponent(poisonSprayDruid)
-                    .addComponent(guidanceDruid))
-                .addGap(68, 68, 68)
+                    .addComponent(resistanceDruid)
+                    .addComponent(thornWhipDruid))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
                 .addComponent(toDruidEquipmentPanel)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addGap(71, 71, 71))
         );
 
         mainPanel.add(druidSpellPanel, "druidSpellPanel");
@@ -2025,10 +2205,10 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
 
         simpleWeaponDruidScroll2.setViewportView(simpleWeaponDruidList2);
 
-        jButton1.setText("Next");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        toMiscFromDruid.setText("Next");
+        toMiscFromDruid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                toMiscFromDruidActionPerformed(evt);
             }
         });
 
@@ -2058,13 +2238,13 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                         .addGroup(druidEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(druidEquipmentPanelLayout.createSequentialGroup()
                                 .addGap(333, 333, 333)
-                                .addComponent(jButton1))
+                                .addComponent(toMiscFromDruid))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, druidEquipmentPanelLayout.createSequentialGroup()
                                 .addGap(52, 52, 52)
                                 .addComponent(simpleWeaponDruid2)
                                 .addGap(45, 45, 45)
                                 .addComponent(simpleWeaponDruidScroll2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
         druidEquipmentPanelLayout.setVerticalGroup(
             druidEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2089,8 +2269,8 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                             .addComponent(simpleWeaponDruid2)))
                     .addComponent(simpleWeaponDruidScroll2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addComponent(toMiscFromDruid)
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         mainPanel.add(druidEquipmentPanel, "druidEquipmentPanel");
@@ -2123,14 +2303,10 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         clericSpellPanelLayout.setHorizontalGroup(
             clericSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(clericSpellPanelLayout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jLabel25)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericSpellPanelLayout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
                 .addGroup(clericSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericSpellPanelLayout.createSequentialGroup()
-                        .addGroup(clericSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(clericSpellPanelLayout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addGroup(clericSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(clericSpellPanelLayout.createSequentialGroup()
                                 .addComponent(guidanceCleric)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2138,55 +2314,46 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(spareTheDyingCleric))
                             .addGroup(clericSpellPanelLayout.createSequentialGroup()
-                                .addGroup(clericSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(thaumaturgyCleric)
+                                .addComponent(mendingCleric)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(clericSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lightCleric)
                                     .addGroup(clericSpellPanelLayout.createSequentialGroup()
-                                        .addComponent(lightCleric)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(mendingCleric)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(resistanceCleric)))
-                        .addGap(179, 179, 179))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericSpellPanelLayout.createSequentialGroup()
-                        .addComponent(toClericEquipmentPanel)
-                        .addGap(80, 80, 80))))
+                                        .addComponent(resistanceCleric)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(thaumaturgyCleric))))))
+                    .addGroup(clericSpellPanelLayout.createSequentialGroup()
+                        .addGap(284, 284, 284)
+                        .addComponent(jLabel25)))
+                .addContainerGap(227, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericSpellPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(toClericEquipmentPanel)
+                .addGap(173, 173, 173))
         );
         clericSpellPanelLayout.setVerticalGroup(
             clericSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(clericSpellPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(clericSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(guidanceCleric)
-                    .addComponent(spareTheDyingCleric)
-                    .addComponent(sacredFlameCleric))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(sacredFlameCleric)
+                    .addComponent(spareTheDyingCleric))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(clericSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(resistanceCleric)
                     .addComponent(mendingCleric)
-                    .addComponent(lightCleric))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(thaumaturgyCleric)
-                .addGap(99, 99, 99)
+                    .addComponent(resistanceCleric)
+                    .addComponent(thaumaturgyCleric))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lightCleric)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addComponent(toClericEquipmentPanel)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addGap(70, 70, 70))
         );
 
         mainPanel.add(clericSpellPanel, "clericSpellPanel");
-
-        javax.swing.GroupLayout clericEquipmentPanelLayout = new javax.swing.GroupLayout(clericEquipmentPanel);
-        clericEquipmentPanel.setLayout(clericEquipmentPanelLayout);
-        clericEquipmentPanelLayout.setHorizontalGroup(
-            clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
-        );
-        clericEquipmentPanelLayout.setVerticalGroup(
-            clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
-        );
-
-        mainPanel.add(clericEquipmentPanel, "clericEquipmentPanel");
 
         jLabel26.setText("Choose 3 Wizard Cantrips:");
 
@@ -2236,10 +2403,10 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
             .addGroup(wizardSpellPanelLayout.createSequentialGroup()
                 .addGroup(wizardSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(wizardSpellPanelLayout.createSequentialGroup()
-                        .addGap(230, 230, 230)
+                        .addGap(295, 295, 295)
                         .addComponent(jLabel26))
                     .addGroup(wizardSpellPanelLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addGap(133, 133, 133)
                         .addGroup(wizardSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(dancingLightsWizard)
                             .addComponent(acidSplashWizard)
@@ -2263,18 +2430,18 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                             .addComponent(prestidigitationWizard)
                             .addComponent(shockingGraspWizard)
                             .addComponent(rayOfFrostWizard))))
-                .addContainerGap(196, Short.MAX_VALUE))
+                .addContainerGap(142, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, wizardSpellPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(toWizardEquipmentPanel)
-                .addGap(58, 58, 58))
+                .addGap(156, 156, 156))
         );
         wizardSpellPanelLayout.setVerticalGroup(
             wizardSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(wizardSpellPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
                 .addComponent(jLabel26)
-                .addGap(13, 13, 13)
+                .addGap(18, 18, 18)
                 .addGroup(wizardSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(wizardSpellPanelLayout.createSequentialGroup()
                         .addComponent(acidSplashWizard)
@@ -2308,22 +2475,103 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                         .addComponent(shockingGraspWizard)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(trueStrikeWizard)))
-                .addGap(59, 59, 59)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addComponent(toWizardEquipmentPanel)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addGap(59, 59, 59))
         );
 
         mainPanel.add(wizardSpellPanel, "wizardSpellPanel");
+
+        jLabel37.setText("Make Wizard Equipment Selection:");
+
+        buttonGroup23.add(quarterstaffWizard);
+        quarterstaffWizard.setText("Quarterstaff");
+
+        buttonGroup23.add(daggerWizard);
+        daggerWizard.setText("Dagger");
+
+        buttonGroup24.add(compWizard);
+        compWizard.setText("Component Pouch");
+
+        buttonGroup24.add(arcaneFocusWizard);
+        arcaneFocusWizard.setText("Arcane Focus");
+
+        buttonGroup25.add(scholarPackWizard);
+        scholarPackWizard.setText("Scholar Pack");
+
+        buttonGroup25.add(explorerPackWizard);
+        explorerPackWizard.setText("Explorer Pack");
+
+        toMiscFromWizard.setText("Next");
+        toMiscFromWizard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMiscFromWizardActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout wizardEquipmentPanelLayout = new javax.swing.GroupLayout(wizardEquipmentPanel);
         wizardEquipmentPanel.setLayout(wizardEquipmentPanelLayout);
         wizardEquipmentPanelLayout.setHorizontalGroup(
             wizardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
+            .addGroup(wizardEquipmentPanelLayout.createSequentialGroup()
+                .addGroup(wizardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(wizardEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(wizardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(wizardEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(272, 272, 272)
+                        .addComponent(jLabel37)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, wizardEquipmentPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(toMiscFromWizard)
+                .addGap(182, 182, 182))
+            .addGroup(wizardEquipmentPanelLayout.createSequentialGroup()
+                .addGap(178, 178, 178)
+                .addComponent(quarterstaffWizard)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(daggerWizard)
+                .addGap(201, 201, 201))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, wizardEquipmentPanelLayout.createSequentialGroup()
+                .addGroup(wizardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(wizardEquipmentPanelLayout.createSequentialGroup()
+                        .addContainerGap(176, Short.MAX_VALUE)
+                        .addComponent(compWizard)
+                        .addGap(170, 170, 170)
+                        .addComponent(arcaneFocusWizard))
+                    .addGroup(wizardEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(scholarPackWizard)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(explorerPackWizard)))
+                .addGap(162, 162, 162))
         );
         wizardEquipmentPanelLayout.setVerticalGroup(
             wizardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
+            .addGroup(wizardEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(wizardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(quarterstaffWizard)
+                    .addComponent(daggerWizard))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(wizardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(compWizard)
+                    .addComponent(arcaneFocusWizard))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(wizardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(scholarPackWizard)
+                    .addComponent(explorerPackWizard))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addComponent(toMiscFromWizard)
+                .addGap(56, 56, 56))
         );
 
         mainPanel.add(wizardEquipmentPanel, "wizardEquipmentPanel");
@@ -2379,6 +2627,10 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
             }
         });
 
+        patronSpell1.setText("jCheckBox1");
+
+        patronSpell2.setText("jCheckBox1");
+
         javax.swing.GroupLayout warlockSpellPanelLayout = new javax.swing.GroupLayout(warlockSpellPanel);
         warlockSpellPanel.setLayout(warlockSpellPanelLayout);
         warlockSpellPanelLayout.setHorizontalGroup(
@@ -2396,58 +2648,64 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                                     .addComponent(poisonSprayWarlock)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(prestidigitationWarlock))
-                                .addGroup(warlockSpellPanelLayout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, warlockSpellPanelLayout.createSequentialGroup()
                                     .addComponent(mageHandWarlock)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGap(18, 18, 18)
                                     .addComponent(minorIllusionWarlock)))
-                            .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(warlockSpellPanelLayout.createSequentialGroup()
-                                    .addComponent(eldritchBlastWarlock)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(friendsWarlock))
-                                .addGroup(warlockSpellPanelLayout.createSequentialGroup()
-                                    .addComponent(bladeWardWarlock)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(warlockSpellPanelLayout.createSequentialGroup()
+                                .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(bladeWardWarlock, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(eldritchBlastWarlock, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(friendsWarlock)
                                     .addComponent(chillTouchWarlock)))))
                     .addGroup(warlockSpellPanelLayout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(trueStrikeWarlock)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(warlockSpellPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(warlockSpellPanelLayout.createSequentialGroup()
-                                .addComponent(hexWarlock)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(illusoryScriptWarlock))
+                                .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(hexWarlock)
+                                    .addComponent(charmPersonWarlock)
+                                    .addGroup(warlockSpellPanelLayout.createSequentialGroup()
+                                        .addGap(98, 98, 98)
+                                        .addComponent(jLabel28)))
+                                .addGap(22, 22, 22))
                             .addGroup(warlockSpellPanelLayout.createSequentialGroup()
                                 .addComponent(expeditiousRetreatWarlock)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(hellishRebukeWarlock)))
+                                .addGap(18, 18, 18)
+                                .addComponent(illusoryScriptWarlock)
+                                .addGap(47, 47, 47)))
+                        .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(armsOfHadarWarlock)
+                            .addComponent(patronSpell1)
+                            .addComponent(patronSpell2))
+                        .addGap(17, 17, 17))
+                    .addGroup(warlockSpellPanelLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
                         .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(warlockSpellPanelLayout.createSequentialGroup()
-                                .addComponent(charmPersonWarlock)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comprehendLanguagesWarlock))
                             .addGroup(warlockSpellPanelLayout.createSequentialGroup()
                                 .addComponent(armorOfAgathysWarlock)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(armsOfHadarWarlock)))
-                        .addComponent(jLabel28))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warlockSpellPanelLayout.createSequentialGroup()
-                        .addComponent(protectionWarlock)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(unseenServantWarlock)))
-                .addGap(81, 81, 81))
+                                .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(hellishRebukeWarlock)
+                                    .addGroup(warlockSpellPanelLayout.createSequentialGroup()
+                                        .addComponent(comprehendLanguagesWarlock)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(witchBoltWarlock))
+                                    .addComponent(unseenServantWarlock)))
+                            .addGroup(warlockSpellPanelLayout.createSequentialGroup()
+                                .addComponent(protectionWarlock)
+                                .addGap(101, 101, 101)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warlockSpellPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warlockSpellPanelLayout.createSequentialGroup()
-                        .addComponent(witchBoltWarlock)
-                        .addGap(143, 143, 143))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warlockSpellPanelLayout.createSequentialGroup()
-                        .addComponent(toWarlockEquipmentPanel)
-                        .addGap(61, 61, 61))))
+                .addGap(182, 533, Short.MAX_VALUE)
+                .addComponent(toWarlockEquipmentPanel)
+                .addGap(163, 163, 163))
         );
         warlockSpellPanelLayout.setVerticalGroup(
             warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2473,47 +2731,151 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(prestidigitationWarlock)
-                            .addComponent(poisonSprayWarlock)))
+                            .addComponent(poisonSprayWarlock)
+                            .addComponent(hexWarlock)))
                     .addGroup(warlockSpellPanelLayout.createSequentialGroup()
                         .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(armorOfAgathysWarlock)
-                            .addComponent(armsOfHadarWarlock))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(comprehendLanguagesWarlock)
-                            .addComponent(charmPersonWarlock))
+                            .addComponent(witchBoltWarlock))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(charmPersonWarlock)
+                            .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(hellishRebukeWarlock)
+                                .addComponent(armsOfHadarWarlock)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(expeditiousRetreatWarlock)
-                            .addComponent(hellishRebukeWarlock))
+                            .addComponent(illusoryScriptWarlock)
+                            .addComponent(patronSpell1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(illusoryScriptWarlock)
-                            .addComponent(hexWarlock))))
+                            .addComponent(unseenServantWarlock)
+                            .addComponent(patronSpell2))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(trueStrikeWarlock)
-                    .addGroup(warlockSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(unseenServantWarlock)
-                        .addComponent(protectionWarlock)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(witchBoltWarlock)
-                .addGap(26, 26, 26)
+                    .addComponent(protectionWarlock))
+                .addGap(86, 86, 86)
                 .addComponent(toWarlockEquipmentPanel)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         mainPanel.add(warlockSpellPanel, "warlockSpellPanel");
+
+        jLabel42.setText("Make Warlock Equipment Selections:");
+
+        buttonGroup23.add(lightCrossbowWarlock);
+        lightCrossbowWarlock.setText("Light Crossbow + 20 bolts");
+        lightCrossbowWarlock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lightCrossbowWarlockActionPerformed(evt);
+            }
+        });
+
+        buttonGroup23.add(simpleWeaponWarlock);
+        simpleWeaponWarlock.setText("Any Simple Weapon");
+        simpleWeaponWarlock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpleWeaponWarlockActionPerformed(evt);
+            }
+        });
+
+        buttonGroup24.add(arcaneFocusWarlock);
+        arcaneFocusWarlock.setText("Arcane Focus");
+
+        buttonGroup24.add(componentPouchWarlock);
+        componentPouchWarlock.setText("Component Pouch");
+
+        buttonGroup25.add(dungeoneerPackWarlock);
+        dungeoneerPackWarlock.setText("Dungeoneer Pack");
+
+        buttonGroup25.add(scholarPackWarlock);
+        scholarPackWarlock.setText("Scholar Pack");
+
+        toMiscFromWarlock.setText("Next");
+        toMiscFromWarlock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMiscFromWarlockActionPerformed(evt);
+            }
+        });
+
+        jScrollPane8.setViewportView(simpleWeaponWarlockList);
 
         javax.swing.GroupLayout warlockEquipmentPanelLayout = new javax.swing.GroupLayout(warlockEquipmentPanel);
         warlockEquipmentPanel.setLayout(warlockEquipmentPanelLayout);
         warlockEquipmentPanelLayout.setHorizontalGroup(
             warlockEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warlockEquipmentPanelLayout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(lightCrossbowWarlock)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(simpleWeaponWarlock)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(142, 142, 142))
+            .addGroup(warlockEquipmentPanelLayout.createSequentialGroup()
+                .addGroup(warlockEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(warlockEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jLabel42))
+                    .addGroup(warlockEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(166, 166, 166)
+                        .addComponent(arcaneFocusWarlock)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(componentPouchWarlock)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warlockEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator18)
+                .addGap(92, 92, 92))
+            .addGroup(warlockEquipmentPanelLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jSeparator19)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warlockEquipmentPanelLayout.createSequentialGroup()
+                .addGap(177, 177, 177)
+                .addComponent(scholarPackWarlock)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(warlockEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(warlockEquipmentPanelLayout.createSequentialGroup()
+                        .addComponent(dungeoneerPackWarlock)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warlockEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(toMiscFromWarlock)
+                        .addGap(172, 172, 172))))
         );
         warlockEquipmentPanelLayout.setVerticalGroup(
             warlockEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
+            .addGroup(warlockEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel42)
+                .addGroup(warlockEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(warlockEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(warlockEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lightCrossbowWarlock)
+                            .addComponent(simpleWeaponWarlock)))
+                    .addGroup(warlockEquipmentPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(warlockEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(arcaneFocusWarlock)
+                    .addComponent(componentPouchWarlock))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addGroup(warlockEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(scholarPackWarlock)
+                    .addComponent(dungeoneerPackWarlock))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(toMiscFromWarlock)
+                .addGap(59, 59, 59))
         );
 
         mainPanel.add(warlockEquipmentPanel, "warlockEquipmentPanel");
@@ -2676,7 +3038,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                                 .addComponent(illusoryScriptBard)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(unseenServantBard)))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bardSpellPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(toBardEquipmentPanel)
@@ -2757,20 +3119,146 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                         .addComponent(viciousMockeryBard)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(toBardEquipmentPanel)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         mainPanel.add(bardSpellPanel, "bardSpellPanel");
+
+        jLabel39.setText("Make Bard Equipment Selections:");
+
+        buttonGroup23.add(diplomatPackBard);
+        diplomatPackBard.setText("Diplomat Pack");
+
+        buttonGroup23.add(entertainerPackBard);
+        entertainerPackBard.setText("Entertainer Pack");
+
+        buttonGroup24.add(rapierBard);
+        rapierBard.setText("Rapier");
+        rapierBard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rapierBardActionPerformed(evt);
+            }
+        });
+
+        buttonGroup24.add(simpleWeaponBard);
+        simpleWeaponBard.setText("Any Simple Weapon");
+        simpleWeaponBard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpleWeaponBardActionPerformed(evt);
+            }
+        });
+
+        buttonGroup24.add(longswordBard);
+        longswordBard.setText("Longsword");
+        longswordBard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                longswordBardActionPerformed(evt);
+            }
+        });
+
+        jScrollPane2.setViewportView(simpleWeaponBardList);
+
+        buttonGroup25.add(luteBard);
+        luteBard.setText("Lute");
+        luteBard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                luteBardActionPerformed(evt);
+            }
+        });
+
+        buttonGroup25.add(instrumentBard);
+        instrumentBard.setText("Any Other Musical Instrument");
+        instrumentBard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                instrumentBardActionPerformed(evt);
+            }
+        });
+
+        jScrollPane3.setViewportView(instrumentBardList);
+
+        toMiscFromBard.setText("Next");
+        toMiscFromBard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMiscFromBardActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bardEquipmentPanelLayout = new javax.swing.GroupLayout(bardEquipmentPanel);
         bardEquipmentPanel.setLayout(bardEquipmentPanelLayout);
         bardEquipmentPanelLayout.setHorizontalGroup(
             bardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
+            .addGroup(bardEquipmentPanelLayout.createSequentialGroup()
+                .addGroup(bardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bardEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(251, 251, 251)
+                        .addComponent(jLabel39))
+                    .addGroup(bardEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(diplomatPackBard)
+                        .addGap(148, 148, 148)
+                        .addComponent(entertainerPackBard))
+                    .addGroup(bardEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addGroup(bardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(bardEquipmentPanelLayout.createSequentialGroup()
+                                .addComponent(rapierBard)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(longswordBard)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(simpleWeaponBard)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(bardEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bardEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(luteBard)
+                        .addGap(57, 57, 57)
+                        .addComponent(instrumentBard)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(toMiscFromBard)))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         bardEquipmentPanelLayout.setVerticalGroup(
             bardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
+            .addGroup(bardEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(bardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(diplomatPackBard)
+                    .addComponent(entertainerPackBard))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(bardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bardEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(bardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(simpleWeaponBard)
+                            .addComponent(longswordBard)
+                            .addComponent(rapierBard)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bardEquipmentPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(bardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bardEquipmentPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(bardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bardEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(luteBard)
+                                .addComponent(instrumentBard))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(66, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bardEquipmentPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(toMiscFromBard)
+                        .addGap(15, 15, 15))))
         );
 
         mainPanel.add(bardEquipmentPanel, "bardEquipmentPanel");
@@ -2931,7 +3419,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                                         .addComponent(detectMagicSorcerer)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(featherFallSorcerer)))))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
         sorcererSpellPanelLayout.setVerticalGroup(
             sorcererSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3008,101 +3496,1271 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                                 .addGroup(sorcererSpellPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(silentImageSorcerer, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(toSorcererEquipmentPanel))))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         mainPanel.add(sorcererSpellPanel, "sorcererSpellPanel");
+
+        jLabel41.setText("Make Sorcerer Equipment Choices:");
+
+        buttonGroup23.add(lightCrossbowSorcerer);
+        lightCrossbowSorcerer.setText("Light Crossbow + 20 bolts");
+        lightCrossbowSorcerer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lightCrossbowSorcererActionPerformed(evt);
+            }
+        });
+
+        buttonGroup23.add(simpleWeaponSorcerer);
+        simpleWeaponSorcerer.setText("Any Simple Weapon");
+        simpleWeaponSorcerer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpleWeaponSorcererActionPerformed(evt);
+            }
+        });
+
+        jScrollPane7.setViewportView(simpleWeaponSorcererList);
+
+        buttonGroup24.add(componentPouchSorcerer);
+        componentPouchSorcerer.setText("Component Pouch");
+
+        buttonGroup24.add(arcaneFocusSorcerer);
+        arcaneFocusSorcerer.setText("Arcane Focus");
+
+        buttonGroup25.add(explorerPackSorcerer);
+        explorerPackSorcerer.setText("Explorer Pack");
+
+        buttonGroup25.add(dungeoneerPackSorcerer);
+        dungeoneerPackSorcerer.setText("Dungeoneer Pack");
+
+        toMiscFromSorcerer.setText("Next");
+        toMiscFromSorcerer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMiscFromSorcererActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout sorcererEquipmentPanelLayout = new javax.swing.GroupLayout(sorcererEquipmentPanel);
         sorcererEquipmentPanel.setLayout(sorcererEquipmentPanelLayout);
         sorcererEquipmentPanelLayout.setHorizontalGroup(
             sorcererEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
+            .addGroup(sorcererEquipmentPanelLayout.createSequentialGroup()
+                .addGroup(sorcererEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sorcererEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(lightCrossbowSorcerer)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(sorcererEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(sorcererEquipmentPanelLayout.createSequentialGroup()
+                                .addComponent(simpleWeaponSorcerer)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel41)))
+                    .addGroup(sorcererEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(componentPouchSorcerer)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(arcaneFocusSorcerer))
+                    .addGroup(sorcererEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addGroup(sorcererEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator16, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE)
+                            .addComponent(jSeparator17)))
+                    .addGroup(sorcererEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(165, 165, 165)
+                        .addComponent(dungeoneerPackSorcerer)
+                        .addGap(31, 31, 31)
+                        .addComponent(explorerPackSorcerer)
+                        .addGap(85, 85, 85)
+                        .addComponent(toMiscFromSorcerer)))
+                .addContainerGap(157, Short.MAX_VALUE))
         );
         sorcererEquipmentPanelLayout.setVerticalGroup(
             sorcererEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
+            .addGroup(sorcererEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(sorcererEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sorcererEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(sorcererEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(simpleWeaponSorcerer)
+                            .addComponent(lightCrossbowSorcerer)))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(sorcererEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(componentPouchSorcerer)
+                    .addComponent(arcaneFocusSorcerer))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(sorcererEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(explorerPackSorcerer)
+                    .addComponent(dungeoneerPackSorcerer)
+                    .addComponent(toMiscFromSorcerer))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         mainPanel.add(sorcererEquipmentPanel, "sorcererEquipmentPanel");
+
+        jLabel35.setText("Make Equipment Choices for Barbarian:");
+
+        buttonGroup19.add(greataxeBarbarian);
+        greataxeBarbarian.setText("Greataxe");
+        greataxeBarbarian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                greataxeBarbarianActionPerformed(evt);
+            }
+        });
+
+        buttonGroup19.add(martialWeaponBarbarian);
+        martialWeaponBarbarian.setText("Any Martial Weapon");
+        martialWeaponBarbarian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                martialWeaponBarbarianActionPerformed(evt);
+            }
+        });
+
+        martialWeaponBarbarianScroll.setViewportView(martialWeaponBarbarianList);
+
+        buttonGroup20.add(handaxeBarbarian);
+        handaxeBarbarian.setText("2 Handaxes");
+        handaxeBarbarian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handaxeBarbarianActionPerformed(evt);
+            }
+        });
+
+        buttonGroup20.add(simpleWeaponBarbarian);
+        simpleWeaponBarbarian.setText("Any Simple Weapon");
+        simpleWeaponBarbarian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpleWeaponBarbarianActionPerformed(evt);
+            }
+        });
+
+        simpleWeaponBarbarianScroll.setViewportView(simpleWeaponBarbarianList);
+
+        toMiscFromBarbarian.setText("Next");
+        toMiscFromBarbarian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMiscFromBarbarianActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout barbarianEquipmentPanelLayout = new javax.swing.GroupLayout(barbarianEquipmentPanel);
         barbarianEquipmentPanel.setLayout(barbarianEquipmentPanelLayout);
         barbarianEquipmentPanelLayout.setHorizontalGroup(
             barbarianEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barbarianEquipmentPanelLayout.createSequentialGroup()
+                .addGroup(barbarianEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(barbarianEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(0, 131, Short.MAX_VALUE)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(barbarianEquipmentPanelLayout.createSequentialGroup()
+                        .addGroup(barbarianEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(barbarianEquipmentPanelLayout.createSequentialGroup()
+                                .addGap(128, 128, 128)
+                                .addComponent(greataxeBarbarian)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(martialWeaponBarbarian))
+                            .addGroup(barbarianEquipmentPanelLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel35)))
+                        .addGap(29, 29, 29)
+                        .addComponent(martialWeaponBarbarianScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, barbarianEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(handaxeBarbarian)
+                        .addGap(119, 119, 119)
+                        .addComponent(simpleWeaponBarbarian)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(barbarianEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(barbarianEquipmentPanelLayout.createSequentialGroup()
+                                .addComponent(toMiscFromBarbarian)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(simpleWeaponBarbarianScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                .addGap(65, 65, 65))
         );
         barbarianEquipmentPanelLayout.setVerticalGroup(
             barbarianEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
+            .addGroup(barbarianEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(barbarianEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(martialWeaponBarbarianScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(barbarianEquipmentPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addGap(18, 18, 18)
+                        .addGroup(barbarianEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(greataxeBarbarian)
+                            .addComponent(martialWeaponBarbarian))))
+                .addGap(11, 11, 11)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(barbarianEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(barbarianEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(barbarianEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(handaxeBarbarian)
+                            .addComponent(simpleWeaponBarbarian)))
+                    .addGroup(barbarianEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(simpleWeaponBarbarianScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(toMiscFromBarbarian)
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         mainPanel.add(barbarianEquipmentPanel, "barbarianEquipmentPanel");
+
+        jLabel40.setText("Make Fighter Equipment Selections:");
+
+        buttonGroup22.add(chainMailFighter);
+        chainMailFighter.setText("Chain Mail");
+
+        buttonGroup22.add(leatherArmorFighter);
+        leatherArmorFighter.setText("Leather Armor, Longbow + 20 arrows");
+
+        buttonGroup23.add(lightCrossbowFighter);
+        lightCrossbowFighter.setText("Light Crossbow + 20 bolts");
+
+        buttonGroup23.add(handaxeFighter);
+        handaxeFighter.setText("2 Handaxes");
+
+        buttonGroup24.add(dungeoneerPackFighter);
+        dungeoneerPackFighter.setText("Dungeoneer Pack");
+
+        buttonGroup24.add(explorerPackFighter);
+        explorerPackFighter.setText("Explorer Pack");
+
+        buttonGroup25.add(shieldFighter);
+        shieldFighter.setText("Martial Weapon + Shield");
+        shieldFighter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shieldFighterActionPerformed(evt);
+            }
+        });
+
+        jScrollPane4.setViewportView(martialWeaponFighterList1);
+
+        buttonGroup25.add(martialWeaponsFighter);
+        martialWeaponsFighter.setText("2 Martial Weapons");
+        martialWeaponsFighter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                martialWeaponsFighterActionPerformed(evt);
+            }
+        });
+
+        jScrollPane5.setViewportView(martialWeaponFighterList2);
+
+        jScrollPane6.setViewportView(martialWeaponFighterList3);
+
+        toMiscFromFighter.setText("Next");
+        toMiscFromFighter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMiscFromFighterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout fighterEquipmentPanelLayout = new javax.swing.GroupLayout(fighterEquipmentPanel);
         fighterEquipmentPanel.setLayout(fighterEquipmentPanelLayout);
         fighterEquipmentPanelLayout.setHorizontalGroup(
             fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fighterEquipmentPanelLayout.createSequentialGroup()
+                .addGap(133, 133, 133)
+                .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fighterEquipmentPanelLayout.createSequentialGroup()
+                        .addComponent(chainMailFighter)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(leatherArmorFighter))
+                    .addGroup(fighterEquipmentPanelLayout.createSequentialGroup()
+                        .addComponent(dungeoneerPackFighter)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(explorerPackFighter))
+                    .addGroup(fighterEquipmentPanelLayout.createSequentialGroup()
+                        .addComponent(lightCrossbowFighter)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(handaxeFighter)))
+                .addGap(180, 180, 180))
+            .addGroup(fighterEquipmentPanelLayout.createSequentialGroup()
+                .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fighterEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(fighterEquipmentPanelLayout.createSequentialGroup()
+                                .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(shieldFighter)
+                                    .addGroup(fighterEquipmentPanelLayout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(33, 33, 33)
+                                .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(martialWeaponsFighter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(toMiscFromFighter))))
+                    .addGroup(fighterEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(224, 224, 224)
+                        .addComponent(jLabel40)))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         fighterEquipmentPanelLayout.setVerticalGroup(
             fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
+            .addGroup(fighterEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(toMiscFromFighter)
+                    .addGroup(fighterEquipmentPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(chainMailFighter)
+                            .addComponent(leatherArmorFighter))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
+                        .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lightCrossbowFighter)
+                            .addComponent(handaxeFighter))
+                        .addGap(5, 5, 5)
+                        .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dungeoneerPackFighter)
+                            .addComponent(explorerPackFighter))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(fighterEquipmentPanelLayout.createSequentialGroup()
+                                .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(shieldFighter)
+                                    .addComponent(martialWeaponsFighter))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(fighterEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         mainPanel.add(fighterEquipmentPanel, "fighterEquipmentPanel");
+
+        jLabel43.setText("Make Ranger Equipment Selections:");
+
+        buttonGroup25.add(leatherArmorRanger);
+        leatherArmorRanger.setText("Leather Armor");
+
+        buttonGroup25.add(scaleMailRanger);
+        scaleMailRanger.setText("Scale Mail");
+
+        buttonGroup24.add(dungeoneerPackRanger);
+        dungeoneerPackRanger.setText("Dungeoneer Pack");
+
+        buttonGroup24.add(explorerPackRanger);
+        explorerPackRanger.setText("Explorer Pack");
+
+        buttonGroup23.add(shortswordsRanger);
+        shortswordsRanger.setText("2 Shortswords");
+        shortswordsRanger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shortswordsRangerActionPerformed(evt);
+            }
+        });
+
+        buttonGroup23.add(simpleWeaponsRanger);
+        simpleWeaponsRanger.setText("2 Simple Melee Weapons");
+        simpleWeaponsRanger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpleWeaponsRangerActionPerformed(evt);
+            }
+        });
+
+        jScrollPane9.setViewportView(simpleWeaponRangerList1);
+
+        jScrollPane10.setViewportView(simpleWeaponRangerList2);
+
+        toMiscFromRanger.setText("Next");
+        toMiscFromRanger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMiscFromRangerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout rangerEquipmentPanelLayout = new javax.swing.GroupLayout(rangerEquipmentPanel);
         rangerEquipmentPanel.setLayout(rangerEquipmentPanelLayout);
         rangerEquipmentPanelLayout.setHorizontalGroup(
             rangerEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
+            .addGroup(rangerEquipmentPanelLayout.createSequentialGroup()
+                .addGroup(rangerEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rangerEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addGroup(rangerEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(rangerEquipmentPanelLayout.createSequentialGroup()
+                                .addComponent(dungeoneerPackRanger)
+                                .addGap(34, 34, 34)
+                                .addComponent(explorerPackRanger))
+                            .addGroup(rangerEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel43)
+                                .addGroup(rangerEquipmentPanelLayout.createSequentialGroup()
+                                    .addComponent(scaleMailRanger)
+                                    .addGap(34, 34, 34)
+                                    .addComponent(leatherArmorRanger)))))
+                    .addGroup(rangerEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addGroup(rangerEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSeparator20, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+                            .addComponent(jSeparator21)))
+                    .addGroup(rangerEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(shortswordsRanger)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(simpleWeaponsRanger)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rangerEquipmentPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(toMiscFromRanger)
+                        .addGap(144, 144, 144)))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         rangerEquipmentPanelLayout.setVerticalGroup(
             rangerEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
+            .addGroup(rangerEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel43)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(rangerEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(leatherArmorRanger)
+                    .addComponent(scaleMailRanger))
+                .addGap(3, 3, 3)
+                .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addGroup(rangerEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(explorerPackRanger)
+                    .addComponent(dungeoneerPackRanger))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(rangerEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rangerEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(shortswordsRanger)
+                        .addComponent(simpleWeaponsRanger))
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(toMiscFromRanger)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         mainPanel.add(rangerEquipmentPanel, "rangerEquipmentPanel");
+
+        jLabel44.setText("Make Paladin Equipment Selections:");
+
+        buttonGroup23.add(explorerPackPaladin);
+        explorerPackPaladin.setText("Explorer's Pack");
+
+        buttonGroup23.add(priestPackPaladin);
+        priestPackPaladin.setText("Priest's Pack");
+
+        buttonGroup24.add(javelinPaladin);
+        javelinPaladin.setText("5 Javelins");
+        javelinPaladin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                javelinPaladinActionPerformed(evt);
+            }
+        });
+
+        buttonGroup24.add(simpleWeaponPaladin);
+        simpleWeaponPaladin.setText("Any Simple Melee Weapon");
+        simpleWeaponPaladin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpleWeaponPaladinActionPerformed(evt);
+            }
+        });
+
+        jScrollPane11.setViewportView(simpleWeaponPaladinList);
+
+        buttonGroup25.add(martialWeaponPaladin2);
+        martialWeaponPaladin2.setText("2 Martial Weapons");
+        martialWeaponPaladin2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                martialWeaponPaladin2ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup25.add(martialWeaponPaladin1);
+        martialWeaponPaladin1.setText("Martial Weapon + Shield");
+        martialWeaponPaladin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                martialWeaponPaladin1ActionPerformed(evt);
+            }
+        });
+
+        jScrollPane12.setViewportView(martialWeaponPaladinList1);
+
+        jScrollPane13.setViewportView(martialWeaponPaladinList2);
+
+        jScrollPane14.setViewportView(martialWeaponPaladinList3);
+
+        toMiscFromPaladin.setText("Next");
+        toMiscFromPaladin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMiscFromPaladinActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout paladinEquipmentPanelLayout = new javax.swing.GroupLayout(paladinEquipmentPanel);
         paladinEquipmentPanel.setLayout(paladinEquipmentPanelLayout);
         paladinEquipmentPanelLayout.setHorizontalGroup(
             paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
+            .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paladinEquipmentPanelLayout.createSequentialGroup()
+                        .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                                .addComponent(priestPackPaladin)
+                                .addGap(129, 129, 129)
+                                .addComponent(explorerPackPaladin)
+                                .addGap(73, 73, 73))
+                            .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                                .addComponent(javelinPaladin)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(simpleWeaponPaladin)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paladinEquipmentPanelLayout.createSequentialGroup()
+                        .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(martialWeaponPaladin1)
+                            .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31)
+                                .addComponent(toMiscFromPaladin))
+                            .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(martialWeaponPaladin2)))))
+                .addGap(39, 39, 39))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, paladinEquipmentPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel44)
+                .addGap(272, 272, 272))
+            .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                .addGap(123, 123, 123)
+                .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         paladinEquipmentPanelLayout.setVerticalGroup(
             paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
+            .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(explorerPackPaladin)
+                    .addComponent(priestPackPaladin))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(javelinPaladin)
+                            .addComponent(simpleWeaponPaladin)))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                        .addComponent(toMiscFromPaladin)
+                        .addGap(41, 41, 41))
+                    .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                        .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(martialWeaponPaladin1)
+                            .addComponent(martialWeaponPaladin2))
+                        .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(paladinEquipmentPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(paladinEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18))))
         );
 
         mainPanel.add(paladinEquipmentPanel, "paladinEquipmentPanel");
+
+        buttonGroup25.add(explorerPackRogue);
+        explorerPackRogue.setText("Explorer Pack");
+
+        buttonGroup25.add(burglerPackRogue);
+        burglerPackRogue.setText(" Burgler's Pack");
+
+        buttonGroup24.add(shortbowRogue);
+        shortbowRogue.setText("Shortbow + 20 arrows");
+
+        buttonGroup24.add(shortswordRogue2);
+        shortswordRogue2.setText("Shortsword");
+
+        buttonGroup23.add(shortswordRogue);
+        shortswordRogue.setText("Shortsword");
+
+        buttonGroup23.add(rapierRogue);
+        rapierRogue.setText("Rapier");
+
+        jLabel38.setText("Make Rogue Equipment Selection:");
+
+        toMiscFromRogue.setText("Next");
+        toMiscFromRogue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMiscFromRogueActionPerformed(evt);
+            }
+        });
+
+        buttonGroup25.add(dungeoneerPackRogue);
+        dungeoneerPackRogue.setText("Dungeoneer Pack");
 
         javax.swing.GroupLayout rogueEquipmentPanelLayout = new javax.swing.GroupLayout(rogueEquipmentPanel);
         rogueEquipmentPanel.setLayout(rogueEquipmentPanelLayout);
         rogueEquipmentPanelLayout.setHorizontalGroup(
             rogueEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
+            .addGroup(rogueEquipmentPanelLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addGroup(rogueEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rogueEquipmentPanelLayout.createSequentialGroup()
+                        .addGroup(rogueEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(rogueEquipmentPanelLayout.createSequentialGroup()
+                                .addGap(177, 177, 177)
+                                .addComponent(jLabel38))
+                            .addGroup(rogueEquipmentPanelLayout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addComponent(rapierRogue)
+                                .addGap(149, 149, 149)
+                                .addComponent(shortswordRogue))
+                            .addGroup(rogueEquipmentPanelLayout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addComponent(shortbowRogue)
+                                .addGap(110, 110, 110)
+                                .addComponent(shortswordRogue2))
+                            .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(rogueEquipmentPanelLayout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(dungeoneerPackRogue)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(burglerPackRogue)
+                                .addGap(18, 18, 18)
+                                .addComponent(explorerPackRogue)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rogueEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(472, 472, 472)
+                        .addComponent(toMiscFromRogue)))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
         rogueEquipmentPanelLayout.setVerticalGroup(
             rogueEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
+            .addGroup(rogueEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(rogueEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rapierRogue)
+                    .addComponent(shortswordRogue))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(rogueEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(shortbowRogue)
+                    .addComponent(shortswordRogue2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(rogueEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(burglerPackRogue)
+                    .addComponent(explorerPackRogue)
+                    .addComponent(dungeoneerPackRogue))
+                .addGap(46, 46, 46)
+                .addComponent(toMiscFromRogue)
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         mainPanel.add(rogueEquipmentPanel, "rogueEquipmentPanel");
+
+        jLabel36.setText("Make Equipment Selections for Monk:");
+
+        buttonGroup21.add(shortswordMonk);
+        shortswordMonk.setText("Shortsword");
+        shortswordMonk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shortswordMonkActionPerformed(evt);
+            }
+        });
+
+        buttonGroup21.add(simpleWeaponMonk);
+        simpleWeaponMonk.setText("Any Simple Weapon");
+        simpleWeaponMonk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpleWeaponMonkActionPerformed(evt);
+            }
+        });
+
+        jScrollPane1.setViewportView(simpleWeaponMonkList);
+
+        buttonGroup22.add(dungeoneerPackMonk);
+        dungeoneerPackMonk.setText("Dungeoneer's Pack");
+
+        buttonGroup22.add(explorersPackMonk);
+        explorersPackMonk.setText("Explorer's Pack");
+
+        toMiscFromMonk.setText("Next");
+        toMiscFromMonk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMiscFromMonkActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout monkEquipmentPanelLayout = new javax.swing.GroupLayout(monkEquipmentPanel);
         monkEquipmentPanel.setLayout(monkEquipmentPanelLayout);
         monkEquipmentPanelLayout.setHorizontalGroup(
             monkEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 707, Short.MAX_VALUE)
+            .addGroup(monkEquipmentPanelLayout.createSequentialGroup()
+                .addGroup(monkEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(monkEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(monkEquipmentPanelLayout.createSequentialGroup()
+                            .addGroup(monkEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(monkEquipmentPanelLayout.createSequentialGroup()
+                                    .addGap(234, 234, 234)
+                                    .addComponent(jLabel36))
+                                .addGroup(monkEquipmentPanelLayout.createSequentialGroup()
+                                    .addGap(150, 150, 150)
+                                    .addComponent(shortswordMonk)
+                                    .addGap(111, 111, 111)
+                                    .addComponent(simpleWeaponMonk)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(monkEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(dungeoneerPackMonk)
+                        .addGap(71, 71, 71)
+                        .addComponent(explorersPackMonk)))
+                .addContainerGap(115, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, monkEquipmentPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(toMiscFromMonk)
+                .addGap(68, 68, 68))
         );
         monkEquipmentPanelLayout.setVerticalGroup(
             monkEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
+            .addGroup(monkEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(monkEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(monkEquipmentPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel36)
+                        .addGap(18, 18, 18)
+                        .addGroup(monkEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(shortswordMonk)
+                            .addComponent(simpleWeaponMonk))))
+                .addGap(32, 32, 32)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(monkEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dungeoneerPackMonk)
+                    .addComponent(explorersPackMonk))
+                .addGap(26, 26, 26)
+                .addComponent(toMiscFromMonk)
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
         mainPanel.add(monkEquipmentPanel, "monkEquipmentPanel");
+
+        finalizeButton.setText("Finalize Character");
+        finalizeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                finalizeButtonActionPerformed(evt);
+            }
+        });
+
+        saveCharacterFile.setText("Save to File");
+        saveCharacterFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveCharacterFileActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout miscellaneousPanelLayout = new javax.swing.GroupLayout(miscellaneousPanel);
+        miscellaneousPanel.setLayout(miscellaneousPanelLayout);
+        miscellaneousPanelLayout.setHorizontalGroup(
+            miscellaneousPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(miscellaneousPanelLayout.createSequentialGroup()
+                .addGroup(miscellaneousPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(miscellaneousPanelLayout.createSequentialGroup()
+                        .addGap(286, 286, 286)
+                        .addComponent(finalizeButton))
+                    .addGroup(miscellaneousPanelLayout.createSequentialGroup()
+                        .addGap(306, 306, 306)
+                        .addComponent(saveCharacterFile)))
+                .addContainerGap(329, Short.MAX_VALUE))
+        );
+        miscellaneousPanelLayout.setVerticalGroup(
+            miscellaneousPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(miscellaneousPanelLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(finalizeButton)
+                .addGap(34, 34, 34)
+                .addComponent(saveCharacterFile)
+                .addContainerGap(192, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(miscellaneousPanel, "miscellaneousPanel");
+
+        buttonGroup26.add(acidSplashWizard1);
+        acidSplashWizard1.setText("Acid Splash");
+
+        buttonGroup26.add(bladeWardWizard1);
+        bladeWardWizard1.setText("Blade Ward");
+
+        buttonGroup26.add(chillTouchWizard1);
+        chillTouchWizard1.setText("Chill Touch");
+
+        buttonGroup26.add(dancingLightsWizard1);
+        dancingLightsWizard1.setText("Dancing Lights");
+
+        buttonGroup26.add(mageHandWizard1);
+        mageHandWizard1.setText("Mage Hand");
+
+        buttonGroup26.add(lightWizard1);
+        lightWizard1.setText("Light");
+
+        buttonGroup26.add(friendsWizard1);
+        friendsWizard1.setText("Friends");
+
+        buttonGroup26.add(fireBoltWizard1);
+        fireBoltWizard1.setText("Fire Bolt");
+
+        buttonGroup26.add(mendingWizard1);
+        mendingWizard1.setText("Mending");
+
+        buttonGroup26.add(messageWizard1);
+        messageWizard1.setText("Message");
+
+        buttonGroup26.add(minorIllusionWizard1);
+        minorIllusionWizard1.setText("Minor Illusion");
+
+        buttonGroup26.add(poisonSprayWizard1);
+        poisonSprayWizard1.setText("Poison Spray");
+
+        buttonGroup26.add(trueStrikeWizard1);
+        trueStrikeWizard1.setText("True Strike");
+
+        buttonGroup26.add(shockingGraspWizard1);
+        shockingGraspWizard1.setText("Shocking Grasp");
+
+        buttonGroup26.add(rayOfFrostWizard1);
+        rayOfFrostWizard1.setText("Ray of Frost");
+
+        buttonGroup26.add(prestidigitationWizard1);
+        prestidigitationWizard1.setText("Prestidigitation");
+
+        jLabel45.setText("Choose 1 Wizard Cantrip for your High Elf:");
+
+        fromHighElfPanel.setText("Next");
+        fromHighElfPanel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fromHighElfPanelActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout highElfWizardCantripPanelLayout = new javax.swing.GroupLayout(highElfWizardCantripPanel);
+        highElfWizardCantripPanel.setLayout(highElfWizardCantripPanelLayout);
+        highElfWizardCantripPanelLayout.setHorizontalGroup(
+            highElfWizardCantripPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(highElfWizardCantripPanelLayout.createSequentialGroup()
+                .addContainerGap(139, Short.MAX_VALUE)
+                .addGroup(highElfWizardCantripPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, highElfWizardCantripPanelLayout.createSequentialGroup()
+                        .addGroup(highElfWizardCantripPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel45)
+                            .addGroup(highElfWizardCantripPanelLayout.createSequentialGroup()
+                                .addGroup(highElfWizardCantripPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(prestidigitationWizard1)
+                                    .addComponent(rayOfFrostWizard1)
+                                    .addComponent(shockingGraspWizard1)
+                                    .addComponent(trueStrikeWizard1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(highElfWizardCantripPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(dancingLightsWizard1)
+                                    .addComponent(acidSplashWizard1)
+                                    .addComponent(chillTouchWizard1)
+                                    .addComponent(bladeWardWizard1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(highElfWizardCantripPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(mageHandWizard1)
+                                    .addComponent(fireBoltWizard1)
+                                    .addComponent(lightWizard1)
+                                    .addComponent(friendsWizard1))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(highElfWizardCantripPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(poisonSprayWizard1)
+                            .addComponent(mendingWizard1)
+                            .addComponent(minorIllusionWizard1)
+                            .addComponent(messageWizard1))
+                        .addGap(136, 136, 136))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, highElfWizardCantripPanelLayout.createSequentialGroup()
+                        .addComponent(fromHighElfPanel)
+                        .addGap(55, 55, 55))))
+        );
+        highElfWizardCantripPanelLayout.setVerticalGroup(
+            highElfWizardCantripPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, highElfWizardCantripPanelLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel45)
+                .addGap(43, 43, 43)
+                .addGroup(highElfWizardCantripPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(highElfWizardCantripPanelLayout.createSequentialGroup()
+                        .addComponent(acidSplashWizard1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bladeWardWizard1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chillTouchWizard1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dancingLightsWizard1))
+                    .addGroup(highElfWizardCantripPanelLayout.createSequentialGroup()
+                        .addComponent(fireBoltWizard1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(friendsWizard1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lightWizard1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mageHandWizard1))
+                    .addGroup(highElfWizardCantripPanelLayout.createSequentialGroup()
+                        .addComponent(mendingWizard1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(messageWizard1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(minorIllusionWizard1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(poisonSprayWizard1))
+                    .addGroup(highElfWizardCantripPanelLayout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(shockingGraspWizard1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(trueStrikeWizard1))
+                    .addGroup(highElfWizardCantripPanelLayout.createSequentialGroup()
+                        .addComponent(prestidigitationWizard1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rayOfFrostWizard1)))
+                .addGap(18, 18, 18)
+                .addComponent(fromHighElfPanel)
+                .addContainerGap(133, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(highElfWizardCantripPanel, "highElfWizardCantripPanel");
+
+        jLabel34.setText("Make selections for Cleric Equipment:");
+
+        buttonGroup15.add(maceCleric);
+        maceCleric.setText("Mace");
+
+        buttonGroup15.add(warhammerCleric);
+        warhammerCleric.setText("Warhammer (if proficient)");
+
+        buttonGroup16.add(scaleMailCleric);
+        scaleMailCleric.setText("Scale Mail");
+
+        buttonGroup16.add(leatherArmorCleric);
+        leatherArmorCleric.setText("Leather Armor");
+
+        buttonGroup16.add(chainMailCleric);
+        chainMailCleric.setText("Chain Mail (if proficient in heavy armor)");
+
+        buttonGroup17.add(lightCrossBowCleric);
+        lightCrossBowCleric.setText("Light Crossbow + 20 bolts");
+        lightCrossBowCleric.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lightCrossBowClericActionPerformed(evt);
+            }
+        });
+
+        buttonGroup17.add(simpleWeaponCleric);
+        simpleWeaponCleric.setText("Any simple weapon");
+        simpleWeaponCleric.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simpleWeaponClericActionPerformed(evt);
+            }
+        });
+
+        simpleWeaponClericScroll.setViewportView(simpleWeaponClericList);
+
+        buttonGroup18.add(priestPackCleric);
+        priestPackCleric.setText("Priest's Pack");
+
+        buttonGroup18.add(explorerPackCleric);
+        explorerPackCleric.setText("Explorer's Pack");
+
+        toMiscFromCleric.setText("Next");
+        toMiscFromCleric.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toMiscFromClericActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout clericEquipmentPanelLayout = new javax.swing.GroupLayout(clericEquipmentPanel);
+        clericEquipmentPanel.setLayout(clericEquipmentPanelLayout);
+        clericEquipmentPanelLayout.setHorizontalGroup(
+            clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clericEquipmentPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(toMiscFromCleric)
+                .addGap(151, 151, 151))
+            .addGroup(clericEquipmentPanelLayout.createSequentialGroup()
+                .addGroup(clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(clericEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(clericEquipmentPanelLayout.createSequentialGroup()
+                                .addGroup(clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(clericEquipmentPanelLayout.createSequentialGroup()
+                                        .addGap(61, 61, 61)
+                                        .addComponent(lightCrossBowCleric)
+                                        .addGap(49, 49, 49)
+                                        .addComponent(simpleWeaponCleric))
+                                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(simpleWeaponClericScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(clericEquipmentPanelLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(scaleMailCleric)
+                                .addGap(59, 59, 59)
+                                .addComponent(leatherArmorCleric)
+                                .addGap(64, 64, 64)
+                                .addComponent(chainMailCleric))
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(clericEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(priestPackCleric)
+                        .addGap(65, 65, 65)
+                        .addComponent(explorerPackCleric))
+                    .addGroup(clericEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(jLabel34))
+                    .addGroup(clericEquipmentPanelLayout.createSequentialGroup()
+                        .addGap(237, 237, 237)
+                        .addComponent(maceCleric)
+                        .addGap(75, 75, 75)
+                        .addComponent(warhammerCleric)))
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+        clericEquipmentPanelLayout.setVerticalGroup(
+            clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clericEquipmentPanelLayout.createSequentialGroup()
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(maceCleric)
+                    .addComponent(warhammerCleric))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(scaleMailCleric)
+                    .addComponent(leatherArmorCleric)
+                    .addComponent(chainMailCleric))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(clericEquipmentPanelLayout.createSequentialGroup()
+                        .addGroup(clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lightCrossBowCleric)
+                            .addComponent(simpleWeaponCleric))
+                        .addGap(57, 57, 57)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(simpleWeaponClericScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(clericEquipmentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(priestPackCleric)
+                    .addComponent(explorerPackCleric))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(toMiscFromCleric)
+                .addGap(0, 85, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(clericEquipmentPanel, "clericEquipmentPanel");
+
+        jLabel4.setText("Ability Scores:");
+
+        firstStatLabel.setText("0");
+
+        secondStatLabel.setText("0");
+
+        thirdStatLabel.setText("0");
+
+        fourthStatLabel.setText("0");
+
+        fifthStatLabel.setText("0");
+
+        sixthStatLabel.setText("0");
+
+        toAssignStatPanel.setText("Next");
+        toAssignStatPanel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toAssignStatPanelActionPerformed(evt);
+            }
+        });
+
+        rollStatsButton.setText("Roll");
+        rollStatsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rollStatsButtonActionPerformed(evt);
+            }
+        });
+
+        buttonGroup27.add(defaultArray);
+        defaultArray.setText("Default Array");
+        defaultArray.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                defaultArrayActionPerformed(evt);
+            }
+        });
+
+        buttonGroup27.add(rollForScores);
+        rollForScores.setText("Roll for Scores (4d6, drop lowest)");
+        rollForScores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rollForScoresActionPerformed(evt);
+            }
+        });
+
+        jLabel46.setText("Choose Score Selection Method:");
+
+        buttonGroup27.add(manualEntry);
+        manualEntry.setText("Manual Entry");
+        manualEntry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manualEntryActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout statPanelLayout = new javax.swing.GroupLayout(statPanel);
+        statPanel.setLayout(statPanelLayout);
+        statPanelLayout.setHorizontalGroup(
+            statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, statPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(toAssignStatPanel)
+                .addGap(149, 149, 149))
+            .addGroup(statPanelLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(statPanelLayout.createSequentialGroup()
+                        .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rollForScores)
+                            .addComponent(defaultArray)
+                            .addComponent(manualEntry)
+                            .addComponent(jLabel46))
+                        .addGap(79, 79, 79)
+                        .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addGroup(statPanelLayout.createSequentialGroup()
+                                .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(firstStatField, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                                    .addComponent(secondStatField)
+                                    .addComponent(thirdStatField)
+                                    .addComponent(fourthStatField)
+                                    .addComponent(fifthStatField))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(firstStatLabel)
+                                    .addComponent(secondStatLabel)
+                                    .addComponent(thirdStatLabel)
+                                    .addComponent(fourthStatLabel)
+                                    .addComponent(fifthStatLabel)))
+                            .addGroup(statPanelLayout.createSequentialGroup()
+                                .addComponent(sixthStatField, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sixthStatLabel))))
+                    .addGroup(statPanelLayout.createSequentialGroup()
+                        .addComponent(rollStatsButton)
+                        .addGap(23, 23, 23)))
+                .addContainerGap(305, Short.MAX_VALUE))
+        );
+        statPanelLayout.setVerticalGroup(
+            statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(statPanelLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(statPanelLayout.createSequentialGroup()
+                        .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(firstStatField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(firstStatLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(secondStatField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(secondStatLabel))
+                        .addGap(8, 8, 8)
+                        .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(thirdStatField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(thirdStatLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fourthStatField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fourthStatLabel))
+                        .addGap(7, 7, 7)
+                        .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fifthStatField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fifthStatLabel))
+                        .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(statPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(sixthStatField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sixthStatLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rollStatsButton)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, statPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                                .addComponent(toAssignStatPanel)
+                                .addGap(73, 73, 73))))
+                    .addGroup(statPanelLayout.createSequentialGroup()
+                        .addComponent(rollForScores)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(defaultArray)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(manualEntry)
+                        .addContainerGap())))
+        );
+
+        mainPanel.add(statPanel, "statPanel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -3124,6 +4782,8 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -3133,11 +4793,19 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "raceClassPanel");
-        //create Character object
+        //create Character object and set up some UI elements for later
         this.newCharacter = new Character();
         this.initialLangsSelected = 0;
         this.commonCheck.setSelected(true);
         this.newCharacter.addThisLanguage("Common");
+        this.saveCharacterFile.setEnabled(false);
+        this.rollStatsButton.setEnabled(false);
+        this.firstStatField.setEditable(false);
+        this.secondStatField.setEditable(false);
+        this.thirdStatField.setEditable(false);
+        this.fourthStatField.setEditable(false);
+        this.fifthStatField.setEditable(false);
+        this.sixthStatField.setEditable(false);
     }//GEN-LAST:event_startButtonActionPerformed
 
     private void toStatPanelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toStatPanelButtonActionPerformed
@@ -3158,6 +4826,16 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
             if(this.newCharacter.getRace().equals("High Elf"))
                 this.newCharacter.setLanguageAmount(1);
             
+            //change labels on assignstatpanel to reflect racial bonuses
+            this.raceStatLabel3.setText(this.raceStatLabel1.getText());
+            this.raceStatLabel4.setText(this.raceStatLabel2.getText());
+            
+            if(this.newCharacter.getRace().equals("High Elf"))
+            {
+                CardLayout card = (CardLayout)mainPanel.getLayout();
+                card.show(mainPanel, "highElfWizardCantripPanel");
+            }
+            else{
             if(this.newCharacter.getPlayerClass().equals("Cleric"))
             {
                 this.clericArcanaCheck.setEnabled(false);
@@ -3205,6 +4883,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                 CardLayout card = (CardLayout)mainPanel.getLayout();
                 card.show(mainPanel, "statPanel");
             }
+            }
         }
     }//GEN-LAST:event_toStatPanelButtonActionPerformed
 
@@ -3238,10 +4917,74 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
 
     private void toAssignStatPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toAssignStatPanelActionPerformed
         // TODO add your handling code here:
+        //checks for error if manual entry is selected
+        boolean error1 = false;
+        boolean error2 = false;
+        if(this.manualEntry.isSelected())
+        {
+            if(this.firstStatField.getText().equals(""))
+                error1 = true;
+            if(this.secondStatField.getText().equals(""))
+                error1 = true;
+            if(this.thirdStatField.getText().equals(""))
+                error1 = true;
+            if(this.fourthStatField.getText().equals(""))
+                error1 = true;
+            if(this.fifthStatField.getText().equals(""))
+                error1 = true;
+            if(this.sixthStatField.getText().equals(""))
+                error1 = true;
+            
+            //check for error2 (if entries are numbers and are between 3&30 inclusive)
+            String[] possibleValues = new String[28];
+            int j = 3;
+            for(int i=0;i<28;i++)
+            {
+                possibleValues[i] = j+"";
+                j++;
+            }
+            j=0;
+            for(String value: possibleValues)
+            {
+                if(this.firstStatField.getText().equals(value))
+                    j++;
+                if(this.secondStatField.getText().equals(value))
+                    j++;
+                if(this.thirdStatField.getText().equals(value))
+                    j++;
+                if(this.fourthStatField.getText().equals(value))
+                    j++;
+                if(this.fifthStatField.getText().equals(value))
+                    j++;
+                if(this.sixthStatField.getText().equals(value))
+                    j++;
+            }
+            if(j != 6)
+                error2 = true;
+        }
         if(this.firstStatLabel.getText().equals("0"))
             JOptionPane.showMessageDialog(null, "Must roll scores before continuing,");
+        else if(this.manualEntry.isSelected() && error1)
+            JOptionPane.showMessageDialog(null, "Must enter value for each score.");
+        else if(this.manualEntry.isSelected() && error2)
+            JOptionPane.showMessageDialog(null, "Values must be numbers between 3-30");
         else
         {
+            if(this.manualEntry.isSelected())
+            {
+                int stat1 = Integer.parseInt(this.firstStatField.getText());
+                int stat2 = Integer.parseInt(this.secondStatField.getText());
+                int stat3 = Integer.parseInt(this.thirdStatField.getText());
+                int stat4 = Integer.parseInt(this.fourthStatField.getText());
+                int stat5 = Integer.parseInt(this.fifthStatField.getText());
+                int stat6 = Integer.parseInt(this.sixthStatField.getText());
+                this.newCharacter.setStatRolls(0,stat1);
+                this.newCharacter.setStatRolls(1,stat2);
+                this.newCharacter.setStatRolls(2,stat3);
+                this.newCharacter.setStatRolls(3,stat4);
+                this.newCharacter.setStatRolls(4,stat5);
+                this.newCharacter.setStatRolls(5,stat6);
+            }
             CardLayout card = (CardLayout)mainPanel.getLayout();
             card.show(mainPanel, "assignStatPanel");
             this.assignStat1.setText("" + this.newCharacter.getThisStatRoll(0));
@@ -4009,46 +5752,94 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                     this.intimidationCheck.setSelected(true);
                     this.intimidationCheck.setEnabled(false);
                 }
+            String race = this.newCharacter.getRace();
+            //if race==elf, check perception, etc.
+            if(race.equals("High Elf") || race.equals("Wood Elf") || race.equals("Dark Elf (Drow)"))
+            {
+                this.perceptionCheck.setForeground(color);
+                this.perceptionCheck.setSelected(true);
+                this.perceptionCheck.setEnabled(false);
+            }
             
             //gets initial amount of skills selected by previous choices
+            //gets initial amount of skill checkboxes enabled
             this.initialProfsSelected = 0;
+            int initialEnabled = 0;
             if(this.acrobaticsCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.acrobaticsCheck.isEnabled())
+                initialEnabled++;
             if(this.animalHandlingCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.animalHandlingCheck.isEnabled())
+                initialEnabled++;
             if(this.arcanaCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.arcanaCheck.isEnabled())
+                initialEnabled++;
             if(this.athleticsCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.athleticsCheck.isEnabled())
+                initialEnabled++;
             if(this.deceptionCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.deceptionCheck.isEnabled())
+                initialEnabled++;
             if(this.historyCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.historyCheck.isEnabled())
+                initialEnabled++;
             if(this.insightCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.insightCheck.isEnabled())
+                initialEnabled++;
             if(this.intimidationCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.intimidationCheck.isEnabled())
+                initialEnabled++;
             if(this.investigationCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.investigationCheck.isEnabled())
+                initialEnabled++;
             if(this.medicineCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.medicineCheck.isEnabled())
+                initialEnabled++;
             if(this.natureCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.natureCheck.isEnabled())
+                initialEnabled++;
             if(this.perceptionCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.perceptionCheck.isEnabled())
+                initialEnabled++;
             if(this.performanceCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.performanceCheck.isEnabled())
+                initialEnabled++;
             if(this.persuasionCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.persuasionCheck.isEnabled())
+                initialEnabled++;
             if(this.religionCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.religionCheck.isEnabled())
+                initialEnabled++;
             if(this.sleightOfHandCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.sleightOfHandCheck.isEnabled())
+                initialEnabled++;
             if(this.stealthCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.stealthCheck.isEnabled())
+                initialEnabled++;
             if(this.survivalCheck.isSelected())
                 this.initialProfsSelected++;
+            if(this.survivalCheck.isEnabled())
+                initialEnabled++;
             
+            if(initialEnabled < this.newCharacter.getProfAmount())
+                this.newCharacter.setProfAmount(initialEnabled);
             this.profAmountLabel.setText(""+this.newCharacter.getProfAmount());
             
             //continue to next panel
@@ -4415,8 +6206,10 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                 this.newCharacter.setWisdom(this.newCharacter.getWisdom()+1);
                 this.newCharacter.setWisMod(StatRoller.getStatMod(this.newCharacter.getWisdom()));
             }
+            
             CardLayout card = (CardLayout)mainPanel.getLayout();
             card.show(mainPanel, "backgroundAlignmentPanel");
+            
             
         }
             
@@ -4686,11 +6479,23 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         {
             String selection = "";
             if(this.archFeyRadio.isSelected())
+            {
                 selection = "the Archfey";
+                this.patronSpell1.setText("Faerie Fire");
+                this.patronSpell2.setText("Sleep");
+            }
             if(this.greatOldOneRadio.isSelected())
+            {
                 selection = "the Great Old One";
+                this.patronSpell1.setText("Dissonant Whispers");
+                this.patronSpell2.setText("Tasha's Hideous Laughter");
+            }
             if(this.fiendRadio.isSelected())
+            {
                 selection = "the Fiend";
+                this.patronSpell1.setText("Burning Hands");
+                this.patronSpell2.setText("Command");
+            }
             this.newCharacter.setOtherworldlyPatron(selection);
             CardLayout card = (CardLayout)mainPanel.getLayout();
             card.show(mainPanel, "statPanel");
@@ -5182,45 +6987,105 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private void toWizardEquipmentPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toWizardEquipmentPanelActionPerformed
         // TODO add your handling code here:
         int cantripsChosen = 0;
+        ArrayList<String> selected = new ArrayList<String>();
+        boolean alreadyChosen = false;
         
         if(this.acidSplashWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Acid Splash");
+        }
         if(this.bladeWardWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Blade Ward");
+        }
         if(this.chillTouchWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Chill Touch");
+        }
         if(this.dancingLightsWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Dancing Lights");
+        }
         if(this.fireBoltWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Firebolt");
+        }
         if(this.friendsWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Friends");
+        }
         if(this.lightWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Light");
+        }
         if(this.mageHandWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Mage Hand");
+        }
         if(this.mendingWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Mending");
+        }
         if(this.messageWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Message");
+        }
         if(this.minorIllusionWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Minor Illusion");
+        }
         if(this.poisonSprayWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Poison Spray");
+        }
         if(this.prestidigitationWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Prestidigitation");
+        }
         if(this.rayOfFrostWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Ray of Frost");
+        }
         if(this.shockingGraspWizard.isSelected())
+        {
             cantripsChosen++;
+            selected.add("Shocking Grasp");
+        }
         if(this.trueStrikeWizard.isSelected())
+        {
             cantripsChosen++;
-        
-        System.out.println(cantripsChosen);
+            selected.add("True Strike");
+        }
+        //check if any chosen antrips are the same chosen for high elf
+        if(this.newCharacter.getRace().equals("High Elf"))
+        {
+            
+            String cantrip = this.newCharacter.getCantrips().get(0);
+            for(String cant : selected)
+            {
+                if(cant.equals(cantrip))
+                    alreadyChosen = true;
+            }
+        }
         if(cantripsChosen != 3)
             JOptionPane.showMessageDialog(null, "Must select 3 Wizard Cantrips");
-        else
-        {
+        else if(alreadyChosen)
+            JOptionPane.showMessageDialog(null, "One Cantrip was selected previously during High Elf Cantrip Selection");
+        else{
             //save cantrips and move onto wizard equipment panel
             if(this.acidSplashWizard.isSelected())
                 this.newCharacter.addThisCantrip("Acid Splash");
@@ -5275,7 +7140,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         cantrips[7] = this.prestidigitationWarlock;
         cantrips[8] = this.trueStrikeWarlock;
         
-        JCheckBox[] spells = new JCheckBox[11];
+        JCheckBox[] spells = new JCheckBox[13];
         spells[0] = this.armorOfAgathysWarlock;
         spells[1] = this.armsOfHadarWarlock;
         spells[2] = this.charmPersonWarlock;
@@ -5287,13 +7152,15 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         spells[8] = this.protectionWarlock;
         spells[9] = this.unseenServantWarlock;
         spells[10] = this.witchBoltWarlock;
+        spells[11] = this.patronSpell1;
+        spells[12] = this.patronSpell2;
         
         for(int i=0;i<9;i++)
         {
             if(cantrips[i].isSelected())
                 cantripsChosen++;
         }
-        for(int i=0;i<11;i++)
+        for(int i=0;i<13;i++)
         {
             if(spells[i].isSelected())
                 spellsChosen++;
@@ -5309,7 +7176,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
                 if(cantrips[i].isSelected())
                     this.newCharacter.addThisCantrip(cantrips[i].getText());        
             }
-            for(int i=0;i<11;i++)
+            for(int i=0;i<13;i++)
             {
                 if(spells[i].isSelected())
                     this.newCharacter.addThisFirstLevel(spells[i].getText());  
@@ -5479,7 +7346,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         listModel1.addElement("Greatclub");
         listModel1.addElement("Handaxe");
         listModel1.addElement("Javelin");
-        listModel1.addElement("Light hammer");
+        listModel1.addElement("Light Hammer");
         listModel1.addElement("Mace");
         listModel1.addElement("Quarterstaff");
         listModel1.addElement("Sickle");
@@ -5504,7 +7371,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         listModel2.addElement("Greatclub");
         listModel2.addElement("Handaxe");
         listModel2.addElement("Javelin");
-        listModel2.addElement("Light hammer");
+        listModel2.addElement("Light Hammer");
         listModel2.addElement("Mace");
         listModel2.addElement("Quarterstaff");
         listModel2.addElement("Sickle");
@@ -5516,7 +7383,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         this.simpleWeaponDruidList2.setModel(new DefaultListModel());
     }//GEN-LAST:event_scimitarDruidActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void toMiscFromDruidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromDruidActionPerformed
         // TODO add your handling code here:
         boolean error1 = false;
         boolean error2 = false;
@@ -5536,19 +7403,1595 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
         else
         {
             //save equipment choices, move on
-            String selection1 = "";
-            String selection2 = "";
             if(woodenShieldDruid.isSelected())
-                selection1 = "Wooden Shield";
+            {
+                this.newCharacter.setShield("Wooden Shield");
+                this.newCharacter.addThisToInventory("Wooden Shield");
+            }
             if(simpleWeaponDruid1.isSelected())
-                selection1 = this.simpleWeaponDruidList1.getSelectedValue().toString();
+            {
+                this.newCharacter.addThisWeapon(this.simpleWeaponDruidList1.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.simpleWeaponDruidList1.getSelectedValue().toString());
+            }
             if(scimitarDruid.isSelected())
-                selection2 = "Scimitar";
+            {
+                this.newCharacter.addThisWeapon("Scimitar");
+                this.newCharacter.addThisToInventory("Scimitar");
+            }
             if(simpleWeaponDruid2.isSelected())
-                selection2 = this.simpleWeaponDruidList2.getSelectedValue().toString();
-                      
+            {
+                this.newCharacter.addThisWeapon(this.simpleWeaponDruidList2.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.simpleWeaponDruidList2.getSelectedValue().toString());
+            }
+            
+            this.newCharacter.addThisToInventory("Druidic Focus");
+            this.newCharacter.setArmor("Leather Armor");
+            this.newCharacter.addThisToInventory("Leather Armor");
+            
+            //add items from explorer's pack to inventory
+            String[] items = Equipment.getExplorersPack();
+            for (String item : items) 
+                this.newCharacter.addThisToInventory(item);
+                
+            //add items from background to inventory
+            String[] bgitems = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for (String item : bgitems)
+                this.newCharacter.addThisToInventory(item);
+                
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");
+
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_toMiscFromDruidActionPerformed
+
+    private void simpleWeaponClericActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleWeaponClericActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponClericList.setModel(new DefaultListModel());
+        DefaultListModel listModel1 = (DefaultListModel)this.simpleWeaponClericList.getModel();
+        listModel1.addElement("Club");
+        listModel1.addElement("Dagger");
+        listModel1.addElement("Greatclub");
+        listModel1.addElement("Handaxe");
+        listModel1.addElement("Javelin");
+        listModel1.addElement("Light Hammer");
+        listModel1.addElement("Mace");
+        listModel1.addElement("Quarterstaff");
+        listModel1.addElement("Sickle");
+        listModel1.addElement("Spear");
+        listModel1.addElement("Light Crossbow");
+        listModel1.addElement("Dart");
+        listModel1.addElement("Shortbow");
+        listModel1.addElement("Sling");
+    }//GEN-LAST:event_simpleWeaponClericActionPerformed
+
+    private void lightCrossBowClericActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lightCrossBowClericActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponClericList.setModel(new DefaultListModel());
+    }//GEN-LAST:event_lightCrossBowClericActionPerformed
+
+    private void toMiscFromClericActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromClericActionPerformed
+        // TODO add your handling code here:
+        boolean error1 = false;
+        boolean error2 = false;
+        boolean error3 = false;
+        boolean error4 = false;
+        boolean error5 = false;
+        
+        if(!this.maceCleric.isSelected() && !this.warhammerCleric.isSelected())
+            error1 = true;
+        if(!this.scaleMailCleric.isSelected() && !this.leatherArmorCleric.isSelected() && !this.chainMailCleric.isSelected())
+            error2 = true;
+        if(!this.lightCrossBowCleric.isSelected() && !this.simpleWeaponCleric.isSelected())
+            error3 = true;
+        if(this.simpleWeaponCleric.isSelected() && this.simpleWeaponClericList.isSelectionEmpty())
+            error4 = true;
+        if(!this.priestPackCleric.isSelected() && !this.explorerPackCleric.isSelected())
+            error5 = true;
+        
+        if(error1 || error2 || error3 || error4 || error5)
+            JOptionPane.showMessageDialog(null, "Must make selections before continuing");
+        else
+        {
+            //save equipment and move on
+            if(this.maceCleric.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Mace");
+                this.newCharacter.addThisToInventory("Mace");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon("Warhammer");
+                this.newCharacter.addThisToInventory("Warhammer");
+            }
+            
+            if(this.scaleMailCleric.isSelected())
+            {
+                this.newCharacter.setArmor("Scale Mail");
+                this.newCharacter.addThisToInventory("Scale Mail");
+            }
+            else if(this.leatherArmorCleric.isSelected())
+            {
+                this.newCharacter.setArmor("Leather Armor");
+                this.newCharacter.addThisToInventory("Leather Armor");
+            }
+            else
+            {
+                this.newCharacter.setArmor("Chain Mail");
+                this.newCharacter.addThisToInventory("Chain Mail");
+            }
+            
+            if(this.lightCrossBowCleric.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Light Crossbow");
+                this.newCharacter.addThisToInventory("Light Crossbow");
+                this.newCharacter.addThisToInventory("20 bolts");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon(this.simpleWeaponClericList.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.simpleWeaponClericList.getSelectedValue().toString());
+            }
+            
+            if(this.priestPackCleric.isSelected())
+            {
+                String[] items = Equipment.getPriestsPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            else
+            {
+                String[] items = Equipment.getExplorersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            this.newCharacter.addThisToInventory("Holy Symbol");
+            this.newCharacter.setShield("Shield");
+            this.newCharacter.addThisToInventory("Shield");
+            
+            //add items from background
+            String[] bgitems = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for(String item : bgitems)
+                this.newCharacter.addThisToInventory(item);
+            
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");
+        }
+                
+    }//GEN-LAST:event_toMiscFromClericActionPerformed
+
+    private void toMiscFromBarbarianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromBarbarianActionPerformed
+        // TODO add your handling code here:
+        boolean error1 = false;
+        boolean error2 = false;
+        boolean error3 = false;
+        boolean error4 = false;
+        
+        if(!this.greataxeBarbarian.isSelected() && !this.martialWeaponBarbarian.isSelected())
+            error1 = true;
+        if(this.martialWeaponBarbarian.isSelected() && this.martialWeaponBarbarianList.isSelectionEmpty())
+            error2 = true;
+        if(!this.handaxeBarbarian.isSelected() && !this.simpleWeaponBarbarian.isSelected())
+            error3 = true;
+        if(this.simpleWeaponBarbarian.isSelected() && this.simpleWeaponBarbarianList.isSelectionEmpty())
+            error4 = true;
+        
+        if(error1 || error2 || error3 || error4)
+            JOptionPane.showMessageDialog(null, "Must make selections before continuing");
+        else
+        {
+            //save selections and move on
+            if(this.greataxeBarbarian.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Greataxe");
+                this.newCharacter.addThisToInventory("Greataxe");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon(this.martialWeaponBarbarianList.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.martialWeaponBarbarianList.getSelectedValue().toString());
+            }
+            if(this.handaxeBarbarian.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Handaxe");
+                this.newCharacter.addThisToInventory("Handaxe x2");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon(this.simpleWeaponBarbarianList.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.simpleWeaponBarbarianList.getSelectedValue().toString());
+            }
+            String[] items = Equipment.getExplorersPack();
+            for(String item : items)
+                this.newCharacter.addThisToInventory(item);
+            
+            //add items from background
+            String[] bgitems = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for(String item : bgitems)
+                this.newCharacter.addThisToInventory(item);
+            
+            this.newCharacter.addThisWeapon("Javelin");
+            this.newCharacter.addThisToInventory("Javelin x4");
+            
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");
+        }
+    }//GEN-LAST:event_toMiscFromBarbarianActionPerformed
+
+    private void simpleWeaponBarbarianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleWeaponBarbarianActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponBarbarianList.setModel(new DefaultListModel());
+        DefaultListModel listModel1 = (DefaultListModel)this.simpleWeaponBarbarianList.getModel();
+        listModel1.addElement("Club");
+        listModel1.addElement("Dagger");
+        listModel1.addElement("Greatclub");
+        listModel1.addElement("Handaxe");
+        listModel1.addElement("Javelin");
+        listModel1.addElement("Light Hammer");
+        listModel1.addElement("Mace");
+        listModel1.addElement("Quarterstaff");
+        listModel1.addElement("Sickle");
+        listModel1.addElement("Spear");
+        listModel1.addElement("Light Crossbow");
+        listModel1.addElement("Dart");
+        listModel1.addElement("Shortbow");
+        listModel1.addElement("Sling");
+    }//GEN-LAST:event_simpleWeaponBarbarianActionPerformed
+
+    private void handaxeBarbarianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handaxeBarbarianActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponBarbarianList.setModel(new DefaultListModel());
+    }//GEN-LAST:event_handaxeBarbarianActionPerformed
+
+    private void greataxeBarbarianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_greataxeBarbarianActionPerformed
+        // TODO add your handling code here:
+        this.martialWeaponBarbarianList.setModel(new DefaultListModel());
+    }//GEN-LAST:event_greataxeBarbarianActionPerformed
+
+    private void martialWeaponBarbarianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_martialWeaponBarbarianActionPerformed
+        // TODO add your handling code here:
+        this.martialWeaponBarbarianList.setModel(new DefaultListModel());
+        DefaultListModel listModel1 = (DefaultListModel)this.martialWeaponBarbarianList.getModel();
+        listModel1.addElement("Battleaxe");
+        listModel1.addElement("Flail");
+        listModel1.addElement("Glaive");
+        listModel1.addElement("Greatsword");
+        listModel1.addElement("Halberd");
+        listModel1.addElement("Lance");
+        listModel1.addElement("Longsword");
+        listModel1.addElement("Maul");
+        listModel1.addElement("Morningstar");
+        listModel1.addElement("Pike");
+        listModel1.addElement("Rapier");
+        listModel1.addElement("Scimitar");
+        listModel1.addElement("Shortsword");
+        listModel1.addElement("Trident");
+        listModel1.addElement("War Pick");
+        listModel1.addElement("Warhammer");
+        listModel1.addElement("Whip");
+        listModel1.addElement("Blowgun");
+        listModel1.addElement("Hand Crossbow");
+        listModel1.addElement("Heavy Crossbow");
+        listModel1.addElement("Longbow");
+        listModel1.addElement("Net");
+    }//GEN-LAST:event_martialWeaponBarbarianActionPerformed
+
+    private void simpleWeaponMonkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleWeaponMonkActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponMonkList.setModel(new DefaultListModel());
+        DefaultListModel listModel1 = (DefaultListModel)this.simpleWeaponMonkList.getModel();
+        listModel1.addElement("Club");
+        listModel1.addElement("Dagger");
+        listModel1.addElement("Greatclub");
+        listModel1.addElement("Handaxe");
+        listModel1.addElement("Javelin");
+        listModel1.addElement("Light Hammer");
+        listModel1.addElement("Mace");
+        listModel1.addElement("Quarterstaff");
+        listModel1.addElement("Sickle");
+        listModel1.addElement("Spear");
+        listModel1.addElement("Light Crossbow");
+        listModel1.addElement("Dart");
+        listModel1.addElement("Shortbow");
+        listModel1.addElement("Sling");
+    }//GEN-LAST:event_simpleWeaponMonkActionPerformed
+
+    private void shortswordMonkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shortswordMonkActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponMonkList.setModel(new DefaultListModel());
+    }//GEN-LAST:event_shortswordMonkActionPerformed
+
+    private void toMiscFromMonkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromMonkActionPerformed
+        // TODO add your handling code here:
+        boolean error1 = false;
+        boolean error2 = false;
+        boolean error3 = false;
+        
+        if(!this.shortswordMonk.isSelected() && !this.simpleWeaponMonk.isSelected())
+            error1 = true;
+        if(!this.dungeoneerPackMonk.isSelected() && !this.explorersPackMonk.isSelected())
+            error2 = true;
+        if(this.simpleWeaponMonk.isSelected() && this.simpleWeaponMonkList.isSelectionEmpty())
+            error3 = true;
+        
+        if(error1 || error2 || error3)
+            JOptionPane.showMessageDialog(null, "Must make selections before continuing");
+        else
+        {
+            //save selections and move on
+            if(this.shortswordMonk.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Shortsword");
+                this.newCharacter.addThisToInventory("Shortsword");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon(this.simpleWeaponMonkList.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.simpleWeaponMonkList.getSelectedValue().toString());
+            }
+            if(this.dungeoneerPackMonk.isSelected())
+            {
+                String[] items = Equipment.getDungeoneersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            else
+            {
+                String[] items = Equipment.getExplorersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            
+            this.newCharacter.addThisWeapon("Dart");
+            this.newCharacter.addThisToInventory("Darts x10");
+            this.newCharacter.addThisWeapon("Unarmed Strike");
+            
+            //get equipment from background
+            String[] items = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for(String item : items)
+                this.newCharacter.addThisToInventory(item);
+            
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");
+        }
+    }//GEN-LAST:event_toMiscFromMonkActionPerformed
+
+    private void toMiscFromWizardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromWizardActionPerformed
+        // TODO add your handling code here:
+        boolean error1 = false;
+        boolean error2 = false;
+        boolean error3 = false;
+        
+        if(!this.quarterstaffWizard.isSelected() && !this.daggerWizard.isSelected())
+            error1 = true;
+        if(!this.compWizard.isSelected() && !this.arcaneFocusWizard.isSelected())
+            error2 = true;
+        if(!this.scholarPackWizard.isSelected() && !this.explorerPackWizard.isSelected())
+            error3 = true;
+        
+        if(error1 || error2 || error3)
+            JOptionPane.showMessageDialog(null, "Must make selections before continuing");
+        else
+        {
+            //save selections and move on
+            if(this.quarterstaffWizard.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Quarterstaff");
+                this.newCharacter.addThisToInventory("Quarterstaff");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon("Dagger");
+                this.newCharacter.addThisToInventory("Dagger");
+            }
+            
+            if(this.compWizard.isSelected())
+                this.newCharacter.addThisToInventory("Component Pouch");
+            else
+                this.newCharacter.addThisToInventory("Arcane Focus");
+            
+            if(this.scholarPackWizard.isSelected())
+            {
+                String[] items = Equipment.getScholarsPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            else
+            {
+                String[] items = Equipment.getExplorersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            this.newCharacter.addThisToInventory("Spellbook");
+            
+            //add gear from background
+            String[] items = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for(String item : items)
+                this.newCharacter.addThisToInventory(item);
+            
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");
+        }
+    }//GEN-LAST:event_toMiscFromWizardActionPerformed
+
+    private void toMiscFromRogueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromRogueActionPerformed
+        // TODO add your handling code here:
+        boolean error1 = false;
+        boolean error2 = false;
+        boolean error3 = false;
+        
+        if(!this.rapierRogue.isSelected() && !this.shortswordRogue.isSelected())
+            error1 = true;
+        if(!this.shortbowRogue.isSelected() && !this.shortswordRogue2.isSelected())
+            error2 = true;
+        if(!this.burglerPackRogue.isSelected() && !this.explorerPackRogue.isSelected() && !this.dungeoneerPackRogue.isSelected())
+            error3 = true;
+        
+        if(error1 || error2 || error3)
+            JOptionPane.showMessageDialog(null, "Must make equipment selections before continuing.");
+        else
+        {
+            if(this.rapierRogue.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Rapier");
+                this.newCharacter.addThisToInventory("Rapier");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon("Shortsword");
+                this.newCharacter.addThisToInventory("Shortsword");
+            }
+            if(this.shortbowRogue.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Shortbow");
+                this.newCharacter.addThisToInventory("Shortbow");
+                this.newCharacter.addThisToInventory("20 arrows");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon("Shortsword");
+                this.newCharacter.addThisToInventory("Shortsword");
+            }
+            
+            if(this.explorerPackRogue.isSelected())
+            {
+                String[] items = Equipment.getExplorersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            else if(this.dungeoneerPackRogue.isSelected())
+            {
+                String[] items = Equipment.getDungeoneersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            else
+            {
+                String[] items = Equipment.getBurglarsPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            this.newCharacter.setArmor("Leather Armor");
+            this.newCharacter.addThisToInventory("Thieves' Tools");
+            this.newCharacter.addThisToInventory("Dagger x2");
+            this.newCharacter.addThisWeapon("Dagger");
+            
+            //add gear from background
+            String[] items = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for(String item : items)
+                this.newCharacter.addThisToInventory(item);
+            
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");  
+        }
+    }//GEN-LAST:event_toMiscFromRogueActionPerformed
+
+    private void simpleWeaponBardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleWeaponBardActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponBardList.setModel(new DefaultListModel());
+        DefaultListModel listModel1 = (DefaultListModel)this.simpleWeaponBardList.getModel();
+        listModel1.addElement("Club");
+        listModel1.addElement("Dagger");
+        listModel1.addElement("Greatclub");
+        listModel1.addElement("Handaxe");
+        listModel1.addElement("Javelin");
+        listModel1.addElement("Light Hammer");
+        listModel1.addElement("Mace");
+        listModel1.addElement("Quarterstaff");
+        listModel1.addElement("Sickle");
+        listModel1.addElement("Spear");
+        listModel1.addElement("Light Crossbow");
+        listModel1.addElement("Dart");
+        listModel1.addElement("Shortbow");
+        listModel1.addElement("Sling");
+    }//GEN-LAST:event_simpleWeaponBardActionPerformed
+
+    private void longswordBardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_longswordBardActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponBardList.setModel(new DefaultListModel());
+    }//GEN-LAST:event_longswordBardActionPerformed
+
+    private void rapierBardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rapierBardActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponBardList.setModel(new DefaultListModel());
+    }//GEN-LAST:event_rapierBardActionPerformed
+
+    private void instrumentBardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instrumentBardActionPerformed
+        // TODO add your handling code here:
+        //STOPPED HERE - ADD INSTRUMENTS TO LIST WHEN THIS RADIOBUTTON SELECTED
+        this.instrumentBardList.setModel(new DefaultListModel());
+        DefaultListModel listModel = (DefaultListModel)this.instrumentBardList.getModel();
+        listModel.addElement("Bagpipes");
+        listModel.addElement("Drum");
+        listModel.addElement("Dulcimer");
+        listModel.addElement("Flute");
+        listModel.addElement("Lyre");
+        listModel.addElement("Horn");
+        listModel.addElement("Pan Flute");
+        listModel.addElement("Shawm");
+        listModel.addElement("Viol");
+    }//GEN-LAST:event_instrumentBardActionPerformed
+
+    private void luteBardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luteBardActionPerformed
+        // TODO add your handling code here:
+        this.instrumentBardList.setModel(new DefaultListModel());
+    }//GEN-LAST:event_luteBardActionPerformed
+
+    private void toMiscFromBardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromBardActionPerformed
+        // TODO add your handling code here:
+        boolean error1 = false;
+        boolean error2 = false;
+        boolean error3 = false;
+        boolean error4 = false;
+        boolean error5 = false;
+        
+        if(!this.diplomatPackBard.isSelected() && !this.entertainerPackBard.isSelected())
+            error1 = true;
+        if(!this.rapierBard.isSelected() && !this.longswordBard.isSelected() && !this.simpleWeaponBard.isSelected())
+            error2 = true;
+        if(!this.luteBard.isSelected() && !this.instrumentBard.isSelected())
+            error3 = true;
+        if(this.simpleWeaponBard.isSelected() && this.simpleWeaponBardList.isSelectionEmpty())
+            error4 = true;
+        if(this.instrumentBard.isSelected() && this.instrumentBardList.isSelectionEmpty())
+            error5 = true;
+        
+        if(error1 || error2 || error3 || error4 || error5)
+            JOptionPane.showMessageDialog(null, "Must make equipment selections before continuing.");
+        else
+        {
+            //save selections and move on
+            if(this.diplomatPackBard.isSelected())
+            {
+                String[] items = Equipment.getDiplomatsPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            else
+            {
+                String[] items = Equipment.getEntertainersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            
+            if(this.rapierBard.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Rapier");
+                this.newCharacter.addThisToInventory("Rapier");
+            }
+            else if(this.longswordBard.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Longsword");
+                this.newCharacter.addThisToInventory("Rapier");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon(this.simpleWeaponBardList.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.simpleWeaponBardList.getSelectedValue().toString());
+            }
+            if(this.luteBard.isSelected())
+                this.newCharacter.addThisToInventory("Lute");
+            else
+                this.newCharacter.addThisToInventory(this.instrumentBardList.getSelectedValue().toString());
+            
+            this.newCharacter.setArmor("Leather Armor");
+            this.newCharacter.addThisToInventory("Leather Armor");
+            this.newCharacter.addThisWeapon("Dagger");
+            this.newCharacter.addThisToInventory("Dagger");
+            
+            //add gear from background
+            String[] items = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for(String item : items)
+                this.newCharacter.addThisToInventory(item);
+            
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");
+        }
+    }//GEN-LAST:event_toMiscFromBardActionPerformed
+
+    private void shieldFighterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shieldFighterActionPerformed
+        // TODO add your handling code here:
+        this.martialWeaponFighterList1.setModel(new DefaultListModel());
+        DefaultListModel listModel1 = (DefaultListModel)this.martialWeaponFighterList1.getModel();
+        listModel1.addElement("Battleaxe");
+        listModel1.addElement("Flail");
+        listModel1.addElement("Glaive");
+        listModel1.addElement("Greatsword");
+        listModel1.addElement("Halberd");
+        listModel1.addElement("Lance");
+        listModel1.addElement("Longsword");
+        listModel1.addElement("Maul");
+        listModel1.addElement("Morningstar");
+        listModel1.addElement("Pike");
+        listModel1.addElement("Rapier");
+        listModel1.addElement("Scimitar");
+        listModel1.addElement("Shortsword");
+        listModel1.addElement("Trident");
+        listModel1.addElement("War Pick");
+        listModel1.addElement("Warhammer");
+        listModel1.addElement("Whip");
+        listModel1.addElement("Blowgun");
+        listModel1.addElement("Hand Crossbow");
+        listModel1.addElement("Heavy Crossbow");
+        listModel1.addElement("Longbow");
+        listModel1.addElement("Net");
+        
+        this.martialWeaponFighterList2.setModel(new DefaultListModel());
+        this.martialWeaponFighterList3.setModel(new DefaultListModel());
+    }//GEN-LAST:event_shieldFighterActionPerformed
+
+    private void martialWeaponsFighterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_martialWeaponsFighterActionPerformed
+        // TODO add your handling code here:
+        this.martialWeaponFighterList2.setModel(new DefaultListModel());
+        DefaultListModel listModel1 = (DefaultListModel)this.martialWeaponFighterList2.getModel();
+        listModel1.addElement("Battleaxe");
+        listModel1.addElement("Flail");
+        listModel1.addElement("Glaive");
+        listModel1.addElement("Greatsword");
+        listModel1.addElement("Halberd");
+        listModel1.addElement("Lance");
+        listModel1.addElement("Longsword");
+        listModel1.addElement("Maul");
+        listModel1.addElement("Morningstar");
+        listModel1.addElement("Pike");
+        listModel1.addElement("Rapier");
+        listModel1.addElement("Scimitar");
+        listModel1.addElement("Shortsword");
+        listModel1.addElement("Trident");
+        listModel1.addElement("War Pick");
+        listModel1.addElement("Warhammer");
+        listModel1.addElement("Whip");
+        listModel1.addElement("Blowgun");
+        listModel1.addElement("Hand Crossbow");
+        listModel1.addElement("Heavy Crossbow");
+        listModel1.addElement("Longbow");
+        listModel1.addElement("Net");
+        
+        this.martialWeaponFighterList3.setModel(new DefaultListModel());
+        DefaultListModel listModel2 = (DefaultListModel)this.martialWeaponFighterList3.getModel();
+        listModel2.addElement("Battleaxe");
+        listModel2.addElement("Flail");
+        listModel2.addElement("Glaive");
+        listModel2.addElement("Greatsword");
+        listModel2.addElement("Halberd");
+        listModel2.addElement("Lance");
+        listModel2.addElement("Longsword");
+        listModel2.addElement("Maul");
+        listModel2.addElement("Morningstar");
+        listModel2.addElement("Pike");
+        listModel2.addElement("Rapier");
+        listModel2.addElement("Scimitar");
+        listModel2.addElement("Shortsword");
+        listModel2.addElement("Trident");
+        listModel2.addElement("War Pick");
+        listModel2.addElement("Warhammer");
+        listModel2.addElement("Whip");
+        listModel2.addElement("Blowgun");
+        listModel2.addElement("Hand Crossbow");
+        listModel2.addElement("Heavy Crossbow");
+        listModel2.addElement("Longbow");
+        listModel2.addElement("Net");
+        
+        this.martialWeaponFighterList1.setModel(new DefaultListModel());
+    }//GEN-LAST:event_martialWeaponsFighterActionPerformed
+
+    private void toMiscFromFighterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromFighterActionPerformed
+        // TODO add your handling code here:
+        boolean error1 = false;
+        boolean error2 = false;
+        boolean error3 = false;
+        boolean error4 = false;
+        boolean error5 = false;
+        boolean error6 = false;
+        boolean error7 = false;
+        
+        if(!this.chainMailFighter.isSelected() && !this.leatherArmorFighter.isSelected())
+            error1 = true;
+        if(!this.shieldFighter.isSelected() && !this.martialWeaponsFighter.isSelected())
+            error2 = true;
+        if(!this.lightCrossbowFighter.isSelected() && !this.handaxeFighter.isSelected())
+            error3 = true;
+        if(!this.dungeoneerPackFighter.isSelected() && !this.explorerPackFighter.isSelected())
+            error4 = true;
+        if(this.shieldFighter.isSelected() && this.martialWeaponFighterList1.isSelectionEmpty())
+            error5 =true;
+        if(this.martialWeaponsFighter.isSelected() && this.martialWeaponFighterList2.isSelectionEmpty())
+            error6 = true;
+        if(this.martialWeaponsFighter.isSelected() && this.martialWeaponFighterList3.isSelectionEmpty())
+            error7 = true;
+        
+        if(error1 || error2 || error3 || error4 || error5 || error6 || error7)
+            JOptionPane.showMessageDialog(null, "Must make equipment selections before continuing.");
+        else
+        {
+            //save selections and move on
+            if(this.chainMailFighter.isSelected())
+            {
+                this.newCharacter.setArmor("Chain Mail");
+                this.newCharacter.addThisToInventory("Chain Mail");
+            }
+            else
+            {
+                this.newCharacter.setArmor("Leather Armor");
+                this.newCharacter.addThisToInventory("Leather Armor");
+                this.newCharacter.addThisWeapon("Longbow");
+                this.newCharacter.addThisToInventory("Longbow");
+                this.newCharacter.addThisToInventory("arrows x20");
+            }
+            
+            if(this.lightCrossbowFighter.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Light Crossbow");
+                this.newCharacter.addThisToInventory("bolts x20");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon("Handaxe");
+                this.newCharacter.addThisToInventory("Handaxe x2");
+            }
+            
+            if(this.shieldFighter.isSelected())
+            {
+                this.newCharacter.setShield("Shield");
+                this.newCharacter.addThisToInventory("Shield");
+                this.newCharacter.addThisWeapon(this.martialWeaponFighterList1.getSelectedValue().toString());   
+                this.newCharacter.addThisToInventory(this.martialWeaponFighterList1.getSelectedValue().toString());
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon(this.martialWeaponFighterList2.getSelectedValue().toString());
+                this.newCharacter.addThisWeapon(this.martialWeaponFighterList3.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.martialWeaponFighterList2.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.martialWeaponFighterList3.getSelectedValue().toString());
+            }
+            
+            if(this.dungeoneerPackFighter.isSelected())
+            {
+                String[] items = Equipment.getDungeoneersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            else
+            {
+                String[] items = Equipment.getExplorersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            
+            //add gear from background
+            String[] items = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for(String item : items)
+                this.newCharacter.addThisToInventory(item);
+            
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");
+        }
+    }//GEN-LAST:event_toMiscFromFighterActionPerformed
+
+    private void simpleWeaponSorcererActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleWeaponSorcererActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponSorcererList.setModel(new DefaultListModel());
+        DefaultListModel listModel = (DefaultListModel)this.simpleWeaponSorcererList.getModel();
+        listModel.addElement("Club");
+        listModel.addElement("Dagger");
+        listModel.addElement("Greatclub");
+        listModel.addElement("Handaxe");
+        listModel.addElement("Javelin");
+        listModel.addElement("Light Hammer");
+        listModel.addElement("Mace");
+        listModel.addElement("Quarterstaff");
+        listModel.addElement("Sickle");
+        listModel.addElement("Spear");
+        listModel.addElement("Light Crossbow");
+        listModel.addElement("Dart");
+        listModel.addElement("Shortbow");
+        listModel.addElement("Sling");
+    }//GEN-LAST:event_simpleWeaponSorcererActionPerformed
+
+    private void lightCrossbowSorcererActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lightCrossbowSorcererActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponSorcererList.setModel(new DefaultListModel());
+    }//GEN-LAST:event_lightCrossbowSorcererActionPerformed
+
+    private void toMiscFromSorcererActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromSorcererActionPerformed
+        // TODO add your handling code here:
+        boolean error1 = false;
+        boolean error2 = false;
+        boolean error3 = false;
+        boolean error4 = false;
+        
+        if(!this.lightCrossbowSorcerer.isSelected() && !this.simpleWeaponSorcerer.isSelected())
+            error1 = true;
+        if(!this.componentPouchSorcerer.isSelected() && !this.arcaneFocusSorcerer.isSelected())
+            error2 = true;
+        if(!this.dungeoneerPackSorcerer.isSelected() && !this.explorerPackSorcerer.isSelected())
+            error3 = true;
+        if(this.simpleWeaponSorcerer.isSelected() && this.simpleWeaponSorcererList.isSelectionEmpty())
+            error4 = true;
+        
+        if(error1 || error2 || error3 || error4)
+            JOptionPane.showMessageDialog(null, "Must make equipment selections before continuing.");
+        else
+        {
+            //save selections and move on
+            if(this.lightCrossbowSorcerer.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Light Crossbow");
+                this.newCharacter.addThisToInventory("Light Crossbow");
+                this.newCharacter.addThisToInventory("20 bolts");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon(this.simpleWeaponSorcererList.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.simpleWeaponSorcererList.getSelectedValue().toString());
+            }
+            if(this.componentPouchSorcerer.isSelected())
+                this.newCharacter.addThisToInventory("Component Pouch");
+            else
+                this.newCharacter.addThisToInventory("Arcane Focus");
+            
+            if(this.dungeoneerPackSorcerer.isSelected())
+            {
+                String[] items = Equipment.getDungeoneersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            else
+            {
+                String[] items = Equipment.getExplorersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            this.newCharacter.addThisToInventory("Dagger x2");
+            this.newCharacter.addThisWeapon("Dagger");
+            
+            //add gear from background
+            String[] items = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for(String item : items)
+                this.newCharacter.addThisToInventory(item);
+            
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");
+        }
+    }//GEN-LAST:event_toMiscFromSorcererActionPerformed
+
+    private void lightCrossbowWarlockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lightCrossbowWarlockActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponWarlockList.setModel(new DefaultListModel());
+    }//GEN-LAST:event_lightCrossbowWarlockActionPerformed
+
+    private void simpleWeaponWarlockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleWeaponWarlockActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponWarlockList.setModel(new DefaultListModel());
+        DefaultListModel listModel = (DefaultListModel)this.simpleWeaponWarlockList.getModel();
+        listModel.addElement("Club");
+        listModel.addElement("Dagger");
+        listModel.addElement("Greatclub");
+        listModel.addElement("Handaxe");
+        listModel.addElement("Javelin");
+        listModel.addElement("Light Hammer");
+        listModel.addElement("Mace");
+        listModel.addElement("Quarterstaff");
+        listModel.addElement("Sickle");
+        listModel.addElement("Spear");
+        listModel.addElement("Light Crossbow");
+        listModel.addElement("Dart");
+        listModel.addElement("Shortbow");
+        listModel.addElement("Sling");
+    }//GEN-LAST:event_simpleWeaponWarlockActionPerformed
+
+    private void toMiscFromWarlockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromWarlockActionPerformed
+        // TODO add your handling code here:
+        boolean error1 = false;
+        boolean error2 = false;
+        boolean error3 = false;
+        boolean error4 = false;
+        
+        if(!this.lightCrossbowWarlock.isSelected() && !this.simpleWeaponWarlock.isSelected())
+            error1 = true;
+        if(this.simpleWeaponWarlock.isSelected() && this.simpleWeaponWarlockList.isSelectionEmpty())
+            error2 = true;
+        if(!this.componentPouchWarlock.isSelected() && !this.arcaneFocusWarlock.isSelected())
+            error3 = true;
+        if(!this.scholarPackWarlock.isSelected() && !this.dungeoneerPackWarlock.isSelected())
+            error4 = true;
+        
+        if(error1 || error2 || error3 || error4)
+            JOptionPane.showMessageDialog(null, "Must make equipment selections before continuing.");
+        else
+        {
+            //save selections and move on
+            if(this.lightCrossbowWarlock.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Light Crossbow");
+                this.newCharacter.addThisToInventory("Light Crossbow");
+                this.newCharacter.addThisToInventory("20 bolts");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon(this.simpleWeaponWarlockList.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.simpleWeaponWarlockList.getSelectedValue().toString());
+            }
+            if(this.componentPouchWarlock.isSelected())
+                this.newCharacter.addThisToInventory("Component Pouch");
+            else
+                this.newCharacter.addThisToInventory("Arcane Focus");
+            
+            if(this.scholarPackWarlock.isSelected())
+            {
+                String[] items = Equipment.getScholarsPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            else
+            {
+                String[] items = Equipment.getDungeoneersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            this.newCharacter.setArmor("Leather Armor");
+            this.newCharacter.addThisToInventory("Leather Armor");
+            this.newCharacter.addThisToInventory("Dagger x2");
+            this.newCharacter.addThisWeapon("Dagger");
+            
+            //add gear from background
+            String[] items = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for(String item : items)
+                this.newCharacter.addThisToInventory(item);
+            
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");
+        }
+    }//GEN-LAST:event_toMiscFromWarlockActionPerformed
+
+    private void simpleWeaponsRangerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleWeaponsRangerActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponRangerList1.setModel(new DefaultListModel());
+        this.simpleWeaponRangerList2.setModel(new DefaultListModel());
+        DefaultListModel listModel1 = (DefaultListModel)this.simpleWeaponRangerList1.getModel();
+        DefaultListModel listModel2 = (DefaultListModel)this.simpleWeaponRangerList2.getModel();
+        listModel1.addElement("Club");
+        listModel1.addElement("Dagger");
+        listModel1.addElement("Greatclub");
+        listModel1.addElement("Handaxe");
+        listModel1.addElement("Javelin");
+        listModel1.addElement("Light Hammer");
+        listModel1.addElement("Mace");
+        listModel1.addElement("Quarterstaff");
+        listModel1.addElement("Sickle");
+        listModel1.addElement("Spear");
+        listModel2.addElement("Club");
+        listModel2.addElement("Dagger");
+        listModel2.addElement("Greatclub");
+        listModel2.addElement("Handaxe");
+        listModel2.addElement("Javelin");
+        listModel2.addElement("Light Hammer");
+        listModel2.addElement("Mace");
+        listModel2.addElement("Quarterstaff");
+        listModel2.addElement("Sickle");
+        listModel2.addElement("Spear");
+    }//GEN-LAST:event_simpleWeaponsRangerActionPerformed
+
+    private void shortswordsRangerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shortswordsRangerActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponRangerList1.setModel(new DefaultListModel());
+        this.simpleWeaponRangerList2.setModel(new DefaultListModel());
+    }//GEN-LAST:event_shortswordsRangerActionPerformed
+
+    private void toMiscFromRangerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromRangerActionPerformed
+        // TODO add your handling code here:
+        boolean error1 = false;
+        boolean error2 = false;
+        boolean error3 = false;
+        boolean error4 = false;
+        boolean error5 = false;
+        
+        if(!this.scaleMailRanger.isSelected() && !this.leatherArmorRanger.isSelected())
+            error1 = true;
+        if(!this.shortswordsRanger.isSelected() && !this.simpleWeaponsRanger.isSelected())
+            error2 = true;
+        if(!this.dungeoneerPackRanger.isSelected() && !this.explorerPackRanger.isSelected())
+            error3 = true;
+        if(this.simpleWeaponsRanger.isSelected() && this.simpleWeaponRangerList1.isSelectionEmpty())
+            error4 = true;
+        if(this.simpleWeaponsRanger.isSelected() && this.simpleWeaponRangerList2.isSelectionEmpty())
+            error5 = true;
+        
+        if(error1 || error2 || error3 || error4 || error5)
+            JOptionPane.showMessageDialog(null, "Must make equipment selections before continuing.");
+        else
+        {
+            //save selections and move on
+            if(this.scaleMailRanger.isSelected())
+            {
+                this.newCharacter.setArmor("Scale Mail");
+                this.newCharacter.addThisToInventory("Scale Mail");
+            }
+            else
+            {
+                this.newCharacter.setArmor("Leather Armor");
+                this.newCharacter.addThisToInventory("Leather Armor");
+            }
+            
+            if(this.shortswordsRanger.isSelected())
+            {
+                this.newCharacter.addThisWeapon("Shortsword");
+                this.newCharacter.addThisToInventory("Shortsword x2");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon(this.simpleWeaponRangerList1.getSelectedValue().toString());
+                this.newCharacter.addThisWeapon(this.simpleWeaponRangerList2.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.simpleWeaponRangerList1.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.simpleWeaponRangerList2.getSelectedValue().toString());
+            }
+            
+            if(this.explorerPackRanger.isSelected())
+            {
+                String[] items = Equipment.getExplorersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            else
+            {
+                String[] items = Equipment.getDungeoneersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            this.newCharacter.addThisWeapon("Longbow");
+            this.newCharacter.addThisToInventory("Longbow");
+            this.newCharacter.addThisToInventory("arrows x20");
+            
+            //add gear from background
+            String[] items = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for(String item : items)
+                this.newCharacter.addThisToInventory(item);
+            
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");
+        }
+    }//GEN-LAST:event_toMiscFromRangerActionPerformed
+
+    private void simpleWeaponPaladinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpleWeaponPaladinActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponPaladinList.setModel(new DefaultListModel());
+        DefaultListModel listModel = (DefaultListModel)this.simpleWeaponPaladinList.getModel();
+        listModel.addElement("Club");
+        listModel.addElement("Dagger");
+        listModel.addElement("Greatclub");
+        listModel.addElement("Handaxe");
+        listModel.addElement("Javelin");
+        listModel.addElement("Light Hammer");
+        listModel.addElement("Mace");
+        listModel.addElement("Quarterstaff");
+        listModel.addElement("Sickle");
+        listModel.addElement("Spear");
+    }//GEN-LAST:event_simpleWeaponPaladinActionPerformed
+
+    private void javelinPaladinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_javelinPaladinActionPerformed
+        // TODO add your handling code here:
+        this.simpleWeaponPaladinList.setModel(new DefaultListModel());
+    }//GEN-LAST:event_javelinPaladinActionPerformed
+
+    private void martialWeaponPaladin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_martialWeaponPaladin1ActionPerformed
+        // TODO add your handling code here:
+        this.martialWeaponPaladinList1.setModel(new DefaultListModel());
+        DefaultListModel listModel = (DefaultListModel)this.martialWeaponPaladinList1.getModel();
+        listModel.addElement("Battleaxe");
+        listModel.addElement("Flail");
+        listModel.addElement("Glaive");
+        listModel.addElement("Greatsword");
+        listModel.addElement("Halberd");
+        listModel.addElement("Lance");
+        listModel.addElement("Longsword");
+        listModel.addElement("Maul");
+        listModel.addElement("Morningstar");
+        listModel.addElement("Pike");
+        listModel.addElement("Rapier");
+        listModel.addElement("Scimitar");
+        listModel.addElement("Shortsword");
+        listModel.addElement("Trident");
+        listModel.addElement("War Pick");
+        listModel.addElement("Warhammer");
+        listModel.addElement("Whip");
+        listModel.addElement("Blowgun");
+        listModel.addElement("Hand Crossbow");
+        listModel.addElement("Heavy Crossbow");
+        listModel.addElement("Longbow");
+        listModel.addElement("Net");
+        this.martialWeaponPaladinList2.setModel(new DefaultListModel());
+        this.martialWeaponPaladinList3.setModel(new DefaultListModel());
+    }//GEN-LAST:event_martialWeaponPaladin1ActionPerformed
+
+    private void martialWeaponPaladin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_martialWeaponPaladin2ActionPerformed
+        // TODO add your handling code here:
+        this.martialWeaponPaladinList2.setModel(new DefaultListModel());
+        this.martialWeaponPaladinList3.setModel(new DefaultListModel());
+        DefaultListModel listModel1 = (DefaultListModel)this.martialWeaponPaladinList2.getModel();
+        DefaultListModel listModel2 = (DefaultListModel)this.martialWeaponPaladinList3.getModel();
+        
+        listModel1.addElement("Battleaxe");
+        listModel1.addElement("Flail");
+        listModel1.addElement("Glaive");
+        listModel1.addElement("Greatsword");
+        listModel1.addElement("Halberd");
+        listModel1.addElement("Lance");
+        listModel1.addElement("Longsword");
+        listModel1.addElement("Maul");
+        listModel1.addElement("Morningstar");
+        listModel1.addElement("Pike");
+        listModel1.addElement("Rapier");
+        listModel1.addElement("Scimitar");
+        listModel1.addElement("Shortsword");
+        listModel1.addElement("Trident");
+        listModel1.addElement("War Pick");
+        listModel1.addElement("Warhammer");
+        listModel1.addElement("Whip");
+        listModel1.addElement("Blowgun");
+        listModel1.addElement("Hand Crossbow");
+        listModel1.addElement("Heavy Crossbow");
+        listModel1.addElement("Longbow");
+        listModel1.addElement("Net");
+        
+        listModel2.addElement("Battleaxe");
+        listModel2.addElement("Flail");
+        listModel2.addElement("Glaive");
+        listModel2.addElement("Greatsword");
+        listModel2.addElement("Halberd");
+        listModel2.addElement("Lance");
+        listModel2.addElement("Longsword");
+        listModel2.addElement("Maul");
+        listModel2.addElement("Morningstar");
+        listModel2.addElement("Pike");
+        listModel2.addElement("Rapier");
+        listModel2.addElement("Scimitar");
+        listModel2.addElement("Shortsword");
+        listModel2.addElement("Trident");
+        listModel2.addElement("War Pick");
+        listModel2.addElement("Warhammer");
+        listModel2.addElement("Whip");
+        listModel2.addElement("Blowgun");
+        listModel2.addElement("Hand Crossbow");
+        listModel2.addElement("Heavy Crossbow");
+        listModel2.addElement("Longbow");
+        listModel2.addElement("Net");
+        
+        this.martialWeaponPaladinList1.setModel(new DefaultListModel());
+    }//GEN-LAST:event_martialWeaponPaladin2ActionPerformed
+
+    private void toMiscFromPaladinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toMiscFromPaladinActionPerformed
+        // TODO add your handling code here:
+        boolean error1 = false;
+        boolean error2 = false;
+        boolean error3 = false;
+        boolean error4 = false;
+        boolean error5 = false;
+        boolean error6 = false;
+        boolean error7 = false;
+        
+        if(!this.priestPackPaladin.isSelected() && !this.explorerPackPaladin.isSelected())
+            error1 = true;
+        if(!this.martialWeaponPaladin1.isSelected() && !this.martialWeaponPaladin2.isSelected())
+            error2 = true;
+        if(!this.javelinPaladin.isSelected() && !this.simpleWeaponPaladin.isSelected())
+            error3 = true;
+        if(this.simpleWeaponPaladin.isSelected() && this.simpleWeaponPaladinList.isSelectionEmpty())
+            error4 = true;
+        if(this.martialWeaponPaladin1.isSelected() && this.martialWeaponPaladinList1.isSelectionEmpty())
+            error5 = true;
+        if(this.martialWeaponPaladin2.isSelected() && this.martialWeaponPaladinList2.isSelectionEmpty())
+            error6 = true;
+        if(this.martialWeaponPaladin2.isSelected() && this.martialWeaponPaladinList3.isSelectionEmpty())
+            error7 = true;
+        
+        if(error1 || error2 || error3 || error4 || error5 || error6 || error7)
+            JOptionPane.showMessageDialog(null, "Must make equipment selections before continuing.");
+        else
+        {
+            //save selections and move on
+            if(this.explorerPackPaladin.isSelected())
+            {
+                String[] items = Equipment.getExplorersPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            else
+            {
+                String[] items = Equipment.getPriestsPack();
+                for(String item : items)
+                    this.newCharacter.addThisToInventory(item);
+            }
+            
+            if(this.javelinPaladin.isSelected())
+            {
+                this.newCharacter.addThisToInventory("Javelin x5");
+                this.newCharacter.addThisWeapon("Javelin");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon(this.simpleWeaponPaladinList.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.simpleWeaponPaladinList.getSelectedValue().toString());
+            }
+            if(this.martialWeaponPaladin1.isSelected())
+            {
+                this.newCharacter.addThisWeapon(this.martialWeaponPaladinList1.getSelectedValue().toString());
+                this.newCharacter.setShield("Shield");
+                this.newCharacter.addThisToInventory(this.martialWeaponPaladinList1.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory("Shield");
+            }
+            else
+            {
+                this.newCharacter.addThisWeapon(this.martialWeaponPaladinList2.getSelectedValue().toString());
+                this.newCharacter.addThisWeapon(this.martialWeaponPaladinList3.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.martialWeaponPaladinList2.getSelectedValue().toString());
+                this.newCharacter.addThisToInventory(this.martialWeaponPaladinList3.getSelectedValue().toString());
+            }
+            this.newCharacter.setArmor("Chain Mail");
+            this.newCharacter.addThisToInventory("Chain Mail");
+            this.newCharacter.addThisToInventory("Holy Symbol");
+            
+            //add gear from background
+            String[] items = Equipment.getBackgroundGear(this.newCharacter.getBackground());
+            for(String item : items)
+                this.newCharacter.addThisToInventory(item);
+            
+            CardLayout card = (CardLayout)mainPanel.getLayout();
+            card.show(mainPanel,"miscellaneousPanel");
+        }
+                   
+    }//GEN-LAST:event_toMiscFromPaladinActionPerformed
+
+    private void finalizeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizeButtonActionPerformed
+        
+        //add cantrips given by racial choice
+        if(this.newCharacter.getRace().equals("Dark Elf (Drow)"))
+        {
+            boolean hasCantrip = false;
+            ArrayList<String> cantrips = this.newCharacter.getCantrips();
+            for(String cantrip : cantrips)
+            {
+                if(cantrip.equals("Dancing Lights"))
+                    hasCantrip = true;
+            }
+            if(!hasCantrip)
+                this.newCharacter.addThisCantrip("Dancing Lights");     
+        }
+        if(this.newCharacter.getRace().equals("Tiefling"))
+        {
+            boolean hasCantrip = false;
+            ArrayList<String> cantrips = this.newCharacter.getCantrips();
+            for(String cantrip : cantrips)
+            {
+                if(cantrip.equals("Thaumaturgy"))
+                    hasCantrip = true;
+            }
+            if(!hasCantrip)
+                this.newCharacter.addThisCantrip("Thaumaturgy");
+        }
+        if(this.newCharacter.getRace().equals("Forest Gnome"))
+        {
+            boolean hasCantrip = false;
+            ArrayList<String> cantrips = this.newCharacter.getCantrips();
+            for(String cantrip : cantrips)
+            {
+                if(cantrip.equals("Minor Illusion"))
+                    hasCantrip = true;
+            }
+            if(!hasCantrip)
+                this.newCharacter.addThisCantrip("Minor Illusion");
+        }
+        
+        //compute the rest of the stats
+        this.newCharacter.computeRest();
+        this.saveCharacterFile.setEnabled(true);
+        this.finalizeButton.setEnabled(false);
+    }//GEN-LAST:event_finalizeButtonActionPerformed
+
+    private void fromHighElfPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fromHighElfPanelActionPerformed
+        // TODO add your handling code here:
+        int cantripsChosen = 0;
+        
+        if(this.acidSplashWizard1.isSelected())
+            cantripsChosen++;
+        if(this.bladeWardWizard1.isSelected())
+            cantripsChosen++;
+        if(this.chillTouchWizard1.isSelected())
+            cantripsChosen++;
+        if(this.dancingLightsWizard1.isSelected())
+            cantripsChosen++;
+        if(this.fireBoltWizard1.isSelected())
+            cantripsChosen++;
+        if(this.friendsWizard1.isSelected())
+            cantripsChosen++;
+        if(this.lightWizard1.isSelected())
+            cantripsChosen++;
+        if(this.mageHandWizard1.isSelected())
+            cantripsChosen++;
+        if(this.mendingWizard1.isSelected())
+            cantripsChosen++;
+        if(this.messageWizard1.isSelected())
+            cantripsChosen++;
+        if(this.minorIllusionWizard1.isSelected())
+            cantripsChosen++;
+        if(this.poisonSprayWizard1.isSelected())
+            cantripsChosen++;
+        if(this.prestidigitationWizard1.isSelected())
+            cantripsChosen++;
+        if(this.rayOfFrostWizard1.isSelected())
+            cantripsChosen++;
+        if(this.shockingGraspWizard1.isSelected())
+            cantripsChosen++;
+        if(this.trueStrikeWizard1.isSelected())
+            cantripsChosen++;
+        
+        if(cantripsChosen != 1)
+            JOptionPane.showMessageDialog(null, "Must select 1 Wizard Cantrip");
+        else
+        {
+            if(this.acidSplashWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Acid Splash");
+            if(this.bladeWardWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Blade Ward");
+            if(this.chillTouchWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Chill Touch");
+            if(this.dancingLightsWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Dancing Lights");
+            if(this.fireBoltWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Fire Bolt");
+            if(this.friendsWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Friends");
+            if(this.lightWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Light");
+            if(this.mageHandWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Mage Hand");
+            if(this.mendingWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Mending");
+            if(this.messageWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Message");
+            if(this.minorIllusionWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Minor Illusion");
+            if(this.poisonSprayWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Poison Spray");
+            if(this.prestidigitationWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Prestidigitation");
+            if(this.rayOfFrostWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Ray of Frost");
+            if(this.shockingGraspWizard1.isSelected())
+                this.newCharacter.addThisCantrip("Shocking Grasp");
+            if(this.trueStrikeWizard1.isSelected())
+                this.newCharacter.addThisCantrip("True Strike");
+            
+            if(this.newCharacter.getPlayerClass().equals("Cleric"))
+            {
+                this.clericArcanaCheck.setEnabled(false);
+                this.clericHistoryCheck.setEnabled(false);
+                this.clericNatureCheck.setEnabled(false);
+                this.clericReligionCheck.setEnabled(false);
+                this.clericAnimalHandlingRadio.setEnabled(false);
+                this.clericSurvivalRadio.setEnabled(false);
+                this.clericNatureRadio.setEnabled(false);
+                CardLayout card = (CardLayout)mainPanel.getLayout();
+                card.show(mainPanel, "clericDomainPanel");
+            }
+            else if(this.newCharacter.getPlayerClass().equals("Fighter"))
+            {
+                CardLayout card = (CardLayout)mainPanel.getLayout();
+                card.show(mainPanel, "fightingStylePanel");
+            }
+            else if(this.newCharacter.getPlayerClass().equals("Sorcerer"))
+            {
+                CardLayout card = (CardLayout)mainPanel.getLayout();
+                card.show(mainPanel, "sorcerousOriginPanel");
+                this.blueRadio.setEnabled(false);
+                this.blackRadio.setEnabled(false);
+                this.redRadio.setEnabled(false);
+                this.whiteRadio.setEnabled(false);
+                this.brassRadio.setEnabled(false);
+                this.bronzeRadio.setEnabled(false);
+                this.copperRadio.setEnabled(false);
+                this.goldRadio.setEnabled(false);
+                this.silverRadio.setEnabled(false);
+                this.greenRadio.setEnabled(false);
+            }
+            else if(this.newCharacter.getPlayerClass().equals("Ranger"))
+            {
+                CardLayout card = (CardLayout)mainPanel.getLayout();
+                card.show(mainPanel, "favoredEnemyPanel");
+            }
+            else if(this.newCharacter.getPlayerClass().equals("Warlock"))
+            {
+                CardLayout card = (CardLayout)mainPanel.getLayout();
+                card.show(mainPanel, "otherworldlyPatronPanel");
+            }
+            else
+            {
+                CardLayout card = (CardLayout)mainPanel.getLayout();
+                card.show(mainPanel, "statPanel");
+            }
+        }
+    }//GEN-LAST:event_fromHighElfPanelActionPerformed
+
+    private void saveCharacterFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveCharacterFileActionPerformed
+        // TODO add your handling code here:
+        
+        File desktop = new File(System.getProperty("user.home"), "Desktop");
+        String desktopFilePath = desktop.getAbsolutePath() + "/" + this.newCharacter.getCharacterName() + ".txt";
+        
+        CharacterWriter cw = new CharacterWriter(desktopFilePath, this.newCharacter);
+        cw.createCharacterFile();
+        JOptionPane.showMessageDialog(null, "File has been saved to Desktop");
+        
+    }//GEN-LAST:event_saveCharacterFileActionPerformed
+
+    private void rollForScoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rollForScoresActionPerformed
+        // TODO add your handling code here:
+        this.rollStatsButton.setEnabled(true);
+        this.firstStatLabel.setText("0");
+        this.secondStatLabel.setText("0");
+        this.thirdStatLabel.setText("0");
+        this.fourthStatLabel.setText("0");
+        this.fifthStatLabel.setText("0");
+        this.sixthStatLabel.setText("0");
+        this.firstStatField.setText("");
+        this.secondStatField.setText("");
+        this.thirdStatField.setText("");
+        this.fourthStatField.setText("");
+        this.fifthStatField.setText("");
+        this.sixthStatField.setText("");
+        this.firstStatField.setEditable(false);
+        this.secondStatField.setEditable(false);
+        this.thirdStatField.setEditable(false);
+        this.fourthStatField.setEditable(false);
+        this.fifthStatField.setEditable(false);
+        this.sixthStatField.setEditable(false);
+    }//GEN-LAST:event_rollForScoresActionPerformed
+
+    private void defaultArrayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_defaultArrayActionPerformed
+        // TODO add your handling code here:
+        this.rollStatsButton.setEnabled(false);
+        this.firstStatLabel.setText("15");
+        this.secondStatLabel.setText("14");
+        this.thirdStatLabel.setText("13");
+        this.fourthStatLabel.setText("12");
+        this.fifthStatLabel.setText("10");
+        this.sixthStatLabel.setText("8");
+        this.newCharacter.setStatRolls(0, 15);
+        this.newCharacter.setStatRolls(1, 14);
+        this.newCharacter.setStatRolls(2, 13);
+        this.newCharacter.setStatRolls(3, 12);
+        this.newCharacter.setStatRolls(4, 10);
+        this.newCharacter.setStatRolls(5, 8);
+        this.firstStatField.setText("");
+        this.secondStatField.setText("");
+        this.thirdStatField.setText("");
+        this.fourthStatField.setText("");
+        this.fifthStatField.setText("");
+        this.sixthStatField.setText("");
+        this.firstStatField.setEditable(false);
+        this.secondStatField.setEditable(false);
+        this.thirdStatField.setEditable(false);
+        this.fourthStatField.setEditable(false);
+        this.fifthStatField.setEditable(false);
+        this.sixthStatField.setEditable(false);
+    }//GEN-LAST:event_defaultArrayActionPerformed
+
+    private void manualEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manualEntryActionPerformed
+        // TODO add your handling code here:
+        this.rollStatsButton.setEnabled(false);
+        this.firstStatField.setEditable(true);
+        this.secondStatField.setEditable(true);
+        this.thirdStatField.setEditable(true);
+        this.fourthStatField.setEditable(true);
+        this.fifthStatField.setEditable(true);
+        this.sixthStatField.setEditable(true);
+        this.firstStatLabel.setText("-");
+        this.secondStatLabel.setText("-");
+        this.thirdStatLabel.setText("-");
+        this.fourthStatLabel.setText("-");
+        this.fifthStatLabel.setText("-");
+        this.sixthStatLabel.setText("-");
+    }//GEN-LAST:event_manualEntryActionPerformed
+
+    private void raceListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_raceListValueChanged
+        // TODO add your handling code here:
+        JList source = (JList)evt.getSource();
+        String selected = source.getSelectedValue().toString();
+        raceLabel.setText(selected);
+        if(selected.equals("Hill Dwarf"))
+        {
+            raceStatLabel1.setText("Con +2");
+            raceStatLabel2.setText("Wis +1");
+        }
+        else if(selected.equals("Mountain Dwarf"))
+        {
+            raceStatLabel1.setText("Con +2");
+            raceStatLabel2.setText("Str +2");
+        }
+        else if(selected.equals("High Elf"))
+        {
+            raceStatLabel1.setText("Dex +2");
+            raceStatLabel2.setText("Int +1");
+        }
+        else if(selected.equals("Wood Elf"))
+        {
+            raceStatLabel1.setText("Dex +2");
+            raceStatLabel2.setText("Wis +1");
+        }
+        else if(selected.equals("Dark Elf (Drow)"))
+        {
+            raceStatLabel1.setText("Dex +2");
+            raceStatLabel2.setText("Cha +1");
+        }
+        else if(selected.equals("Lightfoot Halfling"))
+        {
+            raceStatLabel1.setText("Dex +2");
+            raceStatLabel2.setText("Cha +1");
+        }
+        else if(selected.equals("Stout Halfling"))
+        {
+            raceStatLabel1.setText("Dex +2");
+            raceStatLabel2.setText("Con +1");
+        }
+        else if(selected.equals("Human"))
+        {
+            raceStatLabel1.setText("All +1");
+            raceStatLabel2.setText("");
+        }
+        else if(selected.equals("Human (Variant)"))
+        {
+            raceStatLabel1.setText("Choose two +1");
+            raceStatLabel2.setText("");
+        }
+        else if(selected.equals("Forest Gnome"))
+        {
+            raceStatLabel1.setText("Int +2");
+            raceStatLabel2.setText("Dex +1");
+        }
+        else if(selected.equals("Rock Gnome"))
+        {
+            raceStatLabel1.setText("Int +2");
+            raceStatLabel2.setText("Con +1");
+        }
+        else if(selected.equals("Half-Elf"))
+        {
+            raceStatLabel1.setText("Cha +2");
+            raceStatLabel2.setText("Choose 2 +1");
+        }
+        else if(selected.equals("Half-Orc"))
+        {
+            raceStatLabel1.setText("Str +2");
+            raceStatLabel2.setText("Con +1");
+        }
+        else if(selected.equals("Tiefling"))
+        {
+            raceStatLabel1.setText("Cha +2");
+            raceStatLabel2.setText("Int +1");
+        }
+        else
+        {
+            raceStatLabel1.setText("Str +2");
+            raceStatLabel2.setText("Cha +1");
+        }
+    }//GEN-LAST:event_raceListValueChanged
 
     /**
      * @param args the command line arguments
@@ -5590,10 +9033,14 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox abyssalCheck;
     private javax.swing.JCheckBox acidSplashSorcerer;
     private javax.swing.JCheckBox acidSplashWizard;
+    private javax.swing.JCheckBox acidSplashWizard1;
     private javax.swing.JCheckBox acrobaticsCheck;
     private javax.swing.JCheckBox animalFriendshipBard;
     private javax.swing.JCheckBox animalHandlingCheck;
     private javax.swing.JCheckBox arcanaCheck;
+    private javax.swing.JRadioButton arcaneFocusSorcerer;
+    private javax.swing.JRadioButton arcaneFocusWarlock;
+    private javax.swing.JRadioButton arcaneFocusWizard;
     private javax.swing.JRadioButton archFeyRadio;
     private javax.swing.JCheckBox armorOfAgathysWarlock;
     private javax.swing.JCheckBox armsOfHadarWarlock;
@@ -5617,10 +9064,12 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox bladeWardSorcerer;
     private javax.swing.JCheckBox bladeWardWarlock;
     private javax.swing.JCheckBox bladeWardWizard;
+    private javax.swing.JCheckBox bladeWardWizard1;
     private javax.swing.JRadioButton blueRadio;
     private javax.swing.JRadioButton brassRadio;
     private javax.swing.JRadioButton brewerSuppliesRadio;
     private javax.swing.JRadioButton bronzeRadio;
+    private javax.swing.JRadioButton burglerPackRogue;
     private javax.swing.JCheckBox burningHandsSorcerer;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup10;
@@ -5628,7 +9077,20 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup12;
     private javax.swing.ButtonGroup buttonGroup13;
     private javax.swing.ButtonGroup buttonGroup14;
+    private javax.swing.ButtonGroup buttonGroup15;
+    private javax.swing.ButtonGroup buttonGroup16;
+    private javax.swing.ButtonGroup buttonGroup17;
+    private javax.swing.ButtonGroup buttonGroup18;
+    private javax.swing.ButtonGroup buttonGroup19;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup20;
+    private javax.swing.ButtonGroup buttonGroup21;
+    private javax.swing.ButtonGroup buttonGroup22;
+    private javax.swing.ButtonGroup buttonGroup23;
+    private javax.swing.ButtonGroup buttonGroup24;
+    private javax.swing.ButtonGroup buttonGroup25;
+    private javax.swing.ButtonGroup buttonGroup26;
+    private javax.swing.ButtonGroup buttonGroup27;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
@@ -5643,6 +9105,8 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton cha4;
     private javax.swing.JRadioButton cha5;
     private javax.swing.JRadioButton cha6;
+    private javax.swing.JRadioButton chainMailCleric;
+    private javax.swing.JRadioButton chainMailFighter;
     private javax.swing.JRadioButton chaoticEvilRadio;
     private javax.swing.JRadioButton chaoticGoodRadio;
     private javax.swing.JRadioButton chaoticNeutralRadio;
@@ -5653,6 +9117,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox chillTouchSorcerer;
     private javax.swing.JCheckBox chillTouchWarlock;
     private javax.swing.JCheckBox chillTouchWizard;
+    private javax.swing.JCheckBox chillTouchWizard1;
     private javax.swing.JCheckBox chromaticOrbSorcerer;
     private javax.swing.JList classList;
     private javax.swing.JScrollPane classScrollPane;
@@ -5669,6 +9134,9 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton clericSurvivalRadio;
     private javax.swing.JCheckBox colorSpraySorcerer;
     private javax.swing.JCheckBox commonCheck;
+    private javax.swing.JRadioButton compWizard;
+    private javax.swing.JRadioButton componentPouchSorcerer;
+    private javax.swing.JRadioButton componentPouchWarlock;
     private javax.swing.JCheckBox comprehendLanguagesBard;
     private javax.swing.JCheckBox comprehendLanguagesSorcerer;
     private javax.swing.JCheckBox comprehendLanguagesWarlock;
@@ -5680,11 +9148,14 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton con6;
     private javax.swing.JRadioButton copperRadio;
     private javax.swing.JCheckBox cureWoundsBard;
+    private javax.swing.JRadioButton daggerWizard;
     private javax.swing.JCheckBox dancingLightsBard;
     private javax.swing.JCheckBox dancingLightsSorcerer;
     private javax.swing.JCheckBox dancingLightsWizard;
+    private javax.swing.JCheckBox dancingLightsWizard1;
     private javax.swing.JCheckBox deceptionCheck;
     private javax.swing.JCheckBox deepspeechCheck;
+    private javax.swing.JRadioButton defaultArray;
     private javax.swing.JCheckBox detectMagicBard;
     private javax.swing.JCheckBox detectMagicSorcerer;
     private javax.swing.JRadioButton dex1;
@@ -5693,6 +9164,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton dex4;
     private javax.swing.JRadioButton dex5;
     private javax.swing.JRadioButton dex6;
+    private javax.swing.JRadioButton diplomatPackBard;
     private javax.swing.JCheckBox disguiseSelfBard;
     private javax.swing.JCheckBox disguiseSelfSorcerer;
     private javax.swing.JCheckBox dissonantWhispersBard;
@@ -5702,16 +9174,31 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JPanel druidEquipmentPanel;
     private javax.swing.JPanel druidSpellPanel;
     private javax.swing.JCheckBox druidcraftDruid;
+    private javax.swing.JRadioButton dungeoneerPackFighter;
+    private javax.swing.JRadioButton dungeoneerPackMonk;
+    private javax.swing.JRadioButton dungeoneerPackRanger;
+    private javax.swing.JRadioButton dungeoneerPackRogue;
+    private javax.swing.JRadioButton dungeoneerPackSorcerer;
+    private javax.swing.JRadioButton dungeoneerPackWarlock;
     private javax.swing.JPanel dwarfToolPanel;
     private javax.swing.JCheckBox dwarvishCheck;
     private javax.swing.JCheckBox eldritchBlastWarlock;
     private javax.swing.JCheckBox elvishCheck;
+    private javax.swing.JRadioButton entertainerPackBard;
     private javax.swing.JCheckBox expeditiousRetreatSorcerer;
     private javax.swing.JCheckBox expeditiousRetreatWarlock;
     private javax.swing.JList expertiseList1;
     private javax.swing.JList expertiseList2;
     private javax.swing.JScrollPane expertiseScrollPanel1;
     private javax.swing.JScrollPane expertiseScrollPanel2;
+    private javax.swing.JRadioButton explorerPackCleric;
+    private javax.swing.JRadioButton explorerPackFighter;
+    private javax.swing.JRadioButton explorerPackPaladin;
+    private javax.swing.JRadioButton explorerPackRanger;
+    private javax.swing.JRadioButton explorerPackRogue;
+    private javax.swing.JRadioButton explorerPackSorcerer;
+    private javax.swing.JRadioButton explorerPackWizard;
+    private javax.swing.JRadioButton explorersPackMonk;
     private javax.swing.JCheckBox faerieFireBard;
     private javax.swing.JCheckBox falseLifeSorcerer;
     private javax.swing.JList favoredEnemyList;
@@ -5720,39 +9207,52 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox featherFallBard;
     private javax.swing.JCheckBox featherFallSorcerer;
     private javax.swing.JRadioButton fiendRadio;
+    private javax.swing.JTextField fifthStatField;
     private javax.swing.JLabel fifthStatLabel;
     private javax.swing.JPanel fighterEquipmentPanel;
     private javax.swing.JList fightingStyleList;
     private javax.swing.JPanel fightingStylePanel;
     private javax.swing.JScrollPane fightingStyleScrollPane;
+    private javax.swing.JButton finalizeButton;
     private javax.swing.JCheckBox fireBoltSorcerer;
     private javax.swing.JCheckBox fireBoltWizard;
+    private javax.swing.JCheckBox fireBoltWizard1;
+    private javax.swing.JTextField firstStatField;
     private javax.swing.JLabel firstStatLabel;
     private javax.swing.JCheckBox fogCloudSorcerer;
+    private javax.swing.JTextField fourthStatField;
     private javax.swing.JLabel fourthStatLabel;
     private javax.swing.JCheckBox friendsBard;
     private javax.swing.JCheckBox friendsSorcerer;
     private javax.swing.JCheckBox friendsWarlock;
     private javax.swing.JCheckBox friendsWizard;
+    private javax.swing.JCheckBox friendsWizard1;
+    private javax.swing.JButton fromHighElfPanel;
     private javax.swing.JCheckBox giantCheck;
     private javax.swing.JCheckBox gnomishCheck;
     private javax.swing.JCheckBox goblinCheck;
     private javax.swing.JRadioButton goldRadio;
     private javax.swing.JRadioButton greatOldOneRadio;
+    private javax.swing.JRadioButton greataxeBarbarian;
     private javax.swing.JRadioButton greenRadio;
     private javax.swing.JCheckBox guidanceCleric;
     private javax.swing.JCheckBox guidanceDruid;
     private javax.swing.JCheckBox halflingCheck;
+    private javax.swing.JRadioButton handaxeBarbarian;
+    private javax.swing.JRadioButton handaxeFighter;
     private javax.swing.JCheckBox healingWordBard;
     private javax.swing.JCheckBox hellishRebukeWarlock;
     private javax.swing.JCheckBox heroismBard;
     private javax.swing.JCheckBox hexWarlock;
+    private javax.swing.JPanel highElfWizardCantripPanel;
     private javax.swing.JCheckBox historyCheck;
     private javax.swing.JCheckBox identifyBard;
     private javax.swing.JCheckBox illusoryScriptBard;
     private javax.swing.JCheckBox illusoryScriptWarlock;
     private javax.swing.JCheckBox infernalCheck;
     private javax.swing.JCheckBox insightCheck;
+    private javax.swing.JRadioButton instrumentBard;
+    private javax.swing.JList instrumentBardList;
     private javax.swing.JRadioButton int1;
     private javax.swing.JRadioButton int2;
     private javax.swing.JRadioButton int3;
@@ -5761,7 +9261,6 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton int6;
     private javax.swing.JCheckBox intimidationCheck;
     private javax.swing.JCheckBox investigationCheck;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -5789,31 +9288,107 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JSeparator jSeparator18;
+    private javax.swing.JSeparator jSeparator19;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator20;
+    private javax.swing.JSeparator jSeparator21;
+    private javax.swing.JSeparator jSeparator22;
+    private javax.swing.JSeparator jSeparator23;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JRadioButton javelinPaladin;
     private javax.swing.JCheckBox jumpSorcerer;
     private javax.swing.JLabel languageAmountLabel;
     private javax.swing.JPanel languagePanel;
     private javax.swing.JRadioButton lawfulEvilRadio;
     private javax.swing.JRadioButton lawfulGoodRadio;
     private javax.swing.JRadioButton lawfulNeutralRadio;
+    private javax.swing.JRadioButton leatherArmorCleric;
+    private javax.swing.JRadioButton leatherArmorFighter;
+    private javax.swing.JRadioButton leatherArmorRanger;
     private javax.swing.JCheckBox lightBard;
     private javax.swing.JCheckBox lightCleric;
+    private javax.swing.JRadioButton lightCrossBowCleric;
+    private javax.swing.JRadioButton lightCrossbowFighter;
+    private javax.swing.JRadioButton lightCrossbowSorcerer;
+    private javax.swing.JRadioButton lightCrossbowWarlock;
     private javax.swing.JCheckBox lightSorcerer;
     private javax.swing.JCheckBox lightWizard;
+    private javax.swing.JCheckBox lightWizard1;
     private javax.swing.JCheckBox longstriderBard;
+    private javax.swing.JRadioButton longswordBard;
+    private javax.swing.JRadioButton luteBard;
+    private javax.swing.JRadioButton maceCleric;
     private javax.swing.JCheckBox mageArmorSorcerer;
     private javax.swing.JCheckBox mageHandBard;
     private javax.swing.JCheckBox mageHandSorcerer;
     private javax.swing.JCheckBox mageHandWarlock;
     private javax.swing.JCheckBox mageHandWizard;
+    private javax.swing.JCheckBox mageHandWizard1;
     private javax.swing.JCheckBox magicMissileSorcerer;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JRadioButton manualEntry;
+    private javax.swing.JRadioButton martialWeaponBarbarian;
+    private javax.swing.JList martialWeaponBarbarianList;
+    private javax.swing.JScrollPane martialWeaponBarbarianScroll;
+    private javax.swing.JList martialWeaponFighterList1;
+    private javax.swing.JList martialWeaponFighterList2;
+    private javax.swing.JList martialWeaponFighterList3;
+    private javax.swing.JRadioButton martialWeaponPaladin1;
+    private javax.swing.JRadioButton martialWeaponPaladin2;
+    private javax.swing.JList martialWeaponPaladinList1;
+    private javax.swing.JList martialWeaponPaladinList2;
+    private javax.swing.JList martialWeaponPaladinList3;
+    private javax.swing.JRadioButton martialWeaponsFighter;
     private javax.swing.JRadioButton masonToolsRadio;
     private javax.swing.JCheckBox medicineCheck;
     private javax.swing.JCheckBox mendingBard;
@@ -5821,13 +9396,17 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox mendingDruid;
     private javax.swing.JCheckBox mendingSorcerer;
     private javax.swing.JCheckBox mendingWizard;
+    private javax.swing.JCheckBox mendingWizard1;
     private javax.swing.JCheckBox messageBard;
     private javax.swing.JCheckBox messageSorcerer;
     private javax.swing.JCheckBox messageWizard;
+    private javax.swing.JCheckBox messageWizard1;
     private javax.swing.JCheckBox minorIllusionBard;
     private javax.swing.JCheckBox minorIllusionSorcerer;
     private javax.swing.JCheckBox minorIllusionWarlock;
     private javax.swing.JCheckBox minorIllusionWizard;
+    private javax.swing.JCheckBox minorIllusionWizard1;
+    private javax.swing.JPanel miscellaneousPanel;
     private javax.swing.JPanel monkEquipmentPanel;
     private javax.swing.JPanel namePanel;
     private javax.swing.JCheckBox natureCheck;
@@ -5836,6 +9415,8 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox orcCheck;
     private javax.swing.JPanel otherworldlyPatronPanel;
     private javax.swing.JPanel paladinEquipmentPanel;
+    private javax.swing.JCheckBox patronSpell1;
+    private javax.swing.JCheckBox patronSpell2;
     private javax.swing.JCheckBox perceptionCheck;
     private javax.swing.JCheckBox performanceCheck;
     private javax.swing.JCheckBox persuasionCheck;
@@ -5844,20 +9425,33 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox poisonSpraySorcerer;
     private javax.swing.JCheckBox poisonSprayWarlock;
     private javax.swing.JCheckBox poisonSprayWizard;
+    private javax.swing.JCheckBox poisonSprayWizard1;
     private javax.swing.JCheckBox prestidigitationBard;
     private javax.swing.JCheckBox prestidigitationSorcerer;
     private javax.swing.JCheckBox prestidigitationWarlock;
     private javax.swing.JCheckBox prestidigitationWizard;
+    private javax.swing.JCheckBox prestidigitationWizard1;
+    private javax.swing.JRadioButton priestPackCleric;
+    private javax.swing.JRadioButton priestPackPaladin;
     private javax.swing.JCheckBox primordialCheck;
     private javax.swing.JCheckBox produceFlameDruid;
     private javax.swing.JLabel profAmountLabel;
     private javax.swing.JCheckBox protectionWarlock;
+    private javax.swing.JRadioButton quarterstaffWizard;
     private javax.swing.JPanel raceClassPanel;
+    private javax.swing.JLabel raceLabel;
     private javax.swing.JList raceList;
     private javax.swing.JScrollPane raceScrollPane;
+    private javax.swing.JLabel raceStatLabel1;
+    private javax.swing.JLabel raceStatLabel2;
+    private javax.swing.JLabel raceStatLabel3;
+    private javax.swing.JLabel raceStatLabel4;
     private javax.swing.JPanel rangerEquipmentPanel;
+    private javax.swing.JRadioButton rapierBard;
+    private javax.swing.JRadioButton rapierRogue;
     private javax.swing.JCheckBox rayOfFrostSorcerer;
     private javax.swing.JCheckBox rayOfFrostWizard;
+    private javax.swing.JCheckBox rayOfFrostWizard1;
     private javax.swing.JCheckBox rayOfSicknessSorcerer;
     private javax.swing.JRadioButton redRadio;
     private javax.swing.JCheckBox religionCheck;
@@ -5865,23 +9459,57 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox resistanceDruid;
     private javax.swing.JPanel rogueEquipmentPanel;
     private javax.swing.JPanel rogueExpertisePanel;
+    private javax.swing.JRadioButton rollForScores;
     private javax.swing.JButton rollStatsButton;
     private javax.swing.JCheckBox sacredFlameCleric;
+    private javax.swing.JButton saveCharacterFile;
+    private javax.swing.JRadioButton scaleMailCleric;
+    private javax.swing.JRadioButton scaleMailRanger;
+    private javax.swing.JRadioButton scholarPackWarlock;
+    private javax.swing.JRadioButton scholarPackWizard;
     private javax.swing.JRadioButton scimitarDruid;
+    private javax.swing.JTextField secondStatField;
     private javax.swing.JLabel secondStatLabel;
+    private javax.swing.JRadioButton shieldFighter;
     private javax.swing.JCheckBox shieldSorcerer;
     private javax.swing.JCheckBox shillelaghDruid;
     private javax.swing.JCheckBox shockingGraspSorcerer;
     private javax.swing.JCheckBox shockingGraspWizard;
+    private javax.swing.JCheckBox shockingGraspWizard1;
+    private javax.swing.JRadioButton shortbowRogue;
+    private javax.swing.JRadioButton shortswordMonk;
+    private javax.swing.JRadioButton shortswordRogue;
+    private javax.swing.JRadioButton shortswordRogue2;
+    private javax.swing.JRadioButton shortswordsRanger;
     private javax.swing.JCheckBox silentImageBard;
     private javax.swing.JCheckBox silentImageSorcerer;
     private javax.swing.JRadioButton silverRadio;
+    private javax.swing.JRadioButton simpleWeaponBarbarian;
+    private javax.swing.JList simpleWeaponBarbarianList;
+    private javax.swing.JScrollPane simpleWeaponBarbarianScroll;
+    private javax.swing.JRadioButton simpleWeaponBard;
+    private javax.swing.JList simpleWeaponBardList;
+    private javax.swing.JRadioButton simpleWeaponCleric;
+    private javax.swing.JList simpleWeaponClericList;
+    private javax.swing.JScrollPane simpleWeaponClericScroll;
     private javax.swing.JRadioButton simpleWeaponDruid1;
     private javax.swing.JRadioButton simpleWeaponDruid2;
     private javax.swing.JList simpleWeaponDruidList1;
     private javax.swing.JList simpleWeaponDruidList2;
     private javax.swing.JScrollPane simpleWeaponDruidScroll1;
     private javax.swing.JScrollPane simpleWeaponDruidScroll2;
+    private javax.swing.JRadioButton simpleWeaponMonk;
+    private javax.swing.JList simpleWeaponMonkList;
+    private javax.swing.JRadioButton simpleWeaponPaladin;
+    private javax.swing.JList simpleWeaponPaladinList;
+    private javax.swing.JList simpleWeaponRangerList1;
+    private javax.swing.JList simpleWeaponRangerList2;
+    private javax.swing.JRadioButton simpleWeaponSorcerer;
+    private javax.swing.JList simpleWeaponSorcererList;
+    private javax.swing.JRadioButton simpleWeaponWarlock;
+    private javax.swing.JList simpleWeaponWarlockList;
+    private javax.swing.JRadioButton simpleWeaponsRanger;
+    private javax.swing.JTextField sixthStatField;
     private javax.swing.JLabel sixthStatLabel;
     private javax.swing.JPanel skillsPanel;
     private javax.swing.JCheckBox sleepBard;
@@ -5905,6 +9533,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox sylvanCheck;
     private javax.swing.JCheckBox tashasHideousLaughterBard;
     private javax.swing.JCheckBox thaumaturgyCleric;
+    private javax.swing.JTextField thirdStatField;
     private javax.swing.JLabel thirdStatLabel;
     private javax.swing.JCheckBox thornWhipDruid;
     private javax.swing.JCheckBox thunderwaveBard;
@@ -5917,6 +9546,18 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JButton toDruidEquipmentPanel;
     private javax.swing.JButton toLanguagePanel2;
     private javax.swing.JButton toLanguagesPanel;
+    private javax.swing.JButton toMiscFromBarbarian;
+    private javax.swing.JButton toMiscFromBard;
+    private javax.swing.JButton toMiscFromCleric;
+    private javax.swing.JButton toMiscFromDruid;
+    private javax.swing.JButton toMiscFromFighter;
+    private javax.swing.JButton toMiscFromMonk;
+    private javax.swing.JButton toMiscFromPaladin;
+    private javax.swing.JButton toMiscFromRanger;
+    private javax.swing.JButton toMiscFromRogue;
+    private javax.swing.JButton toMiscFromSorcerer;
+    private javax.swing.JButton toMiscFromWarlock;
+    private javax.swing.JButton toMiscFromWizard;
     private javax.swing.JButton toNamePanel2;
     private javax.swing.JButton toNamePanelButton;
     private javax.swing.JButton toSkillsPanelButton;
@@ -5934,6 +9575,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox trueStrikeSorcerer;
     private javax.swing.JCheckBox trueStrikeWarlock;
     private javax.swing.JCheckBox trueStrikeWizard;
+    private javax.swing.JCheckBox trueStrikeWizard1;
     private javax.swing.JCheckBox undercommonCheck;
     private javax.swing.JCheckBox unseenServantBard;
     private javax.swing.JCheckBox unseenServantWarlock;
@@ -5944,6 +9586,7 @@ public class CharacterCreatorUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox variantStrCheck;
     private javax.swing.JCheckBox variantWisCheck;
     private javax.swing.JCheckBox viciousMockeryBard;
+    private javax.swing.JRadioButton warhammerCleric;
     private javax.swing.JPanel warlockEquipmentPanel;
     private javax.swing.JPanel warlockSpellPanel;
     private javax.swing.JRadioButton whiteRadio;
