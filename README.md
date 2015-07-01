@@ -3,7 +3,7 @@ Dungeons and Dragons 5th edition Character Creator
 
 Character.java - contains all the information related to a character. What is altered during the course of the program.
 
-CharacterCreatorUI.java - thousands of lines that make up the user interface. The methods here are mostly all transitions from one panel to another (while altering the character object in some way).
+CharacterCreatorUI.java - thousands of lines that make up the user interface. The methods here are mostly all transitions from one panel to another (while altering the character object in some way). NOTE : Neatbean GUI builder tool was used to make the user interface.
 
 CharacterWriter.java - class in charge of printing all of the character's information onto a file.
 
