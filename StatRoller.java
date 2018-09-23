@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-package charactercreator;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
