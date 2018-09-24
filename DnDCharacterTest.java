@@ -29,7 +29,7 @@ class DnDCharacterTest {
 	}
 	
 	@Test
-	public void givenDnDCharacter_whenDexMod3_thenAC() {
+	public void givenDnDCharacter_whenDexMod3_thenkAC() {
 		DnDCharacter sut = new DnDCharacter();
 		sut.setDexMod(3);
 		sut.computeRest();
