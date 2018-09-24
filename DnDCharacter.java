@@ -18,7 +18,7 @@ public class DnDCharacter {
     //proficiency bonus
     private int profBonus;
     
-    //amount of skill proficiences
+    //amount of skill proficiencies
     private int profAmount;
     
     //skills that get double prof bonus (knowledge cleric, rogue expertise, etc)
@@ -283,26 +283,32 @@ public class DnDCharacter {
     public void setStrength(int value)
     {
         this.strength = value;
+        this.setStrMod(StatRoller.getStatMod(value));
     }
     public void setDexterity(int value)
     {
         this.dexterity = value;
+        this.setDexMod(StatRoller.getStatMod(value));
     }
     public void setConstitution(int value)
     {
         this.constitution = value;
+        this.setConMod(StatRoller.getStatMod(value));
     }
     public void setIntelligence(int value)
     {
         this.intelligence = value;
+        this.setIntMod(StatRoller.getStatMod(value));
     }
     public void setWisdom(int value)
     {
         this.wisdom = value;
+        this.setWisMod(StatRoller.getStatMod(value));
     }
     public void setCharisma(int value)
     {
         this.charisma = value;
+        this.setChaMod(StatRoller.getStatMod(value));
     }
     public int getStrength()
     {

@@ -1,4 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class DnDCharacterTest {
@@ -31,7 +33,7 @@ class DnDCharacterTest {
 	@Test
 	public void givenDnDCharacter_whenDexMod3_thenkAC() {
 		DnDCharacter sut = new DnDCharacter();
-		sut.setDexMod(3);
+		sut.setDexterity(16);
 		sut.computeRest();
 		assert(sut.getArmorClass() == 13);
 	}
