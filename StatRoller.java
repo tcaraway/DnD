@@ -40,41 +40,6 @@ public class StatRoller {
     
     public static int getStatMod(int statValue)
     {
-<<<<<<< HEAD
         return (statValue-10)/2;
-=======
-        int mod = 0;
-        if(statValue == 3)
-            mod = -4;
-        if(statValue == 4 || statValue == 5)
-            mod = -3;
-        if(statValue == 6 || statValue == 7)
-            mod = -2;
-        if(statValue == 8 || statValue == 9)
-            mod = -1;
-        if(statValue == 10 || statValue == 11)
-            mod = 0;
-        if(statValue == 12 || statValue == 13)
-            mod = 1;
-        if(statValue == 14 || statValue == 15)
-            mod = 2;
-        if(statValue == 16 || statValue == 17)
-            mod = 3;
-        if(statValue == 18 || statValue == 19)
-            mod = 4;
-        if(statValue == 20 || statValue == 21)
-            mod = 5;
-        if(statValue == 22 || statValue == 23)
-            mod = 6;
-        if(statValue == 24 || statValue == 25)
-            mod = 7;
-        if(statValue == 26 || statValue == 27)
-            mod = 8;
-        if(statValue == 28 || statValue == 29)
-            mod = 9;
-        if(statValue >= 30)
-            mod = 10;
-        return mod;
->>>>>>> ac4de05040806f02e0a926177d2d8cdea4b7f0be
     }
 }

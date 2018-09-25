@@ -17,12 +17,8 @@ public class DnDCharacter {
     
     //proficiency bonus
     private int profBonus;
-    
-<<<<<<< HEAD
+
     //amount of skill proficiencies
-=======
-    //amount of skill proficiences
->>>>>>> ac4de05040806f02e0a926177d2d8cdea4b7f0be
     private int profAmount;
     
     //skills that get double prof bonus (knowledge cleric, rogue expertise, etc)
@@ -287,50 +283,32 @@ public class DnDCharacter {
     public void setStrength(int value)
     {
         this.strength = value;
-<<<<<<< HEAD
         this.setStrMod(StatRoller.getStatMod(value));
-=======
->>>>>>> ac4de05040806f02e0a926177d2d8cdea4b7f0be
     }
     public void setDexterity(int value)
     {
         this.dexterity = value;
-<<<<<<< HEAD
         this.setDexMod(StatRoller.getStatMod(value));
-=======
->>>>>>> ac4de05040806f02e0a926177d2d8cdea4b7f0be
     }
     public void setConstitution(int value)
     {
         this.constitution = value;
-<<<<<<< HEAD
         this.setConMod(StatRoller.getStatMod(value));
-=======
->>>>>>> ac4de05040806f02e0a926177d2d8cdea4b7f0be
     }
     public void setIntelligence(int value)
     {
         this.intelligence = value;
-<<<<<<< HEAD
         this.setIntMod(StatRoller.getStatMod(value));
-=======
->>>>>>> ac4de05040806f02e0a926177d2d8cdea4b7f0be
     }
     public void setWisdom(int value)
     {
         this.wisdom = value;
-<<<<<<< HEAD
         this.setWisMod(StatRoller.getStatMod(value));
-=======
->>>>>>> ac4de05040806f02e0a926177d2d8cdea4b7f0be
     }
     public void setCharisma(int value)
     {
         this.charisma = value;
-<<<<<<< HEAD
         this.setChaMod(StatRoller.getStatMod(value));
-=======
->>>>>>> ac4de05040806f02e0a926177d2d8cdea4b7f0be
     }
     public int getStrength()
     {
