@@ -4,23 +4,21 @@ package Main.Java;/*
  * and open the template in the editor.
  */
 
-import Main.Java.DnDCharacter;
-
 import java.io.File;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.nio.charset.StandardCharsets;
 
 /**
  *
  * @author thom
  * writes a characters info onto a .txt file, which is then saved onto the desktop
  */
-public class CharacterWriter
+class CharacterWriter
 {
-    PrintWriter writer;
-    File characterFile;
-    DnDCharacter character;
-    String filePath;
+    private PrintWriter writer;
+    private final File characterFile;
+    private final DnDCharacter character;
+    private final String filePath;
     
     public CharacterWriter(String path, DnDCharacter cha)
     {
@@ -34,7 +32,7 @@ public class CharacterWriter
     {
         int[] savingThrows = character.getSavingThrows();
         try{
-            writer = new PrintWriter(filePath,"UTF-8");
+            writer = new PrintWriter(filePath, StandardCharsets.UTF_8);
             writer.println("Player Name : " + this.character.getPlayerName());
             writer.println("Character Name : " + this.character.getCharacterName());
             writer.println("");
@@ -317,7 +315,7 @@ public class CharacterWriter
             for(String item : character.getInventory())
                 writer.println(item);
             
-        } catch(Exception ex){}
+        } catch(Exception ignored){}
         writer.close();
     }
 }
