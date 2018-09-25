@@ -14,7 +14,7 @@ class CharacterCreatorUI extends javax.swing.JFrame {
 
     //new character to be created
     private DnDCharacter newCharacter;
-    //number of proficiences granted by inital choices before main prof selection
+    //number of proficiencies granted by inital choices before main prof selection
     private int initialProfsSelected;
     //number of languages granted by race choice
     private int initialLangsSelected;
