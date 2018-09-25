@@ -2,6 +2,7 @@ package Main.Java;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ *
  */
 
 import java.util.ArrayList;
@@ -16,13 +17,13 @@ public class DnDCharacter {
     private String race, playerClass, characterName, playerName, background, alignment;
     
     //proficiency bonus
-    private int profBonus;
+    private final int profBonus;
 
     //amount of skill proficiencies
     private int profAmount;
     
     //skills that get double prof bonus (knowledge cleric, rogue expertise, etc)
-    private int[] doubleSkillProfs;
+    private final int[] doubleSkillProfs;
     
     //armor class
     private int ac;
@@ -46,26 +47,23 @@ public class DnDCharacter {
     private String shield;
     
     //weapons received at 1st level
-    private ArrayList<String> weapons;
+    private final ArrayList<String> weapons;
     
     //arraylist of stat rolls (before choosing stat assignment)
-    private int[] statRolls;
+    private final int[] statRolls;
     
     //saving throws
     private int strengthST, dexterityST, constitutionST, intelligenceST, wisdomST, charismaST;
     
     //skills (values)
-    private int[] skills;
+    private final int[] skills;
     
     //skill proficiencies (1 if prof., 0 if not)
-    private int[] skillProfs;
+    private final int[] skillProfs;
     
     //passive wisdom (perception)
     private int passiveWis;
-    
-    //armor class
-    private int armorClass;
-    
+
     //initiative
     private int initiative;
     
@@ -76,36 +74,33 @@ public class DnDCharacter {
     private int maximumHP;
     
     //weapon attacks
-    private ArrayList<WeaponAttack> weaponAttacks;
+    private final ArrayList<WeaponAttack> weaponAttacks;
     
     //other proficiencies 
-    private ArrayList<String> proficiencies;
+    private final ArrayList<String> proficiencies;
     
     //languages known
-    private ArrayList<String> languages;
+    private final ArrayList<String> languages;
     private int languagesAmount;
-    
-    //currency ([1] = copper, [2] = silver, etc.) (Unused at the moment)
-    private int[] currency;
-    
+
     //class features
-    private ArrayList<String> classFeatures;
+    private final ArrayList<String> classFeatures;
     
     //racial features
-    private ArrayList<String> raceFeatures;
+    private final ArrayList<String> raceFeatures;
     
     //inventory
-    private ArrayList<String> inventory;
+    private final ArrayList<String> inventory;
     
     //spell attacks
     private int spellSaveDC;
     private int spellAttackBonus;
     
     //cantrips
-    private ArrayList<String> cantrips;
+    private final ArrayList<String> cantrips;
     
     //1st level spells
-    private ArrayList<String> firstLevelSpells;
+    private final ArrayList<String> firstLevelSpells;
     
     //Cleric Domain if applicable
     private String clericDomain;
@@ -125,7 +120,7 @@ public class DnDCharacter {
     private String otherworldlyPatron;
     
     //used in determining Rogue Expertise at level 1
-    private ArrayList<String> rogueProfs;
+    private final ArrayList<String> rogueProfs;
     
     //create new character object, initialize everything to placeholder values
     public DnDCharacter(){
@@ -187,7 +182,8 @@ public class DnDCharacter {
         this.passiveWis = 0;
     
         //armor class
-        this.armorClass = 0;
+        //armor class
+        int armorClass = 0;
     
         //initiative
         this.initiative = 0;
@@ -199,42 +195,43 @@ public class DnDCharacter {
         this.maximumHP = 0;
         
         //weapon attacks
-        this.weaponAttacks = new ArrayList<WeaponAttack>();
+        this.weaponAttacks = new ArrayList<>();
     
         //other proficiencies 
-        this.proficiencies = new ArrayList<String>();
+        this.proficiencies = new ArrayList<>();
         
         //languages known
-        this.languages = new ArrayList<String>();
+        this.languages = new ArrayList<>();
         this.languagesAmount = 0;
     
         //currency ([1] = copper, [2] = silver, etc.)(unused currently)
-        this.currency = new int[5];
+        //currency ([1] = copper, [2] = silver, etc.) (Unused at the moment)
+        int[] currency = new int[5];
     
         //features and traits
-        this.classFeatures = new ArrayList<String>();
-        this.raceFeatures = new ArrayList<String>();
+        this.classFeatures = new ArrayList<>();
+        this.raceFeatures = new ArrayList<>();
     
         //inventory
-        this.inventory = new ArrayList<String>();
+        this.inventory = new ArrayList<>();
     
         //spell attacks
         this.spellSaveDC = 0;
         this.spellAttackBonus = 0;
     
         //cantrips
-        this.cantrips = new ArrayList<String>();
+        this.cantrips = new ArrayList<>();
     
         //1st level spells
-        this.firstLevelSpells = new ArrayList<String>();
+        this.firstLevelSpells = new ArrayList<>();
     
         this.clericDomain = "";
         this.fightingStyle = "";
         this.otherworldlyPatron = "";
         this.favoredEnemy = "";
-        this.rogueProfs = new ArrayList<String>();
+        this.rogueProfs = new ArrayList<>();
         
-        this.weapons = new ArrayList<String>();
+        this.weapons = new ArrayList<>();
     }
     
     
@@ -705,41 +702,41 @@ public class DnDCharacter {
         initiative = dexMod;
         
         //add racial features/traits/speed/size
-        if(race.equals("Mountain Dwarf") || race.equals("Hill Dwarf"))
-        {
-            dwarfChanges();
-        }
-        else if(race.equals("High Elf") || race.equals("Wood Elf") || race.equals("Dark Elf (Drow)"))
-        {
-            elfChanges();
-        }
-        else if(race.equals("Lightfoot Halfling") || race.equals("Stout Halfling"))
-        {
-            halflingChanges();
-        }
-        else if(race.equals("Human") || race.equals("Human (Variant)"))
-        {
-            humanChanges();
-        }
-        else if(race.equals("Forest Gnome") || race.equals("Rock Gnome"))
-        {
-            gnomeChanges();
-        }
-        else if(race.equals("Half-Elf"))
-        {
-            halfElfChanges();
-        }
-        else if(race.equals("Half-Orc"))
-        {
-            halfOrcChanges();
-        }
-        else if(race.equals("Tiefling"))
-        {
-            tieflingChanges();
-        }
-        else
-        {
-            dragonbornChanges(); //fus ro dah
+        switch (race) {
+            case "Mountain Dwarf":
+            case "Hill Dwarf":
+                dwarfChanges();
+                break;
+            case "High Elf":
+            case "Wood Elf":
+            case "Dark Elf (Drow)":
+                elfChanges();
+                break;
+            case "Lightfoot Halfling":
+            case "Stout Halfling":
+                halflingChanges();
+                break;
+            case "Human":
+            case "Human (Variant)":
+                humanChanges();
+                break;
+            case "Forest Gnome":
+            case "Rock Gnome":
+                gnomeChanges();
+                break;
+            case "Half-Elf":
+                halfElfChanges();
+                break;
+            case "Half-Orc":
+                halfOrcChanges();
+                break;
+            case "Tiefling":
+                tieflingChanges();
+                break;
+            default:
+                dragonbornChanges(); //fus ro dah
+
+                break;
         }
         
         //create weapon attack list out of weapon list
@@ -802,54 +799,48 @@ public class DnDCharacter {
         spellAttackBonus = profBonus + wisMod;
         firstSlots = 2;
         classFeatures.add("Spellcasting");
-        if(clericDomain.equals("Knowledge"))
-        {
-            classFeatures.add("1st-level Spells always prepared: Command, Identify");
-        }
-        else if(clericDomain.equals("Life"))
-        {
-            classFeatures.add("Disciple of Life");
-            proficiencies.add("Heavy Armor");
-            classFeatures.add("1st-level Spells always prepared: Bless, Cure Wounds");
-        }
-        else if(clericDomain.equals("Light"))
-        {
-            ArrayList<String> c = cantrips;
-            boolean alreadyChosen = false;
-            for(String cantrip : c)
-            {
-                if(cantrip.equals("Light"))
-                    alreadyChosen = true;
-            }
-            if(!alreadyChosen)
-                cantrips.add("Light");
-            classFeatures.add("Warding Flare"); 
-            classFeatures.add("1st-level Spells always prepared: Burning Hands, Faerie Fire");
-        }
-        else if(clericDomain.equals("Nature"))
-        {
-            classFeatures.add("1st-level Spells always prepared: Animal Friendship, Speak with Animals");
-            classFeatures.add("1 druid cantrip of your choice");
-            proficiencies.add("Heavy Armor");
-        }
-        else if(clericDomain.equals("Tempest"))
-        {
-            classFeatures.add("1st-level Spells always prepared: Fog Cloud, Thunderwave");
-            proficiencies.add("Martial Weapons");
-            proficiencies.add("Heavy Armor");
-            classFeatures.add("Wrath of the Storm");
-        }
-        else if(clericDomain.equals("Trickery"))
-        {
-            classFeatures.add("1st-level Spells always prepared: Charm Person, Disguise Self");
-            classFeatures.add("Blessing of the Trickster");
-        }
-        else
-        {
-            classFeatures.add("1st-level Spells always prepared: Divine Favor, Shield of Faith");
-            proficiencies.add("Heavy Armor");
-            proficiencies.add("Martial Weapons");
-            classFeatures.add("War Priest");
+        switch (clericDomain) {
+            case "Knowledge":
+                classFeatures.add("1st-level Spells always prepared: Command, Identify");
+                break;
+            case "Life":
+                classFeatures.add("Disciple of Life");
+                proficiencies.add("Heavy Armor");
+                classFeatures.add("1st-level Spells always prepared: Bless, Cure Wounds");
+                break;
+            case "Light":
+                ArrayList<String> c = cantrips;
+                boolean alreadyChosen = false;
+                for (String cantrip : c) {
+                    if (cantrip.equals("Light"))
+                        alreadyChosen = true;
+                }
+                if (!alreadyChosen)
+                    cantrips.add("Light");
+                classFeatures.add("Warding Flare");
+                classFeatures.add("1st-level Spells always prepared: Burning Hands, Faerie Fire");
+                break;
+            case "Nature":
+                classFeatures.add("1st-level Spells always prepared: Animal Friendship, Speak with Animals");
+                classFeatures.add("1 druid cantrip of your choice");
+                proficiencies.add("Heavy Armor");
+                break;
+            case "Tempest":
+                classFeatures.add("1st-level Spells always prepared: Fog Cloud, Thunderwave");
+                proficiencies.add("Martial Weapons");
+                proficiencies.add("Heavy Armor");
+                classFeatures.add("Wrath of the Storm");
+                break;
+            case "Trickery":
+                classFeatures.add("1st-level Spells always prepared: Charm Person, Disguise Self");
+                classFeatures.add("Blessing of the Trickster");
+                break;
+            default:
+                classFeatures.add("1st-level Spells always prepared: Divine Favor, Shield of Faith");
+                proficiencies.add("Heavy Armor");
+                proficiencies.add("Martial Weapons");
+                classFeatures.add("War Priest");
+                break;
         }
     }
     
@@ -1005,12 +996,17 @@ public class DnDCharacter {
         proficiencies.add("Charisma Saving Throws");
         spellSaveDC = 8 + profBonus + chaMod;
         spellAttackBonus = profBonus + chaMod;
-        if(otherworldlyPatron.equals("Archfey"))
-            classFeatures.add("Fey Presence");
-        else if(otherworldlyPatron.equals("The Fiend"))
-            classFeatures.add("Dark One's Blessing");
-        else
-            classFeatures.add("Awakened Mind");
+        switch (otherworldlyPatron) {
+            case "Archfey":
+                classFeatures.add("Fey Presence");
+                break;
+            case "The Fiend":
+                classFeatures.add("Dark One's Blessing");
+                break;
+            default:
+                classFeatures.add("Awakened Mind");
+                break;
+        }
     }
     
     //used in compute(), carry out Wizard class changes
@@ -1044,19 +1040,23 @@ public class DnDCharacter {
             ac = 13 + dexMod;
         else
         {
-            if(armor.equals("Leather Armor"))
-                ac = 11 + dexMod;
-            else if(armor.equals("Scale Mail"))
-            {
-                if(dexMod >= 2)
+            switch (armor) {
+                case "Leather Armor":
+                    ac = 11 + dexMod;
+                    break;
+                case "Scale Mail":
+                    if (dexMod >= 2)
+                        ac = 16;
+                    else
+                        ac = 14 + dexMod;
+                    break;
+                case "Chain Mail":
                     ac = 16;
-                else
-                    ac = 14+dexMod;
-            } 
-            else if(armor.equals("Chain Mail"))            
-                ac = 16;
-            else
-                ac = 10 + dexMod;
+                    break;
+                default:
+                    ac = 10 + dexMod;
+                    break;
+            }
         }
         if(fightingStyle.equals("Defense"))
             ac = ac+1;
@@ -1094,25 +1094,24 @@ public class DnDCharacter {
         raceFeatures.add("Fey Ancestry");
         raceFeatures.add("Trance");
         raceFeatures.add("Keen Senses");
-        if(race.equals("High Elf"))
-        {
-            raceFeatures.add("Elf Weapon Training (prof w/ longsword,shortsword,shortbow,longbow)");
-            raceFeatures.add("1 Wizard Cantrip");
-            raceFeatures.add("Extra Language");
-        }
-        else if(race.equals("Wood Elf"))
-        {
-            raceFeatures.add("Elf Weapon Training (prof w/ longsword,shortsword,shortbow,longbow)");
-            raceFeatures.add("Fleet of Foot");
-            speed = 35;
-            raceFeatures.add("Mask of the Wild");
-        }
-        else
-        {
-            raceFeatures.add("Superior Darkvision");
-            raceFeatures.add("Sunlight Sensitivity");
-            raceFeatures.add("Drow Magic");
-            raceFeatures.add("Drow Weapon Training (prof w/ rapiers,shortswords,hand crossbows)");
+        switch (race) {
+            case "High Elf":
+                raceFeatures.add("Elf Weapon Training (prof w/ longsword,shortsword,shortbow,longbow)");
+                raceFeatures.add("1 Wizard Cantrip");
+                raceFeatures.add("Extra Language");
+                break;
+            case "Wood Elf":
+                raceFeatures.add("Elf Weapon Training (prof w/ longsword,shortsword,shortbow,longbow)");
+                raceFeatures.add("Fleet of Foot");
+                speed = 35;
+                raceFeatures.add("Mask of the Wild");
+                break;
+            default:
+                raceFeatures.add("Superior Darkvision");
+                raceFeatures.add("Sunlight Sensitivity");
+                raceFeatures.add("Drow Magic");
+                raceFeatures.add("Drow Weapon Training (prof w/ rapiers,shortswords,hand crossbows)");
+                break;
         }
     }
     

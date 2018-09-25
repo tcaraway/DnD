@@ -8,124 +8,113 @@ package Main.Java;/*
  *
  * @author thom
  */
-public class Equipment {
+class Equipment {
     
     //returns gear given by backgrounds
     public static String[] getBackgroundGear(String bg)
     {
         String[] items = null;
-        if(bg.equals("Acolyte"))
-        {
-            items = new String[6];
-            items[0] = "holy symbol";
-            items[1] = "prayer book";
-            items[2] = "5 sticks of incense";
-            items[3] = "vestments";
-            items[4] = "common clothes";
-            items[5] = "belt pouch (containing 15gp)";
-        }
-        else if(bg.equals("Charlatan"))
-        {
-            items = new String[4];
-            items[0] = "fine clothes";
-            items[1] = "disguise kit";
-            items[2] = "tools for con of choice";
-            items[3] = "belt pouch (containing 15gp)";
-        }
-        else if(bg.equals("Criminal"))
-        {
-            items = new String[3];
-            items[0] = "crowbar";
-            items[1] = "dark common clothes with hood";
-            items[2] = "belt pouch (containing 15gp)";
-        }
-        else if(bg.equals("Entertainer"))
-        {
-            items = new String[4];
-            items[0] = "Musical Instruments (of your choice)";
-            items[1] = "favor of an admirer";
-            items[2] = "costume";
-            items[3] = "belt pouch (containing 15gp)";
-        }     
-        else if(bg.equals("Folk Hero"))
-        {
-            items = new String[5];
-            items[0] = "set of artisan's tools (of your choice)";
-            items[1] = "shovel";
-            items[2] = "iron pot";
-            items[3] = "common clothes";
-            items[4] = "belt pouch (containing 10gp)";
-        }
-        else if(bg.equals("Guild Artisan"))
-        {
-            items = new String[4];
-            items[0] = "set of artisan's tools (of your choice)";
-            items[1] = "letter of introduction from guild";
-            items[2] = "traveler's clothes";
-            items[3] = "belt pouch (containing 15gp)";
-        }
-        else if(bg.equals("Hermit"))
-        {
-            items = new String[5];
-            items[0] = "scroll case with notes";
-            items[1] = "winter blanket";
-            items[2] = "common clothes";
-            items[3] = "herbalism kit";
-            items[4] = "belt pouch (containing 5gp)";
-        }      
-        else if(bg.equals("Noble"))
-        {
-            items = new String[4];
-            items[0] = "fine clothes";
-            items[1] = "signet ring";
-            items[2] = "scroll of pedigree";
-            items[3] = "purse (containing 25gp)";
-        }   
-        else if(bg.equals("Outlander"))
-        {
-            items = new String[5];
-            items[0] = "staff";
-            items[1] = "hunting trap";
-            items[2] = "trophy from hunted animal";
-            items[3] = "traveler's clothes";
-            items[4] = "belt pouch (containing 10gp)";
-        }
-        else if(bg.equals("Sage"))
-        {
-            items = new String[6];
-            items[0] = "bottle of black ink";
-            items[1] = "quill";
-            items[2] = "small knife";
-            items[3] = "letter from dead colleague";
-            items[4] = "common clothes";
-            items[5] = "belt pouch (containing 10gp";
-        }
-        else if(bg.equals("Sailor"))
-        {
-            items = new String[5];
-            items[0] = "Belaying pin";
-            items[1] = "50 ft. silk rope";
-            items[2] = "lucky charm";
-            items[3] = "common clothes";
-            items[4] = "belt pouch (containing 10gp)";
-        }
-        else if(bg.equals("Soldier"))
-        {
-            items = new String[5];
-            items[0] = "insignia of rank";
-            items[1] = "trophy from fallen enemy";
-            items[2] = "set of bone dice";
-            items[3] = "common clothes";
-            items[4] = "belt pouch (containing 10gp)";
-        }
-        else if(bg.equals("Urchin"))
-        {
-            items = new String[5];
-            items[0] = "small knife";
-            items[1] = "map of hometown";
-            items[2] = "pet mouse";
-            items[3] = "token to remember your parents by";
-            items[4] = "common clothes";
+        switch (bg) {
+            case "Acolyte":
+                items = new String[6];
+                items[0] = "holy symbol";
+                items[1] = "prayer book";
+                items[2] = "5 sticks of incense";
+                items[3] = "vestments";
+                items[4] = "common clothes";
+                items[5] = "belt pouch (containing 15gp)";
+                break;
+            case "Charlatan":
+                items = new String[4];
+                items[0] = "fine clothes";
+                items[1] = "disguise kit";
+                items[2] = "tools for con of choice";
+                items[3] = "belt pouch (containing 15gp)";
+                break;
+            case "Criminal":
+                items = new String[3];
+                items[0] = "crowbar";
+                items[1] = "dark common clothes with hood";
+                items[2] = "belt pouch (containing 15gp)";
+                break;
+            case "Entertainer":
+                items = new String[4];
+                items[0] = "Musical Instruments (of your choice)";
+                items[1] = "favor of an admirer";
+                items[2] = "costume";
+                items[3] = "belt pouch (containing 15gp)";
+                break;
+            case "Folk Hero":
+                items = new String[5];
+                items[0] = "set of artisan's tools (of your choice)";
+                items[1] = "shovel";
+                items[2] = "iron pot";
+                items[3] = "common clothes";
+                items[4] = "belt pouch (containing 10gp)";
+                break;
+            case "Guild Artisan":
+                items = new String[4];
+                items[0] = "set of artisan's tools (of your choice)";
+                items[1] = "letter of introduction from guild";
+                items[2] = "traveler's clothes";
+                items[3] = "belt pouch (containing 15gp)";
+                break;
+            case "Hermit":
+                items = new String[5];
+                items[0] = "scroll case with notes";
+                items[1] = "winter blanket";
+                items[2] = "common clothes";
+                items[3] = "herbalism kit";
+                items[4] = "belt pouch (containing 5gp)";
+                break;
+            case "Noble":
+                items = new String[4];
+                items[0] = "fine clothes";
+                items[1] = "signet ring";
+                items[2] = "scroll of pedigree";
+                items[3] = "purse (containing 25gp)";
+                break;
+            case "Outlander":
+                items = new String[5];
+                items[0] = "staff";
+                items[1] = "hunting trap";
+                items[2] = "trophy from hunted animal";
+                items[3] = "traveler's clothes";
+                items[4] = "belt pouch (containing 10gp)";
+                break;
+            case "Sage":
+                items = new String[6];
+                items[0] = "bottle of black ink";
+                items[1] = "quill";
+                items[2] = "small knife";
+                items[3] = "letter from dead colleague";
+                items[4] = "common clothes";
+                items[5] = "belt pouch (containing 10gp";
+                break;
+            case "Sailor":
+                items = new String[5];
+                items[0] = "Belaying pin";
+                items[1] = "50 ft. silk rope";
+                items[2] = "lucky charm";
+                items[3] = "common clothes";
+                items[4] = "belt pouch (containing 10gp)";
+                break;
+            case "Soldier":
+                items = new String[5];
+                items[0] = "insignia of rank";
+                items[1] = "trophy from fallen enemy";
+                items[2] = "set of bone dice";
+                items[3] = "common clothes";
+                items[4] = "belt pouch (containing 10gp)";
+                break;
+            case "Urchin":
+                items = new String[5];
+                items[0] = "small knife";
+                items[1] = "map of hometown";
+                items[2] = "pet mouse";
+                items[3] = "token to remember your parents by";
+                items[4] = "common clothes";
+                break;
         }
         return items;
     }

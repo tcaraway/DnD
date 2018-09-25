@@ -1,14 +1,14 @@
 package Tests.Java;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import Main.Java.DnDCharacter;
 import org.junit.jupiter.api.Test;
 
-public class DnDCharacterTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class DnDCharacterTest {
 
     @Test
-    public void givenDnDCharacter_whenValidAbilityScores_thenAbilityScoresSet(){
+    void givenDnDCharacter_whenValidAbilityScores_thenAbilityScoresSet(){
         DnDCharacter sut = new DnDCharacter();
         sut.setStrength(3);
         sut.setDexterity(5);   //valid range is 3-30
@@ -26,14 +26,14 @@ public class DnDCharacterTest {
     }
     
 	@Test
-	public void givenDnDCharacter_whenClassBard_thenClass() {
+    void givenDnDCharacter_whenClassBard_thenClass() {
 		DnDCharacter sut = new DnDCharacter();
 		sut.setClass("Bard");
 		assert(sut.getPlayerClass().equals("Bard"));
 	}
 	
 	@Test
-	public void givenDnDCharacter_whenDexMod3_thenkAC() {
+    void givenDnDCharacter_whenDexMod3_thenkAC() {
 		DnDCharacter sut = new DnDCharacter();
 		sut.setDexterity(16);
 		sut.computeRest();

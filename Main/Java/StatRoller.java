@@ -12,7 +12,7 @@ import java.util.Random;
  *
  * @author thom
  */
-public class StatRoller {
+class StatRoller {
     
     public static int rollStat(){
         Random rand = new Random();
@@ -26,9 +26,8 @@ public class StatRoller {
         numList.add(num2);
         numList.add(num3);
         numList.add(num4);
-        
-        int minIndex = numList.indexOf(Collections.min(numList));
-        numList.remove(minIndex);
+
+        numList.remove(Collections.min(numList));
         int total = 0;
         
         for(int i=0;i<3;i++)
