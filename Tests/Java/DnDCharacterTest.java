@@ -33,11 +33,19 @@ class DnDCharacterTest {
 	}
 	
 	@Test
-    void givenDnDCharacter_whenDexMod3_thenkAC() {
+    void givenDnDCharacter_whenDexMod3_thenAC() {
 		DnDCharacter sut = new DnDCharacter();
 		sut.setDexterity(16);
 		sut.computeRest();
 		assert(sut.getArmorClass() == 13);
 	}
 
+	@Test
+    void givenMonk_whenCon16_thenMaxHP() {
+		DnDCharacter sut = new DnDCharacter();
+		sut.setConstitution(16);
+		sut.setClass("Monk");
+		sut.computeRest();
+		assert(sut.getMaxHP() == 11);
+	}
 }
