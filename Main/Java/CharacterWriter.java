@@ -32,7 +32,7 @@ class CharacterWriter
     {
         int[] savingThrows = character.getSavingThrows();
         try{
-            writer = new PrintWriter(filePath, StandardCharsets.UTF_8);
+            writer = new PrintWriter(filePath);
             writer.println("Player Name : " + this.character.getPlayerName());
             writer.println("Character Name : " + this.character.getCharacterName());
             writer.println("");
