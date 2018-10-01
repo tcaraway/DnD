@@ -17,12 +17,12 @@ class DnDCharacterTest {
         sut.setWisdom(25);
         sut.setCharisma(30);
 
-        assertEquals(3, sut.getStrength());
-        assertEquals(5, sut.getDexterity());
-        assertEquals(10, sut.getConstitution());
-        assertEquals(20, sut.getIntelligence());
-        assertEquals(25, sut.getWisdom());
-        assertEquals(30, sut.getCharisma());
+        assertEquals(-3, sut.getStrMod());
+        assertEquals(-2, sut.getDexMod());
+        assertEquals(0, sut.getConMod());
+        assertEquals(5, sut.getIntMod());
+        assertEquals(7, sut.getWisMod());
+        assertEquals(10, sut.getChaMod());
     }
     
 	@Test
