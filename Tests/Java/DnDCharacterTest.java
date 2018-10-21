@@ -48,4 +48,23 @@ class DnDCharacterTest {
 		sut.computeRest();
 		assert(sut.getMaxHP() == 11);
 	}
+	
+	@Test
+	void givenDnDCharacter_whenDruid_thenProficiencies() {
+		DnDCharacter sut = new DnDCharacter();
+		sut.setClass("Druid");
+		sut.computeRest();
+		
+		assert(sut.getOtherProficiencies().size() == 16);
+	}
+	
+	@Test
+	void givenCleric_whenAtributes_thenSpellDC() {
+		DnDCharacter sut = new DnDCharacter();
+		sut.setClass("Cleric");
+		sut.setWisdom(14);
+		sut.computeRest();
+		
+		assert(sut.getSpellSave() == 12);
+	}
 }
