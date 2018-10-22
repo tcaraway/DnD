@@ -14,27 +14,30 @@ import java.util.Random;
  */
 class StatRoller {
     
-    public static int rollStat(){
+    public static ArrayList<Integer> rollStat(){
         Random rand = new Random();
         int num1 = rand.nextInt(6) + 1;
         int num2 = rand.nextInt(6) + 1;
         int num3 = rand.nextInt(6) + 1;
         int num4 = rand.nextInt(6) + 1;
         
-        ArrayList numList = new ArrayList();
+        ArrayList<Integer> numList = new ArrayList<>();
         numList.add(num1);
         numList.add(num2);
         numList.add(num3);
         numList.add(num4);
 
+        int min = Collections.min(numList);
         numList.remove(Collections.min(numList));
         int total = 0;
         
         for(int i=0;i<3;i++)
         {
-            total = total + (int)numList.get(i);
+            total = total + numList.get(i);
         }
-        return total;
+        numList.add(min);
+        numList.add(total);
+        return numList;
     }
     
     public static int getStatMod(int statValue)

@@ -71,6 +71,8 @@ class CharacterCreatorUI extends javax.swing.JFrame {
         JButton toStatPanelButton = new JButton();
         javax.swing.JScrollPane raceScrollPane = new javax.swing.JScrollPane();
         raceList = new JList();
+        javax.swing.JScrollPane subRaceScrollPane = new javax.swing.JScrollPane();
+        subRaceList = new JList();
         javax.swing.JScrollPane classScrollPane = new javax.swing.JScrollPane();
         classList = new JList();
         raceLabel = new javax.swing.JLabel();
@@ -636,7 +638,8 @@ class CharacterCreatorUI extends javax.swing.JFrame {
         });
 
         raceList.setModel(new javax.swing.AbstractListModel() {
-            final String[] strings = {"Hill Dwarf", "Mountain Dwarf", "High Elf", "Wood Elf", "Dark Elf (Drow)", "Lightfoot Halfling", "Stout Halfling", "Human", "Human (Variant)", "Dragonborn (Black)", "Dragonborn (Blue)", "Dragonborn (Brass)", "Dragonborn (Bronze)", "Dragonborn (Copper)", "Dragonborn (Gold)", "Dragonborn (Green)", "Dragonborn (Red)", "Dragonborn (Silver)", "Dragonborn (White)", "Forest Gnome", "Rock Gnome", "Half-Elf", "Half-Orc", "Tiefling"};
+            final String[] strings = {"Hill Dwarf", "Mountain Dwarf", "High Elf", "Wood Elf", "Dark Elf (Drow)", "Lightfoot Halfling", "Stout Halfling", "Human", "Human (Variant)", "Dragonborn (Black)", "Dragonborn (Blue)", "Dragonborn (Green)", "Dragonborn (Red)", "Dragonborn (White)", "Dragonborn (Brass)", "Dragonborn (Bronze)", "Dragonborn (Copper)", "Dragonborn (Gold)", "Dragonborn (Silver)", "Forest Gnome", "Rock Gnome", "Half-Elf", "Half-Orc", "Tiefling"};
+            //final String[] strings = {"Dwarf", "Elf", "Halfling", "Human", "Human (Variant)", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling"};
 
             public int getSize() {
                 return strings.length;
@@ -744,35 +747,26 @@ class CharacterCreatorUI extends javax.swing.JFrame {
         buttonGroup6.add(str6);
         str6.setText("Str");
 
+        buttonGroup1.add(dex1);
+        dex1.setText("Dex");
+
         buttonGroup2.add(dex2);
         dex2.setText("Dex");
 
         buttonGroup3.add(dex3);
         dex3.setText("Dex");
 
-        buttonGroup5.add(dex5);
-        dex5.setText("Dex");
-
         buttonGroup4.add(dex4);
         dex4.setText("Dex");
+
+        buttonGroup5.add(dex5);
+        dex5.setText("Dex");
 
         buttonGroup6.add(dex6);
         dex6.setText("Dex");
 
-        buttonGroup1.add(dex1);
-        dex1.setText("Dex");
-
         buttonGroup1.add(con1);
         con1.setText("Con");
-
-        buttonGroup1.add(int1);
-        int1.setText("Int");
-
-        buttonGroup1.add(wis1);
-        wis1.setText("Wis");
-
-        buttonGroup5.add(cha5);
-        cha5.setText("Cha");
 
         buttonGroup2.add(con2);
         con2.setText("Con");
@@ -789,6 +783,9 @@ class CharacterCreatorUI extends javax.swing.JFrame {
         buttonGroup6.add(con6);
         con6.setText("Con");
 
+        buttonGroup1.add(int1);
+        int1.setText("Int");
+
         buttonGroup2.add(int2);
         int2.setText("Int");
 
@@ -804,32 +801,38 @@ class CharacterCreatorUI extends javax.swing.JFrame {
         buttonGroup6.add(int6);
         int6.setText("Int");
 
+        buttonGroup1.add(wis1);
+        wis1.setText("Wis");
+
         buttonGroup2.add(wis2);
         wis2.setText("Wis");
 
         buttonGroup3.add(wis3);
         wis3.setText("Wis");
 
-        buttonGroup5.add(wis5);
-        wis5.setText("Wis");
-
         buttonGroup4.add(wis4);
         wis4.setText("Wis");
+
+        buttonGroup5.add(wis5);
+        wis5.setText("Wis");
 
         buttonGroup6.add(wis6);
         wis6.setText("Wis");
 
-        buttonGroup2.add(cha2);
-        cha2.setText("Cha");
-
         buttonGroup1.add(cha1);
         cha1.setText("Cha");
+
+        buttonGroup2.add(cha2);
+        cha2.setText("Cha");
 
         buttonGroup3.add(cha3);
         cha3.setText("Cha");
 
         buttonGroup4.add(cha4);
         cha4.setText("Cha");
+
+        buttonGroup5.add(cha5);
+        cha5.setText("Cha");
 
         buttonGroup6.add(cha6);
         cha6.setText("Cha");
@@ -4889,29 +4892,29 @@ class CharacterCreatorUI extends javax.swing.JFrame {
     private void rollStatsButtonActionPerformed() {//GEN-FIRST:event_rollStatsButtonActionPerformed
         // TODO add your handling code here:
         //roll 6 stat values and save to Character object
-        int firstStat = StatRoller.rollStat();
-        this.newCharacter.setStatRolls(0, firstStat);
-        this.firstStatLabel.setText("" + firstStat);
+        ArrayList firstStat = StatRoller.rollStat();
+        this.newCharacter.setStatRolls(0, (int)firstStat.get(4));
+        this.firstStatLabel.setText(firstStat.get(4) + " (" + firstStat.get(0) + ", " + firstStat.get(1) + ", " + firstStat.get(2) + ", " + firstStat.get(3) + ")");
 
-        int secondStat = StatRoller.rollStat();
-        this.newCharacter.setStatRolls(1, secondStat);
-        this.secondStatLabel.setText("" + secondStat);
+        ArrayList secondStat = StatRoller.rollStat();
+        this.newCharacter.setStatRolls(0, (int)secondStat.get(4));
+        this.secondStatLabel.setText(secondStat.get(4) + " (" + secondStat.get(0) + ", " + secondStat.get(1) + ", " + secondStat.get(2) + ", " + secondStat.get(3) + ")");
 
-        int thirdStat = StatRoller.rollStat();
-        this.newCharacter.setStatRolls(2, thirdStat);
-        this.thirdStatLabel.setText("" + thirdStat);
+        ArrayList thirdStat = StatRoller.rollStat();
+        this.newCharacter.setStatRolls(0, (int)thirdStat.get(4));
+        this.thirdStatLabel.setText(thirdStat.get(4) + " (" + thirdStat.get(0) + ", " + thirdStat.get(1) + ", " + thirdStat.get(2) + ", " + thirdStat.get(3) + ")");
 
-        int fourthStat = StatRoller.rollStat();
-        this.newCharacter.setStatRolls(3, fourthStat);
-        this.fourthStatLabel.setText("" + fourthStat);
+        ArrayList fourthStat = StatRoller.rollStat();
+        this.newCharacter.setStatRolls(0, (int)fourthStat.get(4));
+        this.fourthStatLabel.setText(fourthStat.get(4) + " (" + fourthStat.get(0) + ", " + fourthStat.get(1) + ", " + fourthStat.get(2) + ", " + fourthStat.get(3) + ")");
 
-        int fifthStat = StatRoller.rollStat();
-        this.newCharacter.setStatRolls(4, fifthStat);
-        this.fifthStatLabel.setText("" + fifthStat);
+        ArrayList fifthStat = StatRoller.rollStat();
+        this.newCharacter.setStatRolls(0, (int)fifthStat.get(4));
+        this.fifthStatLabel.setText(fifthStat.get(4) + " (" + fifthStat.get(0) + ", " + fifthStat.get(1) + ", " + fifthStat.get(2) + ", " + fifthStat.get(3) + ")");
 
-        int sixthStat = StatRoller.rollStat();
-        this.newCharacter.setStatRolls(5, sixthStat);
-        this.sixthStatLabel.setText("" + sixthStat);
+        ArrayList sixthStat = StatRoller.rollStat();
+        this.newCharacter.setStatRolls(0, (int)sixthStat.get(4));
+        this.sixthStatLabel.setText(sixthStat.get(4) + " (" + sixthStat.get(0) + ", " + sixthStat.get(1) + ", " + sixthStat.get(2) + ", " + sixthStat.get(3) + ")");
     }//GEN-LAST:event_rollStatsButtonActionPerformed
 
     private void toAssignStatPanelActionPerformed() {//GEN-FIRST:event_toAssignStatPanelActionPerformed
@@ -8703,6 +8706,12 @@ class CharacterCreatorUI extends javax.swing.JFrame {
     private JRadioButton bronzeRadio;
     private JRadioButton burglerPackRogue;
     private JCheckBox burningHandsSorcerer;
+    private JComboBox abilityScore1;
+    private JComboBox abilityScore2;
+    private JComboBox abilityScore3;
+    private JComboBox abilityScore4;
+    private JComboBox abilityScore5;
+    private JComboBox abilityScore6;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
@@ -8936,6 +8945,7 @@ class CharacterCreatorUI extends javax.swing.JFrame {
     private JRadioButton quarterstaffWizard;
     private javax.swing.JLabel raceLabel;
     private JList raceList;
+    private JList subRaceList;
     private javax.swing.JLabel raceStatLabel1;
     private javax.swing.JLabel raceStatLabel2;
     private javax.swing.JLabel raceStatLabel3;
