@@ -67,4 +67,36 @@ class DnDCharacterTest {
 		
 		assert(sut.getSpellSave() == 12);
 	}
+	
+	@Test
+	void givenBard_whenAtributes_thenCharST() {
+		DnDCharacter sut = new DnDCharacter();
+		
+		sut.setClass("Bard");
+		sut.setCharisma(16);
+		sut.computeRest();
+		
+		assert(sut.getSavingThrows()[5] == 5);
+	}
+	
+	@Test
+	void givenWizard_whenAtributes_thenSpellAttackBonus() {
+		DnDCharacter sut = new DnDCharacter();
+		
+		sut.setClass("Wizard");
+		sut.setIntelligence(16);
+		sut.computeRest();
+		
+		assert(sut.getSpellAttack() == 5);
+	}
+	
+	@Test
+	void givenDnDCharacter_whenHalfling_thenSize() {
+		DnDCharacter sut = new DnDCharacter();
+
+		sut.setRace("Lightfoot Halfling");
+		sut.computeRest();
+		
+		assert(sut.getSize().equals("Small"));
+	}
 }

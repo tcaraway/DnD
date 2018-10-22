@@ -1118,7 +1118,7 @@ public class DnDCharacter {
     //used in compute, carry out Halfling changes
     private void halflingChanges()
     {
-        size = "small";
+        size = "Small";
         speed = 25;
         raceFeatures.add("Brave");
         raceFeatures.add("Lucky");
