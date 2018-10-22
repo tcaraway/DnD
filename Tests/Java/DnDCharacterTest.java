@@ -62,4 +62,55 @@ class DnDCharacterTest {
         }
         assertTrue(rolls.get(4) == (rolls.get(0)+rolls.get(1)+rolls.get(2))); //check if the last number is the total stat roll (4d6-lowest)
     }
+	
+	@Test
+	void givenDnDCharacter_whenDruid_thenProficiencies() {
+		DnDCharacter sut = new DnDCharacter();
+		sut.setClass("Druid");
+		sut.computeRest();
+		
+		assert(sut.getOtherProficiencies().size() == 16);
+	}
+	
+	@Test
+	void givenCleric_whenAtributes_thenSpellDC() {
+		DnDCharacter sut = new DnDCharacter();
+		sut.setClass("Cleric");
+		sut.setWisdom(14);
+		sut.computeRest();
+		
+		assert(sut.getSpellSave() == 12);
+	}
+	
+	@Test
+	void givenBard_whenAtributes_thenCharST() {
+		DnDCharacter sut = new DnDCharacter();
+		
+		sut.setClass("Bard");
+		sut.setCharisma(16);
+		sut.computeRest();
+		
+		assert(sut.getSavingThrows()[5] == 5);
+	}
+	
+	@Test
+	void givenWizard_whenAtributes_thenSpellAttackBonus() {
+		DnDCharacter sut = new DnDCharacter();
+		
+		sut.setClass("Wizard");
+		sut.setIntelligence(16);
+		sut.computeRest();
+		
+		assert(sut.getSpellAttack() == 5);
+	}
+	
+	@Test
+	void givenDnDCharacter_whenHalfling_thenSize() {
+		DnDCharacter sut = new DnDCharacter();
+
+		sut.setRace("Lightfoot Halfling");
+		sut.computeRest();
+		
+		assert(sut.getSize().equals("Small"));
+	}
 }
