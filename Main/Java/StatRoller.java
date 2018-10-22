@@ -12,7 +12,7 @@ import java.util.Random;
  *
  * @author thom
  */
-class StatRoller {
+public class StatRoller {
     
     public static ArrayList<Integer> rollStat(){
         Random rand = new Random();
