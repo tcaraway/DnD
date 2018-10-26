@@ -12,6 +12,8 @@ import java.util.ArrayList;
  * @author thom
  */
 public class DnDCharacter {
+	
+	private DnDRace race2;
     
     //basic info
     private String race, playerClass, characterName, playerName, background, alignment;
@@ -256,6 +258,10 @@ public class DnDCharacter {
         sts[4] = this.wisdomST;
         sts[5] = this.charismaST;
         return sts;
+    }
+    public void setRace2(DnDRace pRace) 
+    {
+    	this.race2 = pRace;
     }
     public void setRace(String pRace)
     {
@@ -1220,6 +1226,13 @@ public class DnDCharacter {
                 }
             }
         }
+    }
+    
+    public void race2Changes(){
+    	size = race2.getSize();
+    	speed = race2.getSpeed();
+    	raceFeatures.addAll(race2.RaceFeatures());
+    	maximumHP = race2.getMaximumHP();
     }
 }
      

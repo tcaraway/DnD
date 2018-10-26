@@ -1,9 +1,13 @@
 package Tests.Java;
 
 import Main.Java.DnDCharacter;
+import Main.Java.RaceMountainDwarf;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
 
 class DnDCharacterTest {
 
@@ -98,5 +102,21 @@ class DnDCharacterTest {
 		sut.computeRest();
 		
 		assert(sut.getSize().equals("Small"));
+	}
+	
+	@Test
+	void givenRace2_whenRace2Changes_thenRaceFeatures() {
+		DnDCharacter sut = new DnDCharacter();
+		ArrayList<String> expected = new ArrayList<>();
+		expected.add("Darkvision");
+		expected.add("Dwarven Resilience");
+		expected.add("Dwarven Combat Training (prof w/ battleaxe,handaxe,throwing hammer,warhammer)");
+		expected.add("Stonecutting");
+		expected.add("Dwarven Armor Training (prof w/ light and medium armor)");
+		
+		sut.setRace2(new RaceMountainDwarf());
+		sut.race2Changes();
+		
+		assert(sut.getRaceFeatures().equals(expected));
 	}
 }
