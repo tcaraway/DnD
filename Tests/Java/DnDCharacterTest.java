@@ -105,6 +105,17 @@ class DnDCharacterTest {
 	}
 	
 	@Test
+	void givenForestGnome_whenIntelligence14_thenInt() {
+		DnDCharacter sut = new DnDCharacter();
+		
+		sut.setRace("Forest Gnome");
+		sut.setIntelligence(14);
+		sut.computeRest();
+		
+		assert(sut.getIntelligence() == 16);
+	}
+	
+	@Test
 	void givenRace2_whenRace2Changes_thenRaceFeatures() {
 		DnDCharacter sut = new DnDCharacter();
 		ArrayList<String> expected = new ArrayList<>();
