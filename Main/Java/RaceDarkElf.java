@@ -2,7 +2,7 @@ package Main.Java;
 
 import java.util.ArrayList;
 
-public class RaceElf implements DnDRace {
+public class RaceDarkElf implements DnDRace {
 
 	@Override
 	public ArrayList<String> RaceFeatures() {
