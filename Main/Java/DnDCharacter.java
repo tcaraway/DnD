@@ -1262,7 +1262,13 @@ public class DnDCharacter {
     	size = race2.getSize();
     	speed = race2.getSpeed();
     	raceFeatures.addAll(race2.RaceFeatures());
-    	maximumHP = race2.getMaximumHP();
+    	maximumHP += race2.getMaximumHPBonus();
+    	strength += race2.getStrengthBonus();
+    	dexterity += race2.getDexterityBonus();
+    	constitution += race2.getConstitutionBonus();
+    	intelligence += race2.getIntelligenceBonus();
+    	wisdom += race2.getWisdomBonus();
+    	charisma += race2.getCharismaBonus();
     }
 }
      

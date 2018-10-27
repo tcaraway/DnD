@@ -2,37 +2,33 @@ package Main.Java;
 
 import java.util.ArrayList;
 
-public class RaceHillDwarf implements DnDRace {
+public class RaceHumanVariant implements DnDRace {
 
 	@Override
 	public ArrayList<String> RaceFeatures() {
 		ArrayList<String> raceFeatures = new ArrayList<>();
-        raceFeatures.add("Darkvision");
-        raceFeatures.add("Dwarven Resilience");
-        raceFeatures.add("Dwarven Combat Training (prof w/ battleaxe,handaxe,throwing hammer,warhammer)");
-        raceFeatures.add("Stonecutting");
-        raceFeatures.add("Dwarven Toughness");
+		raceFeatures.add("Choose 1 Feat");
 		return raceFeatures;
 	}
-	
+
 	@Override
 	public String getRace() {
-		return "Hill Dwarf";
+		return "Human (Variant)";
 	}
-	
+
 	@Override
 	public int getSpeed() {
-		return 25;
+		return 30;
 	}
-	
+
 	@Override
 	public String getSize() {
-		return "Medium";
+		return "Meduim";
 	}
-	
+
 	@Override
 	public int getMaximumHPBonus() {
-		return 1;
+		return 0;
 	}
 
 	@Override
@@ -47,7 +43,7 @@ public class RaceHillDwarf implements DnDRace {
 
 	@Override
 	public int getConstitutionBonus() {
-		return 2;
+		return 0;
 	}
 
 	@Override
@@ -57,11 +53,12 @@ public class RaceHillDwarf implements DnDRace {
 
 	@Override
 	public int getWisdomBonus() {
-		return 1;
+		return 0;
 	}
 
 	@Override
 	public int getCharismaBonus() {
 		return 0;
 	}
+
 }

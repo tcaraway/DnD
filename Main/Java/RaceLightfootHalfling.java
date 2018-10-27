@@ -30,8 +30,38 @@ public class RaceLightfootHalfling implements DnDRace {
 	}
 
 	@Override
-	public int getMaximumHP() {
+	public int getMaximumHPBonus() {
 		return 0;
+	}
+
+	@Override
+	public int getStrengthBonus() {
+		return 0;
+	}
+
+	@Override
+	public int getDexterityBonus() {
+		return 2;
+	}
+
+	@Override
+	public int getConstitutionBonus() {
+		return 0;
+	}
+
+	@Override
+	public int getIntelligenceBonus() {
+		return 0;
+	}
+
+	@Override
+	public int getWisdomBonus() {
+		return 0;
+	}
+
+	@Override
+	public int getCharismaBonus() {
+		return 1;
 	}
 
 }

@@ -31,7 +31,37 @@ public class RaceMountainDwarf implements DnDRace {
 	}
 	
 	@Override
-	public int getMaximumHP() {
+	public int getMaximumHPBonus() {
+		return 0;
+	}
+
+	@Override
+	public int getStrengthBonus() {
+		return 2;
+	}
+
+	@Override
+	public int getDexterityBonus() {
+		return 0;
+	}
+
+	@Override
+	public int getConstitutionBonus() {
+		return 2;
+	}
+
+	@Override
+	public int getIntelligenceBonus() {
+		return 0;
+	}
+
+	@Override
+	public int getWisdomBonus() {
+		return 0;
+	}
+
+	@Override
+	public int getCharismaBonus() {
 		return 0;
 	}
 	
