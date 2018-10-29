@@ -12,6 +12,8 @@ import java.util.ArrayList;
  * @author thom
  */
 public class DnDCharacter {
+	
+	private DnDRace race2;
     
     //basic info
     private String race, playerClass, characterName, playerName, background, alignment;
@@ -256,6 +258,10 @@ public class DnDCharacter {
         sts[4] = this.wisdomST;
         sts[5] = this.charismaST;
         return sts;
+    }
+    public void setRace2(DnDRace pRace) 
+    {
+    	this.race2 = pRace;
     }
     public void setRace(String pRace)
     {
@@ -1070,17 +1076,20 @@ public class DnDCharacter {
     {
         size = "Medium";
         speed = 25;
+        constitution += 2; 
         raceFeatures.add("Darkvision");
         raceFeatures.add("Dwarven Resilience");
         raceFeatures.add("Dwarven Combat Training (prof w/ battleaxe,handaxe,throwing hammer,warhammer)");
         raceFeatures.add("Stonecutting");
         if(race.equals("Hill Dwarf"))
         {
-            maximumHP = maximumHP + 1;
+            maximumHP += 1;
             raceFeatures.add("Dwarven Toughness");
+            wisdom++;
         }
         else
         {
+        	strength += 2;
             raceFeatures.add("Dwarven Armor Training (prof w/ light and medium armor)");
         }
     }
@@ -1090,23 +1099,27 @@ public class DnDCharacter {
     {
         size = "Medium";
         speed = 30;
+        dexterity += 2;
         raceFeatures.add("Darkvision");
         raceFeatures.add("Fey Ancestry");
         raceFeatures.add("Trance");
         raceFeatures.add("Keen Senses");
         switch (race) {
             case "High Elf":
+            	intelligence++;
                 raceFeatures.add("Elf Weapon Training (prof w/ longsword,shortsword,shortbow,longbow)");
                 raceFeatures.add("1 Wizard Cantrip");
                 raceFeatures.add("Extra Language");
                 break;
             case "Wood Elf":
+            	wisdom++;
                 raceFeatures.add("Elf Weapon Training (prof w/ longsword,shortsword,shortbow,longbow)");
                 raceFeatures.add("Fleet of Foot");
                 speed = 35;
                 raceFeatures.add("Mask of the Wild");
                 break;
             default:
+            	charisma++;
                 raceFeatures.add("Superior Darkvision");
                 raceFeatures.add("Sunlight Sensitivity");
                 raceFeatures.add("Drow Magic");
@@ -1120,13 +1133,18 @@ public class DnDCharacter {
     {
         size = "Small";
         speed = 25;
+        dexterity += 2;
         raceFeatures.add("Brave");
         raceFeatures.add("Lucky");
         raceFeatures.add("Halfling Nimbleness");
-        if(race.equals("Lightfoot Halfling"))
+        if(race.equals("Lightfoot Halfling")) {
+        	charisma++;
             raceFeatures.add("Naturally Stealthy");
-        else
+        }
+        else {
+        	constitution++;
             raceFeatures.add("Stout Resilience");
+        }
     }
     
     //used in compute, carry out Human changes
@@ -1136,6 +1154,14 @@ public class DnDCharacter {
         speed = 30;
         if(playerClass.equals("Human (Variant)"))
             raceFeatures.add("Choose 1 Feat");
+        else {
+        	dexterity++;
+        	constitution++;
+        	wisdom++;
+        	charisma++;
+        	strength++;
+        	intelligence++;
+        }
     }
     
     //used in compute(), carry out Gnome changes
@@ -1143,15 +1169,18 @@ public class DnDCharacter {
     {
         size = "Small";
         speed = 25;
+        intelligence += 2;
         raceFeatures.add("Darkvision");
         raceFeatures.add("Gnome Cunning");
         if(race.equals("Forest Gnome"))
         {
+        	dexterity++;
             raceFeatures.add("Natural Illusionist");
             raceFeatures.add("Speak with Small Beasts");
         }
         else
         {
+        	constitution++;
             raceFeatures.add("Artificer's Lore");
             raceFeatures.add("Tinker");
         }
@@ -1162,6 +1191,7 @@ public class DnDCharacter {
     {
         size = "Medium";
         speed = 30;
+        charisma += 2;
         raceFeatures.add("Darkvision");
         raceFeatures.add("Fey Ancestry");
     }
@@ -1171,6 +1201,8 @@ public class DnDCharacter {
     {
         size= "Medium";
         speed = 35;
+        strength += 2;
+        constitution++;
         raceFeatures.add("Darkvision");
         raceFeatures.add("Relentless Endurance");
         raceFeatures.add("Savage Attacks");
@@ -1182,6 +1214,8 @@ public class DnDCharacter {
     {
         size = "Medium";
         speed = 30;
+        charisma += 2;
+        intelligence++;
         raceFeatures.add("Darkvision");
         raceFeatures.add("Hellish Resistance");
         raceFeatures.add("Infernal Legacy");
@@ -1192,6 +1226,8 @@ public class DnDCharacter {
     {
         size = "Medium";
         speed = 30;
+        charisma++;
+        strength += 2;
         raceFeatures.add("Draconic Ancestry");
         raceFeatures.add("Breath Weapon");
         raceFeatures.add("Damage Resistance");
@@ -1220,6 +1256,19 @@ public class DnDCharacter {
                 }
             }
         }
+    }
+    
+    public void race2Changes(){
+    	size = race2.getSize();
+    	speed = race2.getSpeed();
+    	raceFeatures.addAll(race2.RaceFeatures());
+    	maximumHP += race2.getMaximumHPBonus();
+    	strength += race2.getStrengthBonus();
+    	dexterity += race2.getDexterityBonus();
+    	constitution += race2.getConstitutionBonus();
+    	intelligence += race2.getIntelligenceBonus();
+    	wisdom += race2.getWisdomBonus();
+    	charisma += race2.getCharismaBonus();
     }
 }
      
