@@ -1,32 +1,35 @@
-package Main.Java;
+package Main.Java.Races;
 
 import java.util.ArrayList;
 
-public class RaceForestGnome implements DnDRace {
+public class RaceHighElf implements DnDRace {
 
 	@Override
 	public ArrayList<String> RaceFeatures() {
 		ArrayList<String> raceFeatures = new ArrayList<>();
 		raceFeatures.add("Darkvision");
-	    raceFeatures.add("Gnome Cunning");
-	    raceFeatures.add("Natural Illusionist");
-        raceFeatures.add("Speak with Small Beasts");
+        raceFeatures.add("Fey Ancestry");
+        raceFeatures.add("Trance");
+        raceFeatures.add("Keen Senses");
+        raceFeatures.add("Elf Weapon Training (prof w/ longsword,shortsword,shortbow,longbow)");
+        raceFeatures.add("1 Wizard Cantrip");
+        raceFeatures.add("Extra Language");
 		return raceFeatures;
 	}
 
 	@Override
 	public String getRace() {
-		return "Forest Gnome";
+		return "High Elf";
 	}
 
 	@Override
 	public int getSpeed() {
-		return 25;
+		return 30;
 	}
 
 	@Override
 	public String getSize() {
-		return "Small";
+		return "Medium";
 	}
 
 	@Override
@@ -41,7 +44,7 @@ public class RaceForestGnome implements DnDRace {
 
 	@Override
 	public int getDexterityBonus() {
-		return 1;
+		return 2;
 	}
 
 	@Override
@@ -51,7 +54,7 @@ public class RaceForestGnome implements DnDRace {
 
 	@Override
 	public int getIntelligenceBonus() {
-		return 2;
+		return 1;
 	}
 
 	@Override

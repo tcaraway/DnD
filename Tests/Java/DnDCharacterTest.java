@@ -2,7 +2,7 @@ package Tests.Java;
 
 import Main.Java.DnDCharacter;
 
-import Main.Java.RaceMountainDwarf;
+import Main.Java.Races.RaceMountainDwarf;
 import Main.Java.StatRoller;
 
 import org.junit.jupiter.api.Test;
@@ -11,8 +11,6 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.ArrayList;
 
 class DnDCharacterTest {
 

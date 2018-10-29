@@ -1,36 +1,32 @@
-package Main.Java;
+package Main.Java.Races;
 
 import java.util.ArrayList;
 
-public class RaceDarkElf implements DnDRace {
+public class RaceRockGnome implements DnDRace {
 
 	@Override
 	public ArrayList<String> RaceFeatures() {
 		ArrayList<String> raceFeatures = new ArrayList<>();
 		raceFeatures.add("Darkvision");
-        raceFeatures.add("Fey Ancestry");
-        raceFeatures.add("Trance");
-        raceFeatures.add("Keen Senses");
-        raceFeatures.add("Superior Darkvision");
-        raceFeatures.add("Sunlight Sensitivity");
-        raceFeatures.add("Drow Magic");
-        raceFeatures.add("Drow Weapon Training (prof w/ rapiers,shortswords,hand crossbows)");
+	    raceFeatures.add("Gnome Cunning");
+	    raceFeatures.add("Artificer's Lore");
+        raceFeatures.add("Tinker");
 		return raceFeatures;
 	}
 
 	@Override
 	public String getRace() {
-		return "Elf";
+		return "Rock Gnome";
 	}
 
 	@Override
 	public int getSpeed() {
-		return 30;
+		return 25;
 	}
 
 	@Override
 	public String getSize() {
-		return "Medium";
+		return "Small";
 	}
 
 	@Override
@@ -45,17 +41,17 @@ public class RaceDarkElf implements DnDRace {
 
 	@Override
 	public int getDexterityBonus() {
-		return 2;
+		return 0;
 	}
 
 	@Override
 	public int getConstitutionBonus() {
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public int getIntelligenceBonus() {
-		return 0;
+		return 2;
 	}
 
 	@Override
@@ -65,6 +61,6 @@ public class RaceDarkElf implements DnDRace {
 
 	@Override
 	public int getCharismaBonus() {
-		return 1;
+		return 0;
 	}
 }

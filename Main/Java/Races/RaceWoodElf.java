@@ -1,8 +1,8 @@
-package Main.Java;
+package Main.Java.Races;
 
 import java.util.ArrayList;
 
-public class RaceHighElf implements DnDRace {
+public class RaceWoodElf implements DnDRace {
 
 	@Override
 	public ArrayList<String> RaceFeatures() {
@@ -12,19 +12,19 @@ public class RaceHighElf implements DnDRace {
         raceFeatures.add("Trance");
         raceFeatures.add("Keen Senses");
         raceFeatures.add("Elf Weapon Training (prof w/ longsword,shortsword,shortbow,longbow)");
-        raceFeatures.add("1 Wizard Cantrip");
-        raceFeatures.add("Extra Language");
+        raceFeatures.add("Fleet of Foot");
+        raceFeatures.add("Mask of the Wild");
 		return raceFeatures;
 	}
 
 	@Override
 	public String getRace() {
-		return "High Elf";
+		return "Wood Elf";
 	}
 
 	@Override
 	public int getSpeed() {
-		return 30;
+		return 35;
 	}
 
 	@Override
@@ -54,16 +54,17 @@ public class RaceHighElf implements DnDRace {
 
 	@Override
 	public int getIntelligenceBonus() {
-		return 1;
+		return 0;
 	}
 
 	@Override
 	public int getWisdomBonus() {
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public int getCharismaBonus() {
 		return 0;
 	}
+
 }

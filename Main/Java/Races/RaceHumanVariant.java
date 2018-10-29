@@ -1,32 +1,29 @@
-package Main.Java;
+package Main.Java.Races;
 
 import java.util.ArrayList;
 
-public class RaceLightfootHalfling implements DnDRace {
+public class RaceHumanVariant implements DnDRace {
 
 	@Override
 	public ArrayList<String> RaceFeatures() {
 		ArrayList<String> raceFeatures = new ArrayList<>();
-		raceFeatures.add("Brave");
-        raceFeatures.add("Lucky");
-        raceFeatures.add("Halfling Nimbleness");
-        raceFeatures.add("Naturally Stealthy");
+		raceFeatures.add("Choose 1 Feat");
 		return raceFeatures;
 	}
 
 	@Override
 	public String getRace() {
-		return "Lightfoot Halfling";
+		return "Human (Variant)";
 	}
 
 	@Override
 	public int getSpeed() {
-		return 25;
+		return 30;
 	}
 
 	@Override
 	public String getSize() {
-		return "Small";
+		return "Meduim";
 	}
 
 	@Override
@@ -41,7 +38,7 @@ public class RaceLightfootHalfling implements DnDRace {
 
 	@Override
 	public int getDexterityBonus() {
-		return 2;
+		return 0;
 	}
 
 	@Override
@@ -61,7 +58,7 @@ public class RaceLightfootHalfling implements DnDRace {
 
 	@Override
 	public int getCharismaBonus() {
-		return 1;
+		return 0;
 	}
 
 }

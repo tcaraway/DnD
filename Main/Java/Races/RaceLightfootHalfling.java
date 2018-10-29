@@ -1,8 +1,8 @@
-package Main.Java;
+package Main.Java.Races;
 
 import java.util.ArrayList;
 
-public class RaceStoutHalfling implements DnDRace {
+public class RaceLightfootHalfling implements DnDRace {
 
 	@Override
 	public ArrayList<String> RaceFeatures() {
@@ -10,7 +10,7 @@ public class RaceStoutHalfling implements DnDRace {
 		raceFeatures.add("Brave");
         raceFeatures.add("Lucky");
         raceFeatures.add("Halfling Nimbleness");
-        raceFeatures.add("Stout Resilience");
+        raceFeatures.add("Naturally Stealthy");
 		return raceFeatures;
 	}
 
@@ -46,7 +46,7 @@ public class RaceStoutHalfling implements DnDRace {
 
 	@Override
 	public int getConstitutionBonus() {
-		return 1;
+		return 0;
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class RaceStoutHalfling implements DnDRace {
 
 	@Override
 	public int getCharismaBonus() {
-		return 0;
+		return 1;
 	}
 
 }

@@ -4,6 +4,7 @@ package Main.Java;/*
  * and open the template in the editor.
  */
 
+import javax.swing.*;
 import java.io.File;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;

@@ -1,22 +1,22 @@
-package Main.Java;
+package Main.Java.Races;
 
 import java.util.ArrayList;
 
-public class RaceRockGnome implements DnDRace {
+public class RaceStoutHalfling implements DnDRace {
 
 	@Override
 	public ArrayList<String> RaceFeatures() {
 		ArrayList<String> raceFeatures = new ArrayList<>();
-		raceFeatures.add("Darkvision");
-	    raceFeatures.add("Gnome Cunning");
-	    raceFeatures.add("Artificer's Lore");
-        raceFeatures.add("Tinker");
+		raceFeatures.add("Brave");
+        raceFeatures.add("Lucky");
+        raceFeatures.add("Halfling Nimbleness");
+        raceFeatures.add("Stout Resilience");
 		return raceFeatures;
 	}
 
 	@Override
 	public String getRace() {
-		return "Rock Gnome";
+		return "Lightfoot Halfling";
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class RaceRockGnome implements DnDRace {
 
 	@Override
 	public int getDexterityBonus() {
-		return 0;
+		return 2;
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class RaceRockGnome implements DnDRace {
 
 	@Override
 	public int getIntelligenceBonus() {
-		return 2;
+		return 0;
 	}
 
 	@Override
@@ -63,4 +63,5 @@ public class RaceRockGnome implements DnDRace {
 	public int getCharismaBonus() {
 		return 0;
 	}
+
 }
