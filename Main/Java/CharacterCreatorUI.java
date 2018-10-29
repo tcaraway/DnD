@@ -8397,13 +8397,8 @@ class CharacterCreatorUI extends javax.swing.JFrame {
 
     private void saveCharacterFileActionPerformed() {//GEN-FIRST:event_saveCharacterFileActionPerformed
         // TODO add your handling code here:
-
-        File desktop = new File(System.getProperty("user.home"), "Desktop");
-        String desktopFilePath = desktop.getAbsolutePath() + "/" + this.newCharacter.getCharacterName() + ".txt";
-
-        CharacterWriter cw = new CharacterWriter(desktopFilePath, this.newCharacter);
+        CharacterWriter cw = new CharacterWriter(this.newCharacter);
         cw.createCharacterFile();
-        JOptionPane.showMessageDialog(null, "File has been saved to Desktop");
 
     }//GEN-LAST:event_saveCharacterFileActionPerformed
 
