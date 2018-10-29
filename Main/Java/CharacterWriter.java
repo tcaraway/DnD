@@ -30,9 +30,7 @@ class CharacterWriter
         this.characterFile = new File(path);
         this.character = cha;
         this.filePath = path;
-        System.out.println(path);
         this.writer = null;
-        System.out.println(filePath);
     }
     
     public void createCharacterFile()
