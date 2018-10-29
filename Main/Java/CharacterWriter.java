@@ -321,7 +321,7 @@ class CharacterWriter
             writer.println("________Inventory________");
             for(String item : character.getInventory())
                 writer.println(item);
-            
+            JOptionPane.showMessageDialog(null, "File has been saved to " + filePath);
         } catch(Exception ignored){}
         writer.close();
     }
