@@ -1,11 +1,16 @@
 package Tests.Java;
 
 import Main.Java.DnDCharacter;
+
 import Main.Java.RaceMountainDwarf;
+import Main.Java.StatRoller;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 
@@ -21,19 +26,19 @@ class DnDCharacterTest {
         sut.setWisdom(25);
         sut.setCharisma(30);
 
-        assertEquals(3, sut.getStrength());
-        assertEquals(5, sut.getDexterity());
-        assertEquals(10, sut.getConstitution());
-        assertEquals(20, sut.getIntelligence());
-        assertEquals(25, sut.getWisdom());
-        assertEquals(30, sut.getCharisma());
+        assertEquals(-3, sut.getStrMod());
+        assertEquals(-2, sut.getDexMod());
+        assertEquals(0, sut.getConMod());
+        assertEquals(5, sut.getIntMod());
+        assertEquals(7, sut.getWisMod());
+        assertEquals(10, sut.getChaMod());
     }
     
 	@Test
     void givenDnDCharacter_whenClassBard_thenClass() {
 		DnDCharacter sut = new DnDCharacter();
 		sut.setClass("Bard");
-		assert(sut.getPlayerClass().equals("Bard"));
+		assertTrue(sut.getPlayerClass().equals("Bard"));
 	}
 	
 	@Test
@@ -41,7 +46,7 @@ class DnDCharacterTest {
 		DnDCharacter sut = new DnDCharacter();
 		sut.setDexterity(16);
 		sut.computeRest();
-		assert(sut.getArmorClass() == 13);
+		assertTrue(sut.getArmorClass() == 13);
 	}
 
 	@Test
@@ -50,8 +55,18 @@ class DnDCharacterTest {
 		sut.setConstitution(16);
 		sut.setClass("Monk");
 		sut.computeRest();
-		assert(sut.getMaxHP() == 11);
+		assertTrue(sut.getMaxHP() == 11);
 	}
+
+	@Test
+    void givenStatRoller_whenRollStat_CalculateCorrectStat(){
+        StatRoller sut = new StatRoller();
+        ArrayList<Integer> rolls =  new ArrayList<>(sut.rollStat());
+        for (int i = 0; i < 3; i++){
+            assertTrue(rolls.get(3) <= rolls.get(i)); //check if the second to last number is the lowest roll
+        }
+        assertTrue(rolls.get(4) == (rolls.get(0)+rolls.get(1)+rolls.get(2))); //check if the last number is the total stat roll (4d6-lowest)
+    }
 	
 	@Test
 	void givenDnDCharacter_whenDruid_thenProficiencies() {
