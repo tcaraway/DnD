@@ -1,4 +1,4 @@
-package Main.Java;
+package Main.Java.Races;
 
 import java.util.ArrayList;
 

@@ -1,35 +1,34 @@
-package Main.Java;
+package Main.Java.Races;
 
 import java.util.ArrayList;
 
-public class RaceMountainDwarf implements DnDRace {
-	
+public class RaceForestGnome implements DnDRace {
+
 	@Override
 	public ArrayList<String> RaceFeatures() {
 		ArrayList<String> raceFeatures = new ArrayList<>();
-        raceFeatures.add("Darkvision");
-        raceFeatures.add("Dwarven Resilience");
-        raceFeatures.add("Dwarven Combat Training (prof w/ battleaxe,handaxe,throwing hammer,warhammer)");
-        raceFeatures.add("Stonecutting");
-        raceFeatures.add("Dwarven Armor Training (prof w/ light and medium armor)");
+		raceFeatures.add("Darkvision");
+	    raceFeatures.add("Gnome Cunning");
+	    raceFeatures.add("Natural Illusionist");
+        raceFeatures.add("Speak with Small Beasts");
 		return raceFeatures;
 	}
-	
+
 	@Override
 	public String getRace() {
-		return "Mountain Dwarf";
+		return "Forest Gnome";
 	}
-	
+
 	@Override
 	public int getSpeed() {
 		return 25;
 	}
-	
+
 	@Override
 	public String getSize() {
-		return "Medium";
+		return "Small";
 	}
-	
+
 	@Override
 	public int getMaximumHPBonus() {
 		return 0;
@@ -37,22 +36,22 @@ public class RaceMountainDwarf implements DnDRace {
 
 	@Override
 	public int getStrengthBonus() {
-		return 2;
+		return 0;
 	}
 
 	@Override
 	public int getDexterityBonus() {
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public int getConstitutionBonus() {
-		return 2;
+		return 0;
 	}
 
 	@Override
 	public int getIntelligenceBonus() {
-		return 0;
+		return 2;
 	}
 
 	@Override
@@ -64,5 +63,4 @@ public class RaceMountainDwarf implements DnDRace {
 	public int getCharismaBonus() {
 		return 0;
 	}
-	
 }

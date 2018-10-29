@@ -1,19 +1,21 @@
-package Main.Java;
+package Main.Java.Races;
 
 import java.util.ArrayList;
 
-public class RaceHumanVariant implements DnDRace {
+public class RaceDragonBorn implements DnDRace {
 
 	@Override
 	public ArrayList<String> RaceFeatures() {
 		ArrayList<String> raceFeatures = new ArrayList<>();
-		raceFeatures.add("Choose 1 Feat");
+		raceFeatures.add("Draconic Ancestry");
+        raceFeatures.add("Breath Weapon");
+        raceFeatures.add("Damage Resistance");
 		return raceFeatures;
 	}
 
 	@Override
 	public String getRace() {
-		return "Human (Variant)";
+		return "Dragon Born";
 	}
 
 	@Override
@@ -23,7 +25,8 @@ public class RaceHumanVariant implements DnDRace {
 
 	@Override
 	public String getSize() {
-		return "Meduim";
+		// TODO Auto-generated method stub
+		return "Medium";
 	}
 
 	@Override
@@ -33,7 +36,7 @@ public class RaceHumanVariant implements DnDRace {
 
 	@Override
 	public int getStrengthBonus() {
-		return 0;
+		return 2;
 	}
 
 	@Override
@@ -58,7 +61,7 @@ public class RaceHumanVariant implements DnDRace {
 
 	@Override
 	public int getCharismaBonus() {
-		return 0;
+		return 1;
 	}
 
 }

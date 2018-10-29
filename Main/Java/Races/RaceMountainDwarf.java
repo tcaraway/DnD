@@ -1,9 +1,9 @@
-package Main.Java;
+package Main.Java.Races;
 
 import java.util.ArrayList;
 
-public class RaceHillDwarf implements DnDRace {
-
+public class RaceMountainDwarf implements DnDRace {
+	
 	@Override
 	public ArrayList<String> RaceFeatures() {
 		ArrayList<String> raceFeatures = new ArrayList<>();
@@ -11,13 +11,13 @@ public class RaceHillDwarf implements DnDRace {
         raceFeatures.add("Dwarven Resilience");
         raceFeatures.add("Dwarven Combat Training (prof w/ battleaxe,handaxe,throwing hammer,warhammer)");
         raceFeatures.add("Stonecutting");
-        raceFeatures.add("Dwarven Toughness");
+        raceFeatures.add("Dwarven Armor Training (prof w/ light and medium armor)");
 		return raceFeatures;
 	}
 	
 	@Override
 	public String getRace() {
-		return "Hill Dwarf";
+		return "Mountain Dwarf";
 	}
 	
 	@Override
@@ -32,12 +32,12 @@ public class RaceHillDwarf implements DnDRace {
 	
 	@Override
 	public int getMaximumHPBonus() {
-		return 1;
+		return 0;
 	}
 
 	@Override
 	public int getStrengthBonus() {
-		return 0;
+		return 2;
 	}
 
 	@Override
@@ -57,11 +57,12 @@ public class RaceHillDwarf implements DnDRace {
 
 	@Override
 	public int getWisdomBonus() {
-		return 1;
+		return 0;
 	}
 
 	@Override
 	public int getCharismaBonus() {
 		return 0;
 	}
+	
 }
