@@ -19,9 +19,14 @@ class CharacterWriter
     private final File characterFile;
     private final DnDCharacter character;
     private final String filePath;
-    
-    public CharacterWriter(String path, DnDCharacter cha)
+
+    public CharacterWriter(DnDCharacter cha)
     {
+        String path;
+        JFileChooser fileSelect = new JFileChooser();
+        fileSelect.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        fileSelect.showOpenDialog(null);
+        path = (fileSelect.getSelectedFile().getAbsolutePath()+ File.separator +cha.getCharacterName()+".txt");
         this.characterFile = new File(path);
         this.character = cha;
         this.filePath = path;
@@ -314,7 +319,7 @@ class CharacterWriter
             writer.println("________Inventory________");
             for(String item : character.getInventory())
                 writer.println(item);
-            
+            JOptionPane.showMessageDialog(null, "File has been saved to " + filePath);
         } catch(Exception ignored){}
         writer.close();
     }
