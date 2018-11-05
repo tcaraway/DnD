@@ -1,7 +1,7 @@
-apply plugin: 'pmd'
 plugins {
     id 'java'
 }
+
 group 'DnDCharacterCreator'
 version '1.0-SNAPSHOT'
 

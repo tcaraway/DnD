@@ -1,18 +1,15 @@
-package src.test.java;
-import src.main.java.DnDCharacter;
-import src.main.java.StatRoller;
-import src.main.java.Races.*;
-
+import Races.*;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
+
+import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class DnDCharacterTest {
 
     @Test
-	public void givenDnDCharacter_whenValidAbilityScores_thenAbilityScoresSet(){
+    public void givenDnDCharacter_whenValidAbilityScores_thenAbilityScoresSet(){
         DnDCharacter sut = new DnDCharacter();
         sut.setStrength(3);
         sut.setDexterity(5);   //valid range is 3-30
@@ -30,14 +27,14 @@ public class DnDCharacterTest {
     }
     
 	@Test
-	public void givenDnDCharacter_whenClassBard_thenClass() {
+    public void givenDnDCharacter_whenClassBard_thenClass() {
 		DnDCharacter sut = new DnDCharacter();
 		sut.setClass("Bard");
 		assertTrue(sut.getPlayerClass().equals("Bard"));
 	}
 	
 	@Test
-	public void givenDnDCharacter_whenDexMod3_thenAC() {
+    public void givenDnDCharacter_whenDexMod3_thenAC() {
 		DnDCharacter sut = new DnDCharacter();
 		sut.setDexterity(16);
 		sut.computeRest();
@@ -45,7 +42,7 @@ public class DnDCharacterTest {
 	}
 
 	@Test
-	public void givenMonk_whenCon16_thenMaxHP() {
+    public void givenMonk_whenCon16_thenMaxHP() {
 		DnDCharacter sut = new DnDCharacter();
 		sut.setConstitution(16);
 		sut.setClass("Monk");
@@ -54,7 +51,7 @@ public class DnDCharacterTest {
 	}
 
 	@Test
-	public void givenStatRoller_whenRollStat_CalculateCorrectStat(){
+    public void givenStatRoller_whenRollStat_CalculateCorrectStat(){
         StatRoller sut = new StatRoller();
         ArrayList<Integer> rolls =  new ArrayList<>(sut.rollStat());
         for (int i = 0; i < 3; i++){
@@ -73,7 +70,7 @@ public class DnDCharacterTest {
 	}
 	
 	@Test
-	public void givenCleric_whenAttributes_thenSpellDC() {
+	public void givenCleric_whenAtributes_thenSpellDC() {
 		DnDCharacter sut = new DnDCharacter();
 		sut.setClass("Cleric");
 		sut.setWisdom(14);
@@ -83,7 +80,7 @@ public class DnDCharacterTest {
 	}
 	
 	@Test
-	public void givenBard_whenAttributes_thenCharST() {
+	public void givenBard_whenAtributes_thenCharST() {
 		DnDCharacter sut = new DnDCharacter();
 		
 		sut.setClass("Bard");
@@ -94,7 +91,7 @@ public class DnDCharacterTest {
 	}
 	
 	@Test
-	public void givenWizard_whenAttributes_thenSpellAttackBonus() {
+	public void givenWizard_whenAtributes_thenSpellAttackBonus() {
 		DnDCharacter sut = new DnDCharacter();
 		
 		sut.setClass("Wizard");

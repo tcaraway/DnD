@@ -1,8 +1,6 @@
-package src.main.java;
+import Races.DnDRace;
 
 import java.util.ArrayList;
-
-import src.main.java.Races.DnDRace;
 
 /**
  * Represents a player's character for us in DnD 5th ed.
