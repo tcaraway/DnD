@@ -1,6 +1,10 @@
-import Races.*;
+package src.test.java;
+import src.main.java.DnDCharacter;
+import src.main.java.StatRoller;
+import src.main.java.Races.*;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
