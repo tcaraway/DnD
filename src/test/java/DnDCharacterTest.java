@@ -1,3 +1,4 @@
+package src.test.java;
 import src.main.java.DnDCharacter;
 import src.main.java.StatRoller;
 import src.main.java.Races.*;
