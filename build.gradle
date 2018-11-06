@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'pmd'
+    id 'findbugs'
 }
 
 group 'DnDCharacterCreator'
