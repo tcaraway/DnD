@@ -201,10 +201,6 @@ public class DnDCharacter {
         this.languages = new ArrayList<>();
         this.languagesAmount = 0;
     
-        //currency ([1] = copper, [2] = silver, etc.)(unused currently)
-        //currency ([1] = copper, [2] = silver, etc.) (Unused at the moment)
-        int[] currency = new int[5];
-    
         //features and traits
         this.classFeatures = new ArrayList<>();
         this.raceFeatures = new ArrayList<>();
@@ -810,9 +806,8 @@ public class DnDCharacter {
                 classFeatures.add("1st-level Spells always prepared: Bless, Cure Wounds");
                 break;
             case "Light":
-                ArrayList<String> c = cantrips;
                 boolean alreadyChosen = false;
-                for (String cantrip : c) {
+                for (String cantrip : cantrips) {
                     if (cantrip.equals("Light"))
                         alreadyChosen = true;
                 }
@@ -1256,7 +1251,7 @@ public class DnDCharacter {
     public void race2Changes(){
     	size = race2.getSize();
     	speed = race2.getSpeed();
-    	raceFeatures.addAll(race2.RaceFeatures());
+    	raceFeatures.addAll(race2.raceFeatures());
     	maximumHP += race2.getMaximumHPBonus();
     	strength += race2.getStrengthBonus();
     	dexterity += race2.getDexterityBonus();

@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 
@@ -11,7 +12,6 @@ import java.nio.charset.StandardCharsets;
 class CharacterWriter
 {
     private PrintWriter writer;
-    private final File characterFile;
     private final DnDCharacter character;
     private final String filePath;
 
@@ -22,7 +22,6 @@ class CharacterWriter
         fileSelect.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         fileSelect.showOpenDialog(null);
         path = (fileSelect.getSelectedFile().getAbsolutePath()+ File.separator +cha.getCharacterName()+".txt");
-        this.characterFile = new File(path);
         this.character = cha;
         this.filePath = path;
         this.writer = null;
@@ -31,9 +30,13 @@ class CharacterWriter
     public void createCharacterFile()
     {
         int[] savingThrows = character.getSavingThrows();
-        try{
+
+        try {
             writer = new PrintWriter(filePath);
-            writer.println("Player Name : " + this.character.getPlayerName());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        writer.println("Player Name : " + this.character.getPlayerName());
             writer.println("Character Name : " + this.character.getCharacterName());
             writer.println("");
             
@@ -315,7 +318,7 @@ class CharacterWriter
             for(String item : character.getInventory())
                 writer.println(item);
             JOptionPane.showMessageDialog(null, "File has been saved to " + filePath);
-        } catch(Exception ignored){}
+
         writer.close();
     }
 }

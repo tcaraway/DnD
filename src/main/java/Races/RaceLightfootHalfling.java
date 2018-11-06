@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class RaceLightfootHalfling implements DnDRace {
 
 	@Override
-	public ArrayList<String> RaceFeatures() {
+	public ArrayList<String> raceFeatures() {
 		ArrayList<String> raceFeatures = new ArrayList<>();
 		raceFeatures.add("Brave");
         raceFeatures.add("Lucky");

@@ -5239,8 +5239,6 @@ class CharacterCreatorUI extends javax.swing.JFrame {
             //configure next panel to reflect past choices
             Color color = new Color(255, 0, 0);
             String bg = this.newCharacter.getBackground();
-            String alignment = this.newCharacter.getAlignment();
-
 
             //disable all checkboxes
             this.acrobaticsCheck.setEnabled(false);

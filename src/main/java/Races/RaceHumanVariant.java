@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class RaceHumanVariant implements DnDRace {
 
 	@Override
-	public ArrayList<String> RaceFeatures() {
+	public ArrayList<String> raceFeatures() {
 		ArrayList<String> raceFeatures = new ArrayList<>();
 		raceFeatures.add("Choose 1 Feat");
 		return raceFeatures;

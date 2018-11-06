@@ -3,20 +3,20 @@ package Races;
 import java.util.ArrayList;
 
 public interface DnDRace {
-	public ArrayList<String> RaceFeatures();
+	ArrayList<String> raceFeatures();
 	
-	public String getRace();
+	String getRace();
 	
-	public int getSpeed();
+	int getSpeed();
 	
-	public String getSize();
+	String getSize();
 
-	public int getMaximumHPBonus();
+	int getMaximumHPBonus();
 	
-	public int getStrengthBonus();
-	public int getDexterityBonus();
-	public int getConstitutionBonus();
-	public int getIntelligenceBonus();
-	public int getWisdomBonus();
-	public int getCharismaBonus();
+	int getStrengthBonus();
+	int getDexterityBonus();
+	int getConstitutionBonus();
+	int getIntelligenceBonus();
+	int getWisdomBonus();
+	int getCharismaBonus();
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class RaceForestGnome implements DnDRace {
 
 	@Override
-	public ArrayList<String> RaceFeatures() {
+	public ArrayList<String> raceFeatures() {
 		ArrayList<String> raceFeatures = new ArrayList<>();
 		raceFeatures.add("Darkvision");
 	    raceFeatures.add("Gnome Cunning");
